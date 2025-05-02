@@ -1,0 +1,121 @@
+<!-- मुख्य हेडिंग (यह गैजेट के बाहर या पेज टाइटल हो सकता है, आप इसे हटा भी सकते हैं अगर पेज पर पहले से है) -->
+<!-- <h1>खोजें और सीखें</h1> -->
+
+<!-- मुख्य स्टाइलिश कंटेनर - सारा कंटेंट इसके अंदर रहेगा -->
+<div class="stylish-header-container">
+    <!-- एनिमेटेड हेडर और विवरण -->
+    <div class="animated-text-wrapper">
+         <h2 class="stylish-header">
+             <!-- टेक्स्ट को स्पैन में तोड़ें ताकि अक्षर एनिमेट हो सकें -->
+             <span>अ</span><span>रे</span> <span>रु</span><span>को</span><span>!</span> <span>म</span><span>ज़ा</span> <span>न</span><span>हीं</span> <span>आ</span> <span>र</span><span>हा</span><span>?</span> <span>🤔</span> <span>खो</span><span>जो</span> <span>अ</span><span>प</span><span>नी</span> <span>पं</span><span>स</span><span>द</span> <span>का</span> <span>कं</span><span>टें</span><span>ट</span> <span>-</span> <span>प</span><span>ढ़ा</span><span>ई</span><span>,</span> <span>म</span><span>नो</span><span>रं</span><span>ज</span><span>न</span><span>,</span> <span>ए</span><span>ग्ज़ा</span><span>म</span> <span>टि</span><span>प्स</span> <span>औ</span><span>र</span> <span>ला</span><span>इ</span><span>व</span> <span>न्यू</span><span>ज़</span><span>!</span> <span>📰</span><span>📚</span><span>🎉</span>
+         </h2>
+         <p class="stylish-description">
+             ऊब गए हो? 🤔 हम आपकी पढ़ाई, मनोरंजन, और परीक्षा की तैयारी को आसान बनाते हैं! 🚀 साथ ही, पाएं ताज़ा ख़बरें! 📰 अभी एक्सप्लोर करें! 🔍
+         </p>
+    </div>
+
+    <!-- कैटेगरी बटन -->
+    <div class="category-buttons">
+        <button onclick="showCategory('study-container')">ऑनलाइन पढ़ाई (1-12)</button>
+        <button onclick="showCategory('exam-container')">प्रतियोगी परीक्षा</button>
+        <button onclick="showCategory('college-container')">कॉलेज/यूनिवर्सिटी</button>
+        <button onclick="showCategory('entertainment-container')">मनोरंजन और सीख</button>
+        <button onclick="showCategory('news-container')">लाइव न्यूज़</button>
+    </div>
+
+    <!-- खोज कंटेनर (हेडर कंटेनर के अंदर) -->
+
+    <!-- कैटेगरी 1: ऑनलाइन पढ़ाई -->
+    <div class="search-category-container" id="study-container">
+        <div class="search-box" id="search-box-1">
+            <h3>ऑनलाइन पढ़ाई करें (कक्षा 1-12)</h3>
+            <select id="class-select"> <option value="" />कक्षा चुनें <option value="कक्षा 1" />कक्षा 1 <option value="कक्षा 2" />कक्षा 2 <option value="कक्षा 3" />कक्षा 3 <option value="कक्षा 4" />कक्षा 4 <option value="कक्षा 5" />कक्षा 5 <option value="कक्षा 6" />कक्षा 6 <option value="कक्षा 7" />कक्षा 7 <option value="कक्षा 8" />कक्षा 8 <option value="कक्षा 9" />कक्षा 9 <option value="कक्षा 10" />कक्षा 10 <option value="कक्षा 11" />कक्षा 11 <option value="कक्षा 12" />कक्षा 12 </select>
+            <select id="subject-select"> <option value="" />विषय चुनें <option value="हिंदी" />हिंदी <option value="अंग्रेज़ी" />अंग्रेज़ी <option value="गणित" />गणित <option value="विज्ञान" />विज्ञान <option value="सामाजिक विज्ञान" />सामाजिक विज्ञान <option value="पर्यावरण अध्ययन" />EVS <option value="संस्कृत" />संस्कृत <option value="कंप्यूटर" />कंप्यूटर <option value="भौतिकी" />भौतिकी <option value="रसायन विज्ञान" />रसायन विज्ञान <option value="जीवविज्ञान" />जीवविज्ञान <option value="इतिहास" />इतिहास <option value="भूगोल" />भूगोल <option value="नागरिकशास्त्र" />नागरिकशास्त्र <option value="अर्थशास्त्र" />अर्थशास्त्र <option value="लेखा" />लेखा <option value="व्यवसाय अध्ययन" />व्यवसाय अध्ययन </select>
+            <select id="language-select"> <option value="" />भाषा चुनें <option value="हिंदी" />हिंदी <option value="अंग्रेजी" />अंग्रेजी </select>
+            <select id="board-select"> <option value="" />बोर्ड चुनें <option value="CBSE" />CBSE <option value="ICSE" />ICSE <option value="UP Board" />UP Board <option value="MP Board" />MP Board <option value="Rajasthan Board" />Rajasthan Board <option value="Bihar Board" />Bihar Board <option value="State Board" />अन्य राज्य बोर्ड <option value="NIOS" />NIOS </select>
+            <input type="text" id="text-input-study" class="custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." />
+            <button onclick="performSearch('search-box-1')">खोजें</button>
+        </div>
+    </div>
+
+    <!-- कैटेगरी 2: प्रतियोगी परीक्षा -->
+    <div class="search-category-container" id="exam-container">
+        <div class="search-box" id="search-box-2">
+             <h3>प्रतियोगी परीक्षा</h3>
+            <select id="exam-select"> <option value="" />परीक्षा चुनें <option value="UPSC" />UPSC <option value="SSC CGL" />SSC CGL <option value="SSC CHSL" />SSC CHSL <option value="Railway NTPC" />रेलवे NTPC <option value="IBPS PO" />IBPS PO <option value="SBI PO" />SBI PO <option value="NEET" />NEET <option value="JEE Main" />JEE Main <option value="JEE Advanced" />JEE Advanced <option value="CTET" />CTET <option value="State PSC" />राज्य PSC <option value="State Police" />राज्य पुलिस <option value="Defence NDA CDS" />रक्षा (NDA/CDS) <option value="Teaching Exams" />शिक्षक परीक्षा <option value="Banking Exams" />बैंकिंग <option value="GATE" />GATE </select>
+            <select id="exam-subject-select"> <option value="" />विषय / सेक्शन <option value="गणित क्वांट" />गणित/क्वांट <option value="रीजनिंग" />रीजनिंग <option value="अंग्रेजी" />अंग्रेजी <option value="सामान्य ज्ञान GA" />GK/GA <option value="सामान्य विज्ञान" />सामान्य विज्ञान <option value="करंट अफेयर्स" />करंट अफेयर्स <option value="Physics" />भौतिकी <option value="Chemistry" />रसायन विज्ञान <option value="Biology" />जीवविज्ञान <option value="History" />इतिहास <option value="Geography" />भूगोल <option value="Polity" />राजनीति <option value="Economics" />अर्थशास्त्र <option value="Computer" />कंप्यूटर </select>
+            <select id="exam-resource-select"> <option value="" />संसाधन प्रकार <option value="लेक्चर वीडियो" />लेक्चर <option value="रणनीति टिप्स" />रणनीति/टिप्स <option value="मॉक टेस्ट प्रश्न" />टेस्ट/प्रश्न <option value="सिलेबस" />सिलेबस <option value="नोट्स PDF" />नोट्स/PDF </select>
+            <select id="exam-language-select"> <option value="" />भाषा <option value="हिंदी" />हिंदी <option value="अंग्रेजी" />अंग्रेजी </select>
+            <input type="text" id="text-input-exam" class="custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." />
+            <button onclick="performSearch('search-box-2')">खोजें</button>
+        </div>
+    </div>
+
+    <!-- कैटेगरी 3: कॉलेज/यूनिवर्सिटी -->
+    <div class="search-category-container" id="college-container">
+        <div class="search-box" id="college-search-box">
+            <h3>कॉलेज / यूनिवर्सिटी</h3>
+            <select id="degree-select"> <option value="" />डिग्री / कोर्स <option value="BA" />BA <option value="BSc" />BSc <option value="BCom" />BCom <option value="BTech" />BTech <option value="BE" />BE <option value="BBA" />BBA <option value="BCA" />BCA <option value="LLB" />LLB <option value="MA" />MA <option value="MSc" />MSc <option value="MCom" />MCom <option value="MTech" />MTech <option value="MBA" />MBA <option value="MCA" />MCA <option value="PhD" />PhD <option value="Diploma" />डिप्लोमा </select>
+            <select id="college-subject-select"> <option value="" />विषय / स्पेशलाइजेशन <option value="History" />इतिहास <option value="Political Science" />राजनीति विज्ञान <option value="Sociology" />समाजशास्त्र <option value="Economics" />अर्थशास्त्र <option value="Physics" />भौतिकी <option value="Chemistry" />रसायन विज्ञान <option value="Mathematics" />गणित <option value="Botany" />वनस्पति विज्ञान <option value="Zoology" />प्राणी विज्ञान <option value="Computer Science" />कंप्यूटर विज्ञान <option value="Engineering" />इंजीनियरिंग <option value="Management" />प्रबंधन <option value="Law" />कानून <option value="Commerce" />वाणिज्य </select>
+            <select id="college-resource-select"> <option value="" />संसाधन प्रकार <option value="Lecture" />लेक्चर <option value="Notes" />नोट्स <option value="Seminar Webinar" />सेमिनार <option value="Practical Lab" />प्रैक्टिकल <option value="Exam Preparation" />परीक्षा तैयारी <option value="Thesis Help" />थीसिस </select>
+            <select id="college-language-select"> <option value="" />भाषा <option value="हिंदी" />हिंदी <option value="अंग्रेजी" />अंग्रेजी </select>
+            <input type="text" id="text-input-college" class="custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." />
+            <button onclick="performSearch('college-search-box')">खोजें</button>
+        </div>
+    </div>
+
+    <!-- कैटेगरी 4: मनोरंजन और सीख -->
+    <div class="search-category-container" id="entertainment-container">
+        <div class="search-box" id="search-box-3">
+             <h3>मनोरंजन और सीख</h3>
+            <select id="entertainment-select"> <option value="" />श्रेणी <option value="आज का पंचांग" />पंचांग <option value="आज के शुभ मुहूर्त" />शुभ मुहूर्त <option value="मनोरंजक कहानियां" />कहानी <option value="कविताएं" />कविता <option value="Science Experiments" />साइंस एक्सपेरिमेंट्स <option value="Fun Math Tricks" />मैथ्स ट्रिक्स <option value="Untold History Facts" />इतिहास तथ्य <option value="Amazing Geography" />भूगोल अजूबे <option value="Space Universe" />अंतरिक्ष <option value="Technology Explained" />तकनीक <option value="DIY Projects" />DIY <option value="Mythology Stories" />पौराणिक कथाएं <option value="Psychology Facts" />मनोविज्ञान <option value="Inspirational Biographies" />जीवनियाँ </select>
+            <select id="entertainment-format-select"> <option value="" />प्रारूप <option value="वीडियो" />वीडियो <option value="एनिमेशन" />एनिमेशन <option value="कहानी सुनाना" />कहानी सुनाना <option value="डॉक्यूमेंट्री" />डॉक्यूमेंट्री <option value="गाना संगीत" />संगीत </select>
+            <select id="entertainment-target-audience"> <option value="" />किसके लिए? <option value="बच्चों के लिए" />बच्चों के लिए <option value="छात्रों के लिए" />छात्रों के लिए <option value="सभी के लिए" />सभी के लिए </select>
+            <select id="entertainment-language-select"> <option value="" />भाषा <option value="हिंदी" />हिंदी <option value="अंग्रेजी" />अंग्रेजी <option value="क्षेत्रीय भाषा" />क्षेत्रीय भाषा </select>
+            <input type="text" id="text-input-entertainment" class="custom-search-input" placeholder="या यहाँ कुछ टाइप करें..." />
+            <button onclick="performSearch('search-box-3')">खोजें</button>
+        </div>
+    </div>
+
+    <!-- कैटेगरी 5: लाइव न्यूज़ -->
+    <div class="search-category-container" id="news-container">
+        <div class="search-box" id="news-search-box">
+             <h3>लाइव न्यूज़</h3>
+            <select id="news-channel-select"> <option value="" />चैनल (उदाहरण) <option value="Aaj Tak Live" />आज तक <option value="NDTV India Live" />NDTV इंडिया <option value="India TV Live" />इंडिया टीवी <option value="ABP News Live" />ABP न्यूज़ <option value="Zee News Live" />ज़ी न्यूज़ <option value="DD News Live" />DD न्यूज़ <option value="BBC Hindi Live" />BBC हिंदी <option value="WION Live English" />WION <option value="Al Jazeera Live English" />Al Jazeera </select>
+            <select id="news-type"> <option value="" />समाचार प्रकार <option value="राष्ट्रीय" />राष्ट्रीय <option value="अंतरराष्ट्रीय" />अंतरराष्ट्रीय <option value="व्यापार" />व्यापार <option value="खेल" />खेल <option value="टेक्नोलॉजी" />टेक <option value="मनोरंजन" />मनोरंजन <option value="राज्य समाचार" />राज्य </select>
+            <select id="news-focus-select"> <option value="" />फोकस <option value="ब्रेकिंग न्यूज़" />ब्रेकिंग <option value="विश्लेषण डिबेट" />विश्लेषण <option value="मुख्य समाचार बुलेटिन" />बुलेटिन <option value="विशेष रिपोर्ट" />रिपोर्ट </select>
+            <select id="news-language-select"> <option value="" />भाषा <option value="हिंदी" />हिंदी <option value="अंग्रेजी" />अंग्रेजी <option value="अन्य भाषा" />अन्य </select>
+            <input type="text" id="text-input-news" class="custom-search-input" placeholder="या यहाँ टॉपिक/चैनल टाइप करें..." />
+            <button onclick="performSearch('news-search-box')">खोजें</button>
+        </div>
+    </div>
+
+</div> <!-- End of stylish-header-container -->
+
+
+<!-- वीडियो स्लाइडर और प्लेयर सेक्शन (हेडर कंटेनर के बाहर) -->
+<section class="video-results-section">
+    <div class="video-slider-container" id="video-slider-container">
+        <div class="video-slider" id="video-slider">
+            <!-- Video thumbnails -->
+        </div>
+        <div class="video-slider-nav" id="video-slider-nav">
+            <button onclick="slideVideo(-1)" aria-label="Previous Videos">❮</button>
+            <button onclick="slideVideo(1)" aria-label="Next Videos">❯</button>
+        </div>
+    </div>
+
+    <div class="video-container" id="video-display">
+        <div class="video-player">
+            <iframe id="youtube-iframe" width="100%" height="450" src="" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- मैसेज बॉक्स -->
+<div class="message-box" id="messageBox">
+    <!-- Message -->
+</div>
