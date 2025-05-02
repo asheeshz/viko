@@ -48,7 +48,7 @@ async function fetchYouTubeData(searchTerm = '') {
     // IMPORTANT: Replace with your actual YouTube API Key
     // It's strongly recommended to keep API keys server-side or use OAuth 2.0
     // Exposing it directly in client-side code is insecure.
-    const apiKey = 'YOUR_API_KEY_HERE'; // <<<<<<<<<<<<<<< REPLACE THIS
+    const apiKey = 'AIzaSyBYVKCeEIlBjCoS6Xy_mWatJywG3hUPv3Q'; // <<<<<<<<<<<<<<< REPLACE THIS
     // Ensure API Key is replaced before deployment
     if (apiKey === 'YOUR_API_KEY_HERE') {
          console.error("API Key not replaced in script.js!");
