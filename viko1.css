@@ -1,20 +1,3 @@
-/* --- Prefixes: vsw- --- */
-
-/* Global Styles (Consider theme conflicts) */
-/* You might want to remove or adjust body styles if they conflict with your theme */
-
-/* H1 changed to H2 */
-h2.vsw-page-title { /* Added class for specific styling */
-    text-align: center;
-    padding: 15px;
-    background: linear-gradient(to right, #3498db, #9b59b6);
-    color: white;
-    margin: 0 0 20px 0;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 1.8em;
-}
-
 /* Main Widget Container */
 #vsw-main-widget { /* Prefixed ID */
     background-color: #0a192f;
