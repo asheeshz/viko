@@ -1,4 +1,4 @@
-<!-- छिपे हुए संदेश टेक्स्ट (JS द्वारा उपयोग किए जाते हैं) -->
+<!-- Hidden Message Texts Container -->
 <div id="vsw-message-texts">
     <span id="vsw-msgSearchingVideos">वीडियो खोजे जा रहे हैं...</span>
     <span id="vsw-msgApiKeyError">त्रुटि: API कुंजी कॉन्फ़िगर नहीं है या अमान्य है।</span>
@@ -12,16 +12,18 @@
     <span id="vsw-msgInternalError">एक आंतरिक त्रुटि हुई।</span>
 </div>
 
-<!-- मुख्य विजेट कंटेनर -->
+<!-- Main Widget Container -->
 <div id="vsw-main-widget">
 
-    <!-- स्टाइलिश हेडर -->
+    <!-- वैकल्पिक: शीर्षक को विजेट के अंदर ले जाएं अगर गैजेट का शीर्षक पर्याप्त नहीं है -->
+    <!-- <h2 style="text-align:center; color: white; margin-bottom: 20px; font-size: 1.8em;">खोजें और सीखें</h2> -->
+
     <div class="vsw-stylish-header-container">
         <h2 class="vsw-stylish-header">अरे रुको! मज़ा नहीं आ रहा? 🤔 खोजो अपनी पसंद का कंटेंट - पढ़ाई, मनोरंजन, एग्जाम टिप्स और लाइव न्यूज़! 📰📚🎉</h2>
         <p class="vsw-stylish-description">ऊब गए हो? 🤔 हम आपकी पढ़ाई, मनोरंजन, और परीक्षा की तैयारी को आसान बनाते हैं! 🚀 साथ ही, पाएं ताज़ा ख़बरें! 📰 अभी एक्सप्लोर करें! 🔍</p>
     </div>
 
-    <!-- कैटेगरी बटन -->
+    <!-- कैटेगरी बटन (Inside Widget) -->
     <div class="vsw-category-buttons">
         <button data-target="vsw-study-container">ऑनलाइन पढ़ाई (कक्षा 1-12)</button>
         <button data-target="vsw-exam-container">प्रतियोगी परीक्षा</button>
@@ -30,12 +32,12 @@
         <button data-target="vsw-news-container">लाइव न्यूज़</button>
     </div>
 
-    <!-- एनिमेटेड बैनर -->
+    <!-- Animated Banner -->
     <div id="vsw-category-banner">
         नीचे दिए बटनों से चुनें अपनी पसंद की दुनिया - पढ़ाई, मज़ा, तैयारी, या ताज़ा खबरें!
     </div>
 
-    <!-- खोज कंटेनर -->
+    <!-- खोज कंटेनर (Inside Widget) -->
 
     <!-- कैटेगरी 1: ऑनलाइन पढ़ाई -->
     <div class="vsw-search-category-container" id="vsw-study-container">
@@ -279,19 +281,17 @@
     </div>
 
     <!-- वीडियो स्लाइडर और प्लेयर सेक्शन (JS द्वारा डायनामिक रूप से जोड़े जाएंगे) -->
-    <!-- इन तत्वों को HTML में रखने की आवश्यकता नहीं है क्योंकि JS उन्हें संभालता है,
-         लेकिन प्लेसहोल्डर अस्थायी रूप से यहां रखे जा सकते हैं यदि चाहें -->
-    <section class="vsw-video-slider-container" id="vsw-video-slider-container" style="display: none;">
+    <section class="vsw-video-slider-container" id="vsw-video-slider-container">
         <div class="vsw-video-slider" id="vsw-video-slider">
             <!-- Video thumbnails will be displayed here -->
         </div>
-        <div class="vsw-video-slider-nav" id="vsw-video-slider-nav" style="display: none;">
+        <div class="vsw-video-slider-nav" id="vsw-video-slider-nav">
             <button onclick="vsw_slideVideo(-1)">❮</button>
             <button onclick="vsw_slideVideo(1)">❯</button>
         </div>
     </section>
 
-    <section class="vsw-video-container" id="vsw-video-display" style="display: none;">
+    <section class="vsw-video-container" id="vsw-video-display">
         <div class="vsw-video-player">
             <iframe id="vsw-youtube-iframe" width="100%" height="450" src="" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -300,9 +300,9 @@
         </div>
     </section>
 
-</div> <!-- मुख्य विजेट कंटेनर का अंत -->
+</div> <!-- End of #vsw-main-widget -->
 
-<!-- मैसेज बॉक्स (विजेट के बाहर, फिक्स्ड पोजीशन) -->
+<!-- मैसेज बॉक्स (Outside Widget, Fixed Position) -->
 <div class="vsw-message-box" id="vsw-messageBox">
     <!-- Message will be shown here -->
 </div>
