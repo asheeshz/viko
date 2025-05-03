@@ -1,0 +1,1083 @@
+<!doctype html>
+
+
+
+    
+    
+    खोजें और सीखें - विजेट
+    <!-- CSS Styles Embedded Below -->
+    <style>
+        /* --- Prefixes: vsw- --- */
+
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e0e0e0;
+            color: #333;
+            overflow-x: hidden;
+            display: -webkit-box; display: -ms-flexbox; display: flex;
+            -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column;
+            -webkit-box-align: center; -ms-flex-align: center; align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* H1 changed to H2 */
+        h2.vsw-page-title { /* Added class for specific styling */
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(to right, #3498db, #9b59b6);
+            color: white;
+            margin: 0 0 20px 0;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1.8em;
+        }
+
+        /* Main Widget Container */
+        #vsw-main-widget { /* Prefixed ID */
+            background-color: #0a192f;
+            padding: 25px;
+            margin: 0 auto 20px auto;
+            /* Increased max-width */
+            max-width: 1800px;
+            width: 95%;
+            box-sizing: border-box;
+            border: 10px solid transparent;
+            border-radius: 25px;
+            background-clip: padding-box;
+            position: relative;
+            -webkit-animation: vsw_shinyBorder 6s infinite linear; animation: vsw_shinyBorder 6s infinite linear; /* Prefixed animation name */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            -webkit-mask-image: radial-gradient(white, black);
+             overflow: hidden;
+        }
+
+        /* Shiny Border Animation */
+        @-webkit-keyframes vsw_shinyBorder { /* Prefixed animation name */
+            0% { border-image-source: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+            25% { border-image-source: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+            50% { border-image-source: linear-gradient(225deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+            75% { border-image-source: linear-gradient(315deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+            100% { border-image-source: linear-gradient(405deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+        }
+        @keyframes vsw_shinyBorder { /* Prefixed animation name */
+            0% { border-image-source: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+            25% { border-image-source: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+            50% { border-image-source: linear-gradient(225deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+            75% { border-image-source: linear-gradient(315deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+            100% { border-image-source: linear-gradient(405deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
+        }
+
+
+        /* Stylish Header (Inside Widget - Already H2) */
+        .vsw-stylish-header-container { /* Prefixed class */
+            text-align: center;
+            padding: 15px;
+            margin: 0 auto 25px auto;
+            max-width: 95%;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .vsw-stylish-header { /* Prefixed class */
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #e74c3c;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.15), 3px 3px 8px rgba(0, 0, 0, 0.6);
+            -webkit-animation: vsw_colorChange 5s infinite alternate, vsw_wobble 2.5s infinite ease-in-out; animation: vsw_colorChange 5s infinite alternate, vsw_wobble 2.5s infinite ease-in-out; /* Prefixed animation names */
+        }
+
+        .vsw-stylish-description { /* Prefixed class */
+            font-size: 1.15em;
+            color: #5dade2;
+            -webkit-animation: vsw_fadeIn 2s ease-out, vsw_pulse 2.2s infinite alternate; animation: vsw_fadeIn 2s ease-out, vsw_pulse 2.2s infinite alternate; /* Prefixed animation names */
+            line-height: 1.5;
+        }
+
+        /* Text Animations (Keep Existing) */
+        @-webkit-keyframes vsw_wobble { /* Prefixed animation name */
+            0%, 100% { -webkit-transform: translateX(0) rotate(0); transform: translateX(0) rotate(0); }
+            15% { -webkit-transform: translateX(-6px) rotate(-4deg); transform: translateX(-6px) rotate(-4deg); }
+            30% { -webkit-transform: translateX(4px) rotate(3deg); transform: translateX(4px) rotate(3deg); }
+            45% { -webkit-transform: translateX(-4px) rotate(-2deg); transform: translateX(-4px) rotate(-2deg); }
+            60% { -webkit-transform: translateX(3px) rotate(1.5deg); transform: translateX(3px) rotate(1.5deg); }
+            75% { -webkit-transform: translateX(-2px) rotate(-1deg); transform: translateX(-2px) rotate(-1deg); }
+        }
+        @keyframes vsw_wobble { /* Prefixed animation name */
+            0%, 100% { -webkit-transform: translateX(0) rotate(0); transform: translateX(0) rotate(0); }
+            15% { -webkit-transform: translateX(-6px) rotate(-4deg); transform: translateX(-6px) rotate(-4deg); }
+            30% { -webkit-transform: translateX(4px) rotate(3deg); transform: translateX(4px) rotate(3deg); }
+            45% { -webkit-transform: translateX(-4px) rotate(-2deg); transform: translateX(-4px) rotate(-2deg); }
+            60% { -webkit-transform: translateX(3px) rotate(1.5deg); transform: translateX(3px) rotate(1.5deg); }
+            75% { -webkit-transform: translateX(-2px) rotate(-1deg); transform: translateX(-2px) rotate(-1deg); }
+        }
+        @-webkit-keyframes vsw_fadeIn { from { opacity: 0; } to { opacity: 1; } } /* Prefixed animation name */
+        @keyframes vsw_fadeIn { from { opacity: 0; } to { opacity: 1; } } /* Prefixed animation name */
+        @-webkit-keyframes vsw_colorChange { /* Prefixed animation name */
+            0% { color: #e74c3c; } 25% { color: #3498db; } 50% { color: #2ecc71; }
+            75% { color: #f1c40f; } 100% { color: #9b59b6; }
+        }
+        @keyframes vsw_colorChange { /* Prefixed animation name */
+            0% { color: #e74c3c; } 25% { color: #3498db; } 50% { color: #2ecc71; }
+            75% { color: #f1c40f; } 100% { color: #9b59b6; }
+        }
+        @-webkit-keyframes vsw_pulse { 0% { -webkit-transform: scale(1); transform: scale(1); } 100% { -webkit-transform: scale(1.03); transform: scale(1.03); } } /* Prefixed animation name */
+        @keyframes vsw_pulse { 0% { -webkit-transform: scale(1); transform: scale(1); } 100% { -webkit-transform: scale(1.03); transform: scale(1.03); } } /* Prefixed animation name */
+
+
+        /* Category Buttons (Inside Widget) */
+        .vsw-category-buttons { /* Prefixed class */
+            text-align: center;
+            padding: 20px 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            display: -webkit-box; display: -ms-flexbox; display: flex;
+            -ms-flex-wrap: wrap; flex-wrap: wrap;
+            -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+            gap: 15px;
+            border-radius: 8px;
+        }
+        .vsw-category-buttons button { /* Prefixed class */
+            -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1;
+            -ms-flex-preferred-size: 150px; flex-basis: 150px;
+            max-width: 200px;
+            padding: 12px 15px;
+            height: 48px;
+            display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex;
+            -webkit-box-align: center; -ms-flex-align: center; align-items: center;
+            -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+            font-size: 1em;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            -webkit-transition: background-color 0.3s ease, -webkit-transform 0.15s ease, box-shadow 0.15s ease, border-bottom 0.15s ease; transition: background-color 0.3s ease, -webkit-transform 0.15s ease, box-shadow 0.15s ease, border-bottom 0.15s ease; transition: background-color 0.3s ease, transform 0.15s ease, box-shadow 0.15s ease, border-bottom 0.15s ease; transition: background-color 0.3s ease, transform 0.15s ease, box-shadow 0.15s ease, border-bottom 0.15s ease, -webkit-transform 0.15s ease;
+            text-align: center;
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25), inset 0 -4px 2px rgba(0,0,0,0.3);
+            border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+            position: relative;
+            top: 0;
+        }
+        .vsw-category-buttons button:nth-child(1) { background-color: #e74c3c; border-color: #a1332a; }
+        .vsw-category-buttons button:nth-child(2) { background-color: #3498db; border-color: #2570a8; }
+        .vsw-category-buttons button:nth-child(3) { background-color: #2ecc71; border-color: #1f9451; }
+        .vsw-category-buttons button:nth-child(4) { background-color: #f39c12; border-color: #b5740e; }
+        .vsw-category-buttons button:nth-child(5) { background-color: #9b59b6; border-color: #703c87; }
+        .vsw-category-buttons button:hover {
+            -webkit-transform: translateY(-3px) scale(1.02); transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), inset 0 -2px 1px rgba(0,0,0,0.2);
+            top: -3px;
+        }
+        .vsw-category-buttons button:active {
+             -webkit-transform: translateY(2px) scale(0.98); transform: translateY(2px) scale(0.98);
+             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0,0,0,0.3);
+             border-bottom: none;
+             top: 2px;
+        }
+
+        /* --- Animated Banner --- */
+        #vsw-category-banner { /* Prefixed ID */
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            color: white;
+            text-align: center;
+            padding: 12px 10px;
+            margin: 20px auto 25px auto;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+            -webkit-animation: vsw_bannerPulse 2s infinite alternate ease-in-out, vsw_fadeInBanner 1s ease-out; animation: vsw_bannerPulse 2s infinite alternate ease-in-out, vsw_fadeInBanner 1s ease-out; /* Prefixed animation names */
+            display: block;
+        }
+        @-webkit-keyframes vsw_bannerPulse { /* Prefixed animation name */
+            0% { -webkit-transform: scale(1); transform: scale(1); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); }
+            100% { -webkit-transform: scale(1.02); transform: scale(1.02); box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5); }
+        }
+        @keyframes vsw_bannerPulse { /* Prefixed animation name */
+            0% { -webkit-transform: scale(1); transform: scale(1); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); }
+            100% { -webkit-transform: scale(1.02); transform: scale(1.02); box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5); }
+        }
+        @-webkit-keyframes vsw_fadeInBanner { /* Prefixed animation name */
+             from { opacity: 0; -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+             to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+        }
+        @keyframes vsw_fadeInBanner { /* Prefixed animation name */
+             from { opacity: 0; -webkit-transform: translateY(-10px); transform: translateY(-10px); }
+             to { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+        }
+
+        /* Search Category Container (Inside Widget) */
+        .vsw-search-category-container { /* Prefixed class */
+            padding: 10px 0;
+            width: 100%;
+            box-sizing: border-box;
+            -webkit-transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out; transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            clear: both;
+        }
+        .vsw-search-category-container.vsw-active-search-box { /* Prefixed class */
+            opacity: 1;
+            max-height: 1500px;
+            overflow: visible;
+        }
+
+        /* Search Box Styles (Inside Widget) */
+        .vsw-search-box { /* Prefixed class */
+            max-width: 95%;
+            margin: 10px auto 20px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            color: white;
+            -webkit-transition: -webkit-transform 0.4s ease, box-shadow 0.4s ease; transition: -webkit-transform 0.4s ease, box-shadow 0.4s ease; transition: transform 0.4s ease, box-shadow 0.4s ease; transition: transform 0.4s ease, box-shadow 0.4s ease, -webkit-transform 0.4s ease;
+            min-height: 280px;
+            position: relative;
+            box-sizing: border-box;
+            display: -webkit-box; display: -ms-flexbox; display: flex;
+            -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column;
+            -webkit-box-align: center; -ms-flex-align: center; align-items: center;
+            -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+        }
+        #vsw-search-box-1 { background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335, #673ab7); } /* Prefixed ID */
+        #vsw-search-box-2 { background: linear-gradient(45deg, #e91e63, #9c27b0, #673ab7, #3f51b5, #2196f3); } /* Prefixed ID */
+        #vsw-college-search-box { background: linear-gradient(45deg, #009688, #4caf50, #8bc34a, #cddc39, #ffeb3b); } /* Prefixed ID */
+        #vsw-search-box-3 { background: linear-gradient(45deg, #ff9800, #ff5722, #f44336, #e91e63, #9c27b0); } /* Prefixed ID */
+        #vsw-news-search-box { background: linear-gradient(45deg, #607d8b, #795548, #9e9e9e, #455a64, #37474f); } /* Prefixed ID */
+        .vsw-search-box:hover {
+            -webkit-transform: scale(1.02); transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+        }
+        /* H3 already used, keeping as is */
+        .vsw-search-box h3 { /* Prefixed class */
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+        .vsw-search-box select,
+        .vsw-search-box input[type="text"],
+        .vsw-search-box button { /* Prefixed class */
+            width: 90%;
+            max-width: 450px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            font-size: 1.1em;
+            font-weight: normal;
+            box-sizing: border-box;
+        }
+        .vsw-search-box select { cursor: pointer; }
+        .vsw-search-box input[type="text"] { cursor: text; }
+        .vsw-search-box button {
+            background-color: #e74c3c;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border: none;
+            cursor: pointer;
+            -webkit-transition: background-color 0.3s ease, -webkit-transform 0.1s ease; transition: background-color 0.3s ease, -webkit-transform 0.1s ease; transition: background-color 0.3s ease, transform 0.1s ease; transition: background-color 0.3s ease, transform 0.1s ease, -webkit-transform 0.1s ease;
+        }
+        .vsw-search-box button:hover { background-color: #c0392b; }
+        .vsw-search-box button:active { -webkit-transform: scale(0.98); transform: scale(0.98); }
+        .vsw-custom-search-input::-webkit-input-placeholder { color: #777; font-style: italic; } /* Prefixed class */
+        .vsw-custom-search-input::-moz-placeholder { color: #777; font-style: italic; } /* Prefixed class */
+        .vsw-custom-search-input:-ms-input-placeholder { color: #777; font-style: italic; } /* Prefixed class */
+        .vsw-custom-search-input::-ms-input-placeholder { color: #777; font-style: italic; } /* Prefixed class */
+        .vsw-custom-search-input::placeholder { color: #777; font-style: italic; } /* Prefixed class */
+
+        /* Video Container (Inside Widget) */
+        .vsw-video-container { /* Prefixed class */
+            padding: 15px 5px;
+            text-align: center;
+            display: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Video Slider (Inside Widget) */
+        .vsw-video-slider-container { /* Prefixed class */
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            margin: 15px auto;
+            overflow: hidden;
+            min-height: 160px;
+            display: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        }
+        .vsw-video-slider { /* Prefixed class */
+            display: -webkit-box; display: -ms-flexbox; display: flex;
+            -webkit-transition: -webkit-transform 0.5s ease-in-out; transition: -webkit-transform 0.5s ease-in-out; transition: transform 0.5s ease-in-out; transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+        }
+        .vsw-video-item { /* Prefixed class */
+            -ms-flex: 0 0 auto; flex: 0 0 auto;
+            width: 150px;
+            margin: 0 6px;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            border: 1px solid #555;
+            border-radius: 4px;
+            padding: 5px;
+            background-color: #1a2b47;
+            -webkit-transition: -webkit-transform 0.2s ease, border-color 0.3s ease; transition: -webkit-transform 0.2s ease, border-color 0.3s ease; transition: transform 0.2s ease, border-color 0.3s ease; transition: transform 0.2s ease, border-color 0.3s ease, -webkit-transform 0.2s ease;
+        }
+        .vsw-video-item:hover {
+            -webkit-transform: scale(1.04); transform: scale(1.04);
+            border-color: #00ffff;
+        }
+        .vsw-video-item img {
+            width: 100%;
+            height: 84px;
+            -o-object-fit: cover; object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+        .vsw-video-item p {
+            margin-top: 6px;
+            font-size: 0.8em;
+            line-height: 1.25;
+            height: 3em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #ccc;
+        }
+
+        /* Navigation Buttons for Video Slider */
+        .vsw-video-slider-nav { /* Prefixed class */
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translateY(-50%); transform: translateY(-50%);
+            left: 8px;
+            right: 8px;
+            width: auto;
+            display: -webkit-box; display: -ms-flexbox; display: flex;
+            -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;
+            padding: 0;
+            display: none;
+            z-index: 10;
+        }
+        .vsw-video-slider-nav button { /* Prefixed class */
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1em;
+            line-height: 1;
+            width: 40px;
+            height: 40px;
+            display: -webkit-box; display: -ms-flexbox; display: flex;
+            -webkit-box-align: center; -ms-flex-align: center; align-items: center;
+            -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+            -webkit-transition: background-color 0.3s ease; transition: background-color 0.3s ease;
+        }
+        .vsw-video-slider-nav button:hover { background: rgba(0, 0, 0, 1); }
+
+        /* Large Video Player (Inside Widget) */
+        .vsw-video-player { /* Prefixed class */
+            width: 98%;
+            max-width: 900px;
+            margin: 20px auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            background-color: #000;
+        }
+        .vsw-video-player iframe { /* Prefixed class */
+            display: block;
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        /* Message Box Styles (Appears Over Widget) */
+        .vsw-message-box { /* Prefixed class */
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            -webkit-transform: translateX(-50%); transform: translateX(-50%);
+            background-color: #ffc107;
+            color: #333;
+            border: 1px solid #e0a800;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1100;
+            text-align: center;
+            display: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            max-width: 80%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+             #vsw-main-widget { padding: 15px; border-width: 8px; border-radius: 20px;}
+             .vsw-stylish-header { font-size: 1.4em; }
+             .vsw-stylish-description { font-size: 1.05em; }
+             .vsw-category-buttons button { -ms-flex-preferred-size: 140px; flex-basis: 140px; height: 45px; }
+             .vsw-category-buttons { gap: 12px; }
+             #vsw-category-banner { font-size: 1em; padding: 10px; }
+             .vsw-search-box { max-width: 100%; padding: 20px; min-height: auto; }
+             .vsw-search-box h3 { font-size: 1.3em; margin-bottom: 15px;}
+             .vsw-search-box select,
+             .vsw-search-box input[type="text"],
+             .vsw-search-box button { width: 95%; font-size: 1em; padding: 10px; margin-bottom: 12px; }
+             .vsw-video-item { width: 130px; }
+             .vsw-video-item img { height: 73px; }
+             .vsw-video-item p { font-size: 0.78em; }
+             .vsw-video-player iframe { height: 400px; }
+             .vsw-video-slider-nav button { width: 38px; height: 38px; font-size: 1em; }
+        }
+        @media (max-width: 480px) {
+             body { padding: 10px; }
+             h2.vsw-page-title { font-size: 1.4em; padding: 12px; } /* Adjust H2 size */
+             #vsw-main-widget { padding: 10px; border-width: 6px; border-radius: 15px; }
+             .vsw-stylish-header { font-size: 1.2em; }
+             .vsw-stylish-description { font-size: 0.95em; }
+             .vsw-category-buttons { padding: 15px 5px; gap: 10px; }
+             .vsw-category-buttons button {
+                font-size: 0.85em;
+                padding: 8px 10px;
+                -ms-flex-preferred-size: calc(50% - 15px); flex-basis: calc(50% - 15px); /* Adjust basis for 2 columns with gap */
+                max-width: none;
+                height: 48px;
+             }
+             #vsw-category-banner { font-size: 0.9em; padding: 8px; }
+             .vsw-search-box h3 { font-size: 1.15em;}
+             .vsw-search-box select,
+             .vsw-search-box input[type="text"],
+             .vsw-search-box button { font-size: 0.9em; padding: 8px; }
+             .vsw-video-item { width: 110px; }
+             .vsw-video-item img { height: 62px; }
+             .vsw-video-item p { font-size: 0.7em; height: 2.8em; }
+             .vsw-video-player iframe { height: 250px; }
+             .vsw-video-slider-nav button { width: 32px; height: 32px; font-size: 0.9em; }
+        }
+
+        /* Hidden Message Texts */
+        #vsw-message-texts { display: none; } /* Prefixed ID */
+
+    </style>
+
+
+
+
+    <!-- Changed H1 to H2 with a prefixed class -->
+    <h2 class="vsw-page-title">खोजें और सीखें</h2>
+
+    <!-- Hidden Message Texts Container -->
+    <div id="vsw-message-texts"> <!-- Prefixed ID -->
+        <!-- <span id="vsw-msgInitialPrompt">कृपया ऊपर दी गई श्रेणियों में से एक चुनें।</span> --> <!-- Prefixed ID -->
+        <span id="vsw-msgSearchingVideos">वीडियो खोजे जा रहे हैं...</span> <!-- Prefixed ID -->
+        <span id="vsw-msgApiKeyError">त्रुटि: API कुंजी कॉन्फ़िगर नहीं है या अमान्य है।</span> <!-- Prefixed ID -->
+        <span id="vsw-msgApiQuotaError">त्रुटि: YouTube API कोटा समाप्त हो गया है।</span> <!-- Prefixed ID -->
+        <span id="vsw-msgApiKeyInvalid">त्रुटि: API कुंजी अमान्य है।</span> <!-- Prefixed ID -->
+        <span id="vsw-msgNoVideosFound">इस खोज के लिए कोई वीडियो नहीं मिला।</span> <!-- Prefixed ID -->
+        <span id="vsw-msgVideoLoadFailed">चयनित वीडियो लोड करने में विफल।</span> <!-- Prefixed ID -->
+        <span id="vsw-msgValidationError">कृपया खोज करने के लिए कम से कम एक ड्रॉपडाउन चुनें या टेक्स्ट बॉक्स में कुछ टाइप करें।</span> <!-- Prefixed ID -->
+        <span id="vsw-msgApiGenericErrorPrefix">API त्रुटि</span> <!-- Prefixed ID -->
+        <span id="vsw-msgVideoLoadErrorPrefix">वीडियो लोड करने में त्रुटि</span> <!-- Prefixed ID -->
+        <span id="vsw-msgInternalError">एक आंतरिक त्रुटि हुई।</span> <!-- Prefixed ID -->
+    </div>
+
+    <!-- Main Widget Container -->
+    <div id="vsw-main-widget"> <!-- Prefixed ID -->
+
+        <div class="vsw-stylish-header-container"> <!-- Prefixed class -->
+            <!-- This is already H2 -->
+            <h2 class="vsw-stylish-header">अरे रुको! मज़ा नहीं आ रहा? 🤔 खोजो अपनी पसंद का कंटेंट - पढ़ाई, मनोरंजन, एग्जाम टिप्स और लाइव न्यूज़! 📰📚🎉</h2> <!-- Prefixed class -->
+            <p class="vsw-stylish-description">ऊब गए हो? 🤔 हम आपकी पढ़ाई, मनोरंजन, और परीक्षा की तैयारी को आसान बनाते हैं! 🚀 साथ ही, पाएं ताज़ा ख़बरें! 📰 अभी एक्सप्लोर करें! 🔍</p> <!-- Prefixed class -->
+        </div>
+
+        <!-- कैटेगरी बटन (Inside Widget) -->
+        <div class="vsw-category-buttons"> <!-- Prefixed class -->
+            <button data-target="vsw-study-container">ऑनलाइन पढ़ाई (कक्षा 1-12)</button> <!-- Prefixed data-target -->
+            <button data-target="vsw-exam-container">प्रतियोगी परीक्षा</button> <!-- Prefixed data-target -->
+            <button data-target="vsw-college-container">महाविद्यालयीन/विश्वविद्यालय शिक्षा</button> <!-- Prefixed data-target -->
+            <button data-target="vsw-entertainment-container">मनोरंजन और सीख</button> <!-- Prefixed data-target -->
+            <button data-target="vsw-news-container">लाइव न्यूज़</button> <!-- Prefixed data-target -->
+        </div>
+
+        <!-- Animated Banner -->
+        <div id="vsw-category-banner"> <!-- Prefixed ID -->
+            नीचे दिए बटनों से चुनें अपनी पसंद की दुनिया - पढ़ाई, मज़ा, तैयारी, या ताज़ा खबरें!
+        </div>
+
+        <!-- खोज कंटेनर (Inside Widget) -->
+
+        <!-- कैटेगरी 1: ऑनलाइन पढ़ाई -->
+        <div class="vsw-search-category-container" id="vsw-study-container"> <!-- Prefixed class & ID -->
+            <div class="vsw-search-box" id="vsw-search-box-1"> <!-- Prefixed class & ID -->
+                <h3>ऑनलाइन पढ़ाई करें (कक्षा 1-12)</h3>
+                <select id="vsw-class-select"> <!-- Prefixed ID -->
+                    <option value="" />कक्षा चुनें
+                    <option value="कक्षा 1" />कक्षा 1
+                    <option value="कक्षा 2" />कक्षा 2
+                    <option value="कक्षा 3" />कक्षा 3
+                    <option value="कक्षा 4" />कक्षा 4
+                    <option value="कक्षा 5" />कक्षा 5
+                    <option value="कक्षा 6" />कक्षा 6
+                    <option value="कक्षा 7" />कक्षा 7
+                    <option value="कक्षा 8" />कक्षा 8
+                    <option value="कक्षा 9" />कक्षा 9
+                    <option value="कक्षा 10" />कक्षा 10
+                </select>
+                <select id="vsw-subject-select"> <!-- Prefixed ID -->
+                    <option value="" />विषय चुनें
+                    <option value="हिंदी" />हिंदी
+                    <option value="अंग्रेज़ी (English)" />अंग्रेज़ी
+                    <option value="गणित (Mathematics)" />गणित
+                    <option value="विज्ञान (Science)" />विज्ञान
+                    <option value="सामाजिक विज्ञान (Social Science)" />सामाजिक विज्ञान
+                    <option value="पर्यावरण अध्ययन (EVS)" />पर्यावरण अध्ययन
+                    <option value="संस्कृत" />संस्कृत
+                    <option value="कंप्यूटर" />कंप्यूटर
+                    <option value="इतिहास (History)" />इतिहास
+                    <option value="भूगोल (Geography)" />भूगोल
+                </select>
+                <select id="vsw-language-select"> <!-- Prefixed ID -->
+                    <option value="" />भाषा चुनें
+                    <option value="हिंदी" />हिंदी
+                    <option value="अंग्रेजी" />अंग्रेजी
+                </select>
+                <select id="vsw-board-select"> <!-- Prefixed ID -->
+                    <option value="" />शिक्षा बोर्ड चुनें
+                    <option value="CBSE" />सीबीएसई (CBSE)
+                    <option value="ICSE" />आईसीएसई (ICSE)
+                    <option value="UP Board" />उत्तर प्रदेश बोर्ड
+                    <option value="MP Board" />मध्य प्रदेश बोर्ड
+                    <option value="Rajasthan Board" />राजस्थान बोर्ड
+                    <option value="Bihar Board" />बिहार बोर्ड
+                    <option value="State Board" />अन्य राज्य बोर्ड
+                    <option value="NIOS" />एनआईओएस (NIOS)
+                </select>
+                <input type="text" id="vsw-text-input-study" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /> <!-- Prefixed ID & class -->
+                <button onclick="vsw_performSearch('vsw-search-box-1')">खोजें</button> <!-- Prefixed function call & ID -->
+            </div>
+        </div>
+
+        <!-- कैटेगरी 2: प्रतियोगी परीक्षा -->
+        <div class="vsw-search-category-container" id="vsw-exam-container"> <!-- Prefixed class & ID -->
+            <div class="vsw-search-box" id="vsw-search-box-2"> <!-- Prefixed class & ID -->
+                <h3>प्रतियोगी परीक्षा की तैयारी करें</h3>
+                <select id="vsw-exam-select"> <!-- Prefixed ID -->
+                    <option value="" />परीक्षा चुनें
+                    <option value="UPSC Civil Services" />UPSC सिविल सेवा
+                    <option value="SSC CGL" />SSC CGL
+                    <option value="SSC CHSL" />SSC CHSL
+                    <option value="RRB NTPC" />रेलवे NTPC
+                    <option value="IBPS PO" />IBPS PO
+                    <option value="SBI PO" />SBI PO
+                    <option value="NEET" />NEET
+                    <option value="JEE Main" />JEE Main
+                    <option value="CTET" />CTET
+                    <option value="State PSC" />राज्य PSC
+                </select>
+                <select id="vsw-exam-subject-select"> <!-- Prefixed ID -->
+                    <option value="" />विषय / सेक्शन चुनें
+                    <option value="गणित" />गणित / क्वांट
+                    <option value="रीजनिंग" />रीजनिंग
+                    <option value="अंग्रेजी" />अंग्रेजी
+                    <option value="सामान्य ज्ञान" />सामान्य ज्ञान / GA
+                    <option value="सामान्य विज्ञान" />सामान्य विज्ञान
+                    <option value="करंट अफेयर्स" />करंट अफेयर्स
+                    <option value="History" />इतिहास
+                    <option value="Geography" />भूगोल
+                    <option value="Polity" />राजनीति विज्ञान
+                    <option value="Economics" />अर्थशास्त्र
+                </select>
+                <select id="vsw-exam-resource-select"> <!-- Prefixed ID -->
+                    <option value="" />संसाधन प्रकार चुनें
+                    <option value="लेक्चर वीडियो" />लेक्चर वीडियो
+                    <option value="रणनीति टिप्स" />रणनीति / टिप्स
+                    <option value="मॉक टेस्ट" />मॉक टेस्ट / प्रश्न
+                    <option value="सिलेबस" />सिलेबस विश्लेषण
+                    <option value="नोट्स" />नोट्स / PDF
+                </select>
+                <select id="vsw-exam-language-select"> <!-- Prefixed ID -->
+                    <option value="" />भाषा चुनें
+                    <option value="हिंदी" />हिंदी
+                    <option value="अंग्रेजी" />अंग्रेजी
+                </select>
+                <input type="text" id="vsw-text-input-exam" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /> <!-- Prefixed ID & class -->
+                <button onclick="vsw_performSearch('vsw-search-box-2')">खोजें</button> <!-- Prefixed function call & ID -->
+            </div>
+        </div>
+
+        <!-- कैटेगरी 3: महाविद्यालयीन/विश्वविद्यालय शिक्षा -->
+        <div class="vsw-search-category-container" id="vsw-college-container"> <!-- Prefixed class & ID -->
+            <div class="vsw-search-box" id="vsw-college-search-box"> <!-- Prefixed class & ID -->
+                <h3>महाविद्यालयीन / विश्वविद्यालय शिक्षा</h3>
+                <select id="vsw-degree-select"> <!-- Prefixed ID -->
+                    <option value="" />डिग्री / कोर्स चुनें
+                    <option value="BA" />बी.ए. (BA)
+                    <option value="BSc" />बी.एस.सी. (BSc)
+                    <option value="BCom" />बी.कॉम. (BCom)
+                    <option value="BTech" />बी.टेक. (BTech)
+                    <option value="BE" />बी.ई. (BE)
+                    <option value="BBA" />बी.बी.ए. (BBA)
+                    <option value="BCA" />बी.सी.ए. (BCA)
+                    <option value="MA" />एम.ए. (MA)
+                    <option value="MSc" />एम.एस.सी. (MSc)
+                    <option value="MBA" />एम.बी.ए. (MBA)
+                </select>
+                <select id="vsw-college-subject-select"> <!-- Prefixed ID -->
+                    <option value="" />विषय / विशेषज्ञता चुनें
+                    <option value="History" />इतिहास
+                    <option value="Economics" />अर्थशास्त्र
+                    <option value="Physics" />भौतिकी
+                    <option value="Chemistry" />रसायन विज्ञान
+                    <option value="Mathematics" />गणित
+                    <option value="Computer Science" />कंप्यूटर विज्ञान
+                    <option value="Engineering" />इंजीनियरिंग (सामान्य)
+                    <option value="Management" />प्रबंधन (Management)
+                    <option value="Law" />कानून (Law)
+                    <option value="Commerce" />वाणिज्य (Commerce)
+                </select>
+                <select id="vsw-college-resource-select"> <!-- Prefixed ID -->
+                    <option value="" />संसाधन प्रकार चुनें
+                    <option value="Lecture" />व्याख्यान (Lecture)
+                    <option value="Notes" />नोट्स / अध्ययन सामग्री
+                    <option value="Seminar" />सेमिनार / वेबिनार
+                    <option value="Practical" />प्रैक्टिकल / लैब
+                    <option value="Exam Preparation" />परीक्षा तैयारी
+                    <option value="Thesis Help" />थीसिस सहायता
+                </select>
+                <select id="vsw-college-language-select"> <!-- Prefixed ID -->
+                    <option value="" />भाषा चुनें
+                    <option value="हिंदी" />हिंदी
+                    <option value="अंग्रेजी" />अंग्रेजी
+                </select>
+                <input type="text" id="vsw-text-input-college" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /> <!-- Prefixed ID & class -->
+                <button onclick="vsw_performSearch('vsw-college-search-box')">खोजें</button> <!-- Prefixed function call & ID -->
+            </div>
+        </div>
+
+        <!-- कैटेगरी 4: मनोरंजन और सीख -->
+        <div class="vsw-search-category-container" id="vsw-entertainment-container"> <!-- Prefixed class & ID -->
+            <div class="vsw-search-box" id="vsw-search-box-3"> <!-- Prefixed class & ID -->
+                <h3>मनोरंजन करें और आनंद पूर्वक सीखें</h3>
+                <select id="vsw-entertainment-select"> <!-- Prefixed ID -->
+                    <option value="" />श्रेणी चुनें
+                    <option value="आज का पंचांग" />आज का पंचांग
+                    <option value="मनोरंजक कहानियां" />कहानी
+                    <option value="कविताएं" />कविता
+                    <option value="Science Experiments" />साइंस एक्सपेरिमेंट्स
+                    <option value="Fun Math Tricks" />रोचक गणित ट्रिक्स
+                    <option value="Untold History Facts" />इतिहास के अनसुने तथ्य
+                    <option value="Amazing Geography" />भूगोल के अजूबे
+                    <option value="Space and Universe" />अंतरिक्ष और ब्रह्मांड
+                    <option value="Technology Explained" />तकनीक सरल भाषा में
+                    <option value="DIY Projects" />DIY प्रोजेक्ट्स
+                </select>
+                <select id="vsw-entertainment-format-select"> <!-- Prefixed ID -->
+                    <option value="" />प्रारूप चुनें
+                    <option value="वीडियो" />वीडियो
+                    <option value="एनिमेशन" />एनिमेशन
+                    <option value="कहानी सुनाना" />कहानी सुनाना (ऑडियो/वीडियो)
+                    <option value="डॉक्यूमेंट्री" />डॉक्यूमेंट्री
+                    <option value="गाना" />गाना / संगीत
+                </select>
+                <select id="vsw-entertainment-target-audience"> <!-- Prefixed ID -->
+                    <option value="" />किसके लिए?
+                    <option value="बच्चों के लिए" />बच्चों के लिए
+                    <option value="छात्रों के लिए" />छात्रों के लिए
+                    <option value="सभी के लिए" />सभी के लिए
+                </select>
+                <select id="vsw-entertainment-language-select"> <!-- Prefixed ID -->
+                    <option value="" />भाषा चुनें
+                    <option value="हिंदी" />हिंदी
+                    <option value="अंग्रेजी" />अंग्रेजी
+                    <option value="बघेली" />बघेली
+                    <option value="बुंदेली" />बुंदेली
+                    <option value="भोजपुरी" />भोजपुरी
+                    <option value="क्षेत्रीय भाषा" />अन्य क्षेत्रीय भाषा
+                </select>
+                <input type="text" id="vsw-text-input-entertainment" class="vsw-custom-search-input" placeholder="या यहाँ कुछ टाइप करें..." /> <!-- Prefixed ID & class -->
+                <button onclick="vsw_performSearch('vsw-search-box-3')">खोजें</button> <!-- Prefixed function call & ID -->
+            </div>
+        </div>
+
+        <!-- कैटेगरी 5: लाइव न्यूज़ -->
+        <div class="vsw-search-category-container" id="vsw-news-container"> <!-- Prefixed class & ID -->
+             <div class="vsw-search-box" id="vsw-news-search-box"> <!-- Prefixed class & ID -->
+                <h3>लाइव न्यूज़ देखें</h3>
+                <select id="vsw-news-channel-select"> <!-- Prefixed ID -->
+                    <option value="" />न्यूज़ चैनल चुनें (उदाहरण)
+                    <option value="Aaj Tak Live" />आज तक लाइव
+                    <option value="NDTV India Live" />NDTV इंडिया लाइव
+                    <option value="India TV Live" />इंडिया टीवी लाइव
+                    <option value="ABP News Live" />ABP न्यूज़ लाइव
+                    <option value="Zee News Live" />ज़ी न्यूज़ लाइव
+                    <option value="DD News Live" />DD न्यूज़ लाइव
+                    <option value="BBC Hindi Live" />BBC हिंदी लाइव
+                    <option value="WION Live" />WION लाइव (अंग्रेजी)
+                    <option value="Al Jazeera Live" />अल जज़ीरा लाइव (अंग्रेजी)
+                </select>
+                <select id="vsw-news-type"> <!-- Prefixed ID -->
+                    <option value="" />समाचार का प्रकार चुनें
+                    <option value="राष्ट्रीय" />राष्ट्रीय (National)
+                    <option value="अंतरराष्ट्रीय" />अंतरराष्ट्रीय (International)
+                    <option value="व्यापार" />व्यापार (Business)
+                    <option value="खेल" />खेल (Sports)
+                    <option value="टेक्नोलॉजी" />टेक्नोलॉजी
+                    <option value="मनोरंजन" />मनोरंजन (Entertainment)
+                    <option value="राज्य समाचार" />राज्य समाचार
+                </select>
+                <select id="vsw-news-focus-select"> <!-- Prefixed ID -->
+                    <option value="" />फोकस चुनें
+                    <option value="ब्रेकिंग न्यूज़" />ब्रेकिंग न्यूज़
+                    <option value="विश्लेषण" />विश्लेषण / डिबेट
+                    <option value="मुख्य समाचार" />मुख्य समाचार बुलेटिन
+                    <option value="विशेष रिपोर्ट" />विशेष रिपोर्ट
+                </select>
+                <select id="vsw-news-language-select"> <!-- Prefixed ID -->
+                    <option value="" />भाषा चुनें
+                    <option value="हिंदी" />हिंदी
+                    <option value="अंग्रेजी" />अंग्रेजी
+                    <option value="बंगाली" />बंगाली
+                    <option value="मराठी" />मराठी
+                    <option value="तमिल" />तमिल
+                    <option value="तेलुगु" />तेलुगु
+                    <option value="गुजराती" />गुजराती
+                </select>
+                <input type="text" id="vsw-text-input-news" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक/चैनल टाइप करें..." /> <!-- Prefixed ID & class -->
+                <button onclick="vsw_performSearch('vsw-news-search-box')">खोजें</button> <!-- Prefixed function call & ID -->
+            </div>
+        </div>
+
+        <!-- वीडियो स्लाइडर और प्लेयर सेक्शन (DOM में अस्थायी रूप से हटाए गए, JS द्वारा जोड़े जाएंगे) -->
+        <section class="vsw-video-slider-container" id="vsw-video-slider-container"> <!-- Prefixed class & ID -->
+            <div class="vsw-video-slider" id="vsw-video-slider"> <!-- Prefixed class & ID -->
+                <!-- Video thumbnails will be displayed here -->
+            </div>
+            <div class="vsw-video-slider-nav" id="vsw-video-slider-nav"> <!-- Prefixed class & ID -->
+                <button onclick="vsw_slideVideo(-1)">❮</button> <!-- Prefixed function call -->
+                <button onclick="vsw_slideVideo(1)">❯</button> <!-- Prefixed function call -->
+            </div>
+        </section>
+
+        <section class="vsw-video-container" id="vsw-video-display"> <!-- Prefixed class & ID -->
+            <div class="vsw-video-player"> <!-- Prefixed class -->
+                <iframe id="vsw-youtube-iframe" width="100%" height="450" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe> <!-- Prefixed ID -->
+            </div>
+        </section>
+
+    </div> <!-- End of #vsw-main-widget -->
+
+    <!-- मैसेज बॉक्स (Outside Widget, Fixed Position) -->
+    <div class="vsw-message-box" id="vsw-messageBox"> <!-- Prefixed class & ID -->
+        <!-- Message will be shown here -->
+    </div>
+
+    <!-- JavaScript Embedded Below -->
+    <script>
+        // --- Globals (Prefixed) ---
+        const vsw_mainWidget = document.getElementById('vsw-main-widget');
+        const vsw_categoryButtonsContainer = document.querySelector('.vsw-category-buttons');
+        const vsw_categoryBanner = document.getElementById('vsw-category-banner');
+        const vsw_allSearchContainers = document.querySelectorAll('.vsw-search-category-container');
+        const vsw_videoSliderContainer = document.getElementById('vsw-video-slider-container');
+        const vsw_videoDisplay = document.getElementById('vsw-video-display');
+        const vsw_videoSliderNav = document.getElementById('vsw-video-slider-nav');
+        const vsw_messageBox = document.getElementById('vsw-messageBox');
+        const vsw_videoSlider = document.getElementById('vsw-video-slider');
+        const vsw_youtubeIframe = document.getElementById('vsw-youtube-iframe');
+        const vsw_messageTexts = document.getElementById('vsw-message-texts');
+
+        let vsw_currentVideoItems = [];
+        let vsw_videoSlideIndex = 0;
+        let vsw_itemsPerPage = vsw_calculateItemsPerPage(); // Call prefixed function
+        let vsw_activeSearchContainerId = null;
+        let vsw_messageTimeout;
+        let vsw_resizeTimeout;
+
+        // --- Initialization ---
+        window.onload = () => {
+            vsw_videoSliderContainer.remove();
+            vsw_videoDisplay.remove();
+            vsw_showBanner(); // Call prefixed function
+            vsw_itemsPerPage = vsw_calculateItemsPerPage(); // Call prefixed function
+            vsw_setupCategoryButtons(); // Call prefixed function
+            vsw_setupOutsideClickListener(); // Call prefixed function
+        };
+
+        // --- Banner Helper Functions (Prefixed) ---
+        function vsw_showBanner() {
+            if(vsw_categoryBanner) vsw_categoryBanner.style.display = 'block';
+        }
+        function vsw_hideBanner() {
+             if(vsw_categoryBanner) vsw_categoryBanner.style.display = 'none';
+        }
+
+        // --- Helper function to get text from hidden message elements (Prefixed) ---
+        function vsw_getTextById(id) {
+            const element = vsw_messageTexts.querySelector(`#${id}`); // Use prefixed container
+            if (element) { return element.textContent; }
+            else { console.error(`Msg ID "${id}" not found.`); return `[${id}]`; }
+        }
+
+        // --- Category Button Logic (Prefixed) ---
+        function vsw_setupCategoryButtons() {
+            const buttons = vsw_categoryButtonsContainer.querySelectorAll('button'); // Use prefixed container
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-target');
+                    vsw_toggleCategory(targetId); // Call prefixed function
+                });
+            });
+        }
+
+        function vsw_closeCurrentlyActiveCategory() {
+            if (vsw_activeSearchContainerId) {
+                const currentActiveContainer = document.getElementById(vsw_activeSearchContainerId);
+                if (currentActiveContainer) {
+                    currentActiveContainer.classList.remove('vsw-active-search-box'); // Use prefixed class
+                    if (currentActiveContainer.contains(vsw_videoSliderContainer)) vsw_videoSliderContainer.remove();
+                    if (currentActiveContainer.contains(vsw_videoDisplay)) vsw_videoDisplay.remove();
+                }
+                vsw_activeSearchContainerId = null;
+                vsw_showBanner(); // Call prefixed function
+            }
+        }
+
+
+        function vsw_toggleCategory(containerIdToShow) {
+            const containerToShow = document.getElementById(containerIdToShow);
+            if (!containerToShow) return;
+
+            const isAlreadyActive = containerIdToShow === vsw_activeSearchContainerId;
+            vsw_closeCurrentlyActiveCategory(); // Call prefixed function
+
+            if (!isAlreadyActive) {
+                containerToShow.classList.add('vsw-active-search-box'); // Use prefixed class
+                vsw_activeSearchContainerId = containerIdToShow;
+                containerToShow.appendChild(vsw_videoSliderContainer);
+                containerToShow.appendChild(vsw_videoDisplay);
+                vsw_clearVideoResults(); // Call prefixed function
+                vsw_hideVideoSections(); // Call prefixed function
+                vsw_hideBanner(); // Call prefixed function
+            }
+            vsw_hideMessage(); // Call prefixed function
+        }
+
+        // --- Click Outside Logic (Prefixed) ---
+        function vsw_setupOutsideClickListener() {
+            document.addEventListener('click', (event) => {
+                if (!vsw_activeSearchContainerId) return;
+                const activeContainer = document.getElementById(vsw_activeSearchContainerId);
+                if (!activeContainer) { vsw_activeSearchContainerId = null; return; }
+
+                if (event.target.closest('.vsw-category-buttons button') || event.target.closest('#vsw-category-banner')) return; // Check prefixed elements
+
+                if (!activeContainer.contains(event.target)) {
+                    vsw_closeCurrentlyActiveCategory(); // Call prefixed function
+                }
+            });
+        }
+
+
+        // --- YouTube API Interaction (Prefixed) ---
+        async function vsw_fetchYouTubeData(searchTerm = '') {
+            const apiKey = 'AIzaSyBYVKCeEIlBjCoS6Xy_mWatJywG3hUPv3Q'; // WARNING: Exposed API Key!
+            if (apiKey === 'YOUR_API_KEY_HERE' || apiKey.length < 30) {
+                 console.error("API Key invalid");
+                 vsw_showMessage(vsw_getTextById('vsw-msgApiKeyError'), 5000); // Use prefixed functions/IDs
+                 vsw_hideVideoSections(); // Use prefixed function
+                 return;
+            }
+            const apiHost = 'youtube.googleapis.com'; // Local variable
+            const maxResults = 30; // Local variable
+            let apiUrl = `https://${apiHost}/youtube/v3/search?part=snippet&type=video&maxResults=${maxResults}&key=${apiKey}`; // Local variable
+            apiUrl += `&q=${encodeURIComponent(searchTerm || 'शैक्षणिक वीडियो हिंदी')}`;
+
+            vsw_showMessage(vsw_getTextById('vsw-msgSearchingVideos'), 2500); // Use prefixed functions/IDs
+            try {
+                const response = await fetch(apiUrl, { method: 'GET', headers: { 'Accept': 'application/json' } }); // Local variable
+                if (!response.ok) {
+                    const errorData = await response.json(); // Local variable
+                    console.error('API Error:', errorData);
+                    let errorId = 'vsw-msgApiGenericErrorPrefix'; let errorDetails = `(${response.status})`; // Local variables
+                    if (errorData.error?.message) {
+                        errorDetails += `: ${errorData.error.message}`;
+                        if (errorData.error.errors?.[0]?.reason === 'quotaExceeded') { errorId = 'vsw-msgApiQuotaError'; errorDetails = ''; }
+                        else if (errorData.error.errors?.[0]?.reason === 'keyInvalid') { errorId = 'vsw-msgApiKeyInvalid'; errorDetails = ''; }
+                    }
+                    throw new Error(vsw_getTextById(errorId) + errorDetails); // Use prefixed function
+                }
+                const data = await response.json(); // Local variable
+                if (!data?.items || data.items.length === 0) {
+                    vsw_showMessage(vsw_getTextById('vsw-msgNoVideosFound'), 4000); // Use prefixed functions/IDs
+                    vsw_hideVideoSections(); vsw_clearVideoResults(); vsw_currentVideoItems = []; return; // Use prefixed variables/functions
+                }
+                vsw_currentVideoItems = data.items; // Use prefixed variable
+                vsw_displayVideos(vsw_currentVideoItems); // Use prefixed function/variable
+                vsw_showVideoSections(); // Use prefixed function
+            } catch (error) {
+                console.error('Fetch Error:', error);
+                let displayError = error.message; // Local variable
+                if (!displayError.startsWith(vsw_getTextById('vsw-msgApiGenericErrorPrefix').substring(0,5)) && !displayError.startsWith(vsw_getTextById('vsw-msgApiKeyError').substring(0,5))) { // Use prefixed function
+                    displayError = `${vsw_getTextById('vsw-msgVideoLoadErrorPrefix')}: ${error.message}`; // Use prefixed function
+                }
+                vsw_showMessage(displayError, 6000); // Use prefixed function
+                vsw_hideVideoSections(); vsw_clearVideoResults(); vsw_currentVideoItems = []; // Use prefixed functions/variables
+            }
+        }
+
+        // --- Video Display (Prefixed) ---
+        function vsw_displayVideos(videos) {
+            vsw_videoSlider.innerHTML = ''; vsw_videoSlideIndex = 0; // Use prefixed variables
+            if (!videos || videos.length === 0) {
+                vsw_videoSlider.innerHTML = `<p style="color:#ccc; padding: 20px;">${vsw_getTextById('vsw-msgNoVideosFound')}</p>`; // Use prefixed variable/function/ID
+                vsw_videoSliderNav.style.display = 'none'; vsw_youtubeIframe.src = ''; vsw_videoDisplay.style.display = 'none'; return; // Use prefixed variables
+            }
+            videos.forEach((video, index) => { // Local variables
+                if (!video.id?.videoId || !video.snippet) return;
+                const videoId = video.id.videoId; const videoTitle = video.snippet.title || 'Untitled Video'; // Local variables
+                const thumbnailUrl = video.snippet.thumbnails?.medium?.url || video.snippet.thumbnails?.default?.url || 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; // Local variable
+                const videoItem = document.createElement('div'); videoItem.classList.add('vsw-video-item'); videoItem.setAttribute('data-index', index); // Use prefixed class
+                const thumbnail = document.createElement('img'); thumbnail.src = thumbnailUrl; thumbnail.alt = videoTitle; // Local variables
+                thumbnail.onerror = function() { this.onerror=null; this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'; console.warn(`Thumb fail: ${thumbnailUrl}`); };
+                const title = document.createElement('p'); const tempEl = document.createElement('textarea'); tempEl.innerHTML = videoTitle; title.textContent = tempEl.value; // Local variables
+                videoItem.appendChild(thumbnail); videoItem.appendChild(title);
+                videoItem.addEventListener('click', () => { vsw_displayEmbeddedVideo(videoId); vsw_videoDisplay.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }); // Use prefixed function/variable
+                vsw_videoSlider.appendChild(videoItem); // Use prefixed variable
+            });
+            if (videos.length > 0 && videos[0].id?.videoId) { vsw_displayEmbeddedVideo(videos[0].id.videoId); } // Use prefixed function
+            else { vsw_youtubeIframe.src = ''; vsw_videoDisplay.style.display = 'none'; } // Use prefixed variables
+            vsw_itemsPerPage = vsw_calculateItemsPerPage(); vsw_updateVideoSlider(); // Use prefixed variables/functions
+            vsw_videoSliderNav.style.display = vsw_currentVideoItems.length > vsw_itemsPerPage ? 'flex' : 'none'; // Use prefixed variables
+        }
+
+        function vsw_displayEmbeddedVideo(videoId) {
+            if (!videoId) { vsw_youtubeIframe.src = ''; vsw_videoDisplay.style.display = 'none'; return; } // Use prefixed variables
+            vsw_youtubeIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=0&rel=0&modestbranding=1`; // Use prefixed variable
+            vsw_videoDisplay.style.display = 'block'; // Use prefixed variable
+            vsw_youtubeIframe.onerror = () => { console.error('iFrame fail:', videoId); vsw_showMessage(vsw_getTextById('vsw-msgVideoLoadFailed'), 3000); }; // Use prefixed functions/IDs
+        }
+
+        function vsw_clearVideoResults() {
+            vsw_videoSlider.innerHTML = ''; vsw_youtubeIframe.src = ''; vsw_currentVideoItems = []; vsw_videoSlideIndex = 0; // Use prefixed variables
+             vsw_hideVideoSections(); // Use prefixed function
+        }
+
+        // --- Video Slider Navigation (Prefixed) ---
+        function vsw_calculateItemsPerPage() {
+            const sliderContainerElement = document.getElementById('vsw-video-slider-container'); // Use prefixed ID
+            if (!sliderContainerElement || sliderContainerElement.offsetWidth <= 0) { return 4; }
+            const containerWidth = sliderContainerElement.offsetWidth - 20; // Local variable
+            const itemTotalWidth = 150 + 12; // Local variable
+            const calculatedItems = Math.max(1, Math.floor(containerWidth / itemTotalWidth)); // Local variable
+            return calculatedItems;
+        }
+
+        function vsw_slideVideo(direction) {
+            const numVideoItems = vsw_currentVideoItems.length; // Use prefixed variable
+            vsw_itemsPerPage = vsw_calculateItemsPerPage(); // Use prefixed variable/function
+            if (numVideoItems <= vsw_itemsPerPage) return; // Use prefixed variable
+            const maxIndex = numVideoItems - vsw_itemsPerPage; // Local variable, use prefixed variable
+            vsw_videoSlideIndex = Math.max(0, Math.min(maxIndex, vsw_videoSlideIndex + direction)); // Use prefixed variable
+            vsw_updateVideoSlider(); // Use prefixed function
+        }
+
+        function vsw_updateVideoSlider() {
+             if (vsw_currentVideoItems.length === 0) { vsw_videoSlider.style.transform = `translateX(0px)`; return; }; // Use prefixed variables
+            const itemWidth = 150; const itemMargin = 12; // Local variables
+            const slideAmount = -vsw_videoSlideIndex * (itemWidth + itemMargin); // Use prefixed variable
+            vsw_videoSlider.style.transform = `translateX(${slideAmount}px)`; // Use prefixed variable
+        }
+
+        // Prefixed resize listener
+        window.addEventListener('resize', () => {
+            clearTimeout(vsw_resizeTimeout); // Use prefixed variable
+            vsw_resizeTimeout = setTimeout(() => { // Use prefixed variable
+                const sliderContainerElement = document.getElementById('vsw-video-slider-container'); // Use prefixed ID
+                 if (sliderContainerElement && document.body.contains(sliderContainerElement)) {
+                    vsw_itemsPerPage = vsw_calculateItemsPerPage(); // Use prefixed variable/function
+                    const maxIndex = Math.max(0, vsw_currentVideoItems.length - vsw_itemsPerPage); // Use prefixed variables
+                    vsw_videoSlideIndex = Math.min(vsw_videoSlideIndex, maxIndex); // Use prefixed variable
+                    vsw_updateVideoSlider(); // Use prefixed function
+                    vsw_videoSliderNav.style.display = vsw_currentVideoItems.length > vsw_itemsPerPage ? 'flex' : 'none'; // Use prefixed variables
+                }
+            }, 250);
+        });
+
+        // --- Search Logic (Prefixed) ---
+        function vsw_performSearch(searchBoxId) { // Prefixed function name
+            const searchBox = document.getElementById(searchBoxId);
+            if (!searchBox) { console.error("Search box not found:", searchBoxId); return; }
+            let finalSearchTerm = ''; let dropdownSelectionMade = false; let dropdownSearchTerm = ''; // Local variables
+            const selects = searchBox.querySelectorAll('select'); // Local variable
+            selects.forEach(select => { if (select.value?.trim()) { dropdownSearchTerm += select.value.trim() + ' '; dropdownSelectionMade = true; } });
+            const textInput = searchBox.querySelector('.vsw-custom-search-input'); // Use prefixed class
+            const textValue = textInput ? textInput.value.trim() : ''; // Local variable
+            if (textValue) { finalSearchTerm = (dropdownSearchTerm + textValue).trim(); }
+            else if (dropdownSelectionMade) { finalSearchTerm = dropdownSearchTerm.trim(); }
+            else { vsw_showMessage(vsw_getTextById('vsw-msgValidationError'), 4000); return; } // Use prefixed function/ID
+            vsw_hideMessage(); // Use prefixed function
+            vsw_fetchYouTubeData(finalSearchTerm); // Use prefixed function
+        }
+
+        // --- UI Helper Functions (Prefixed) ---
+        function vsw_showVideoSections() {
+            if (vsw_currentVideoItems.length > 0) { // Use prefixed variable
+                vsw_videoSliderContainer.style.display = 'block'; // Use prefixed variable
+                 if (vsw_youtubeIframe.src && vsw_youtubeIframe.src !== 'about:blank') { vsw_videoDisplay.style.display = 'block'; } // Use prefixed variables
+                 else { vsw_videoDisplay.style.display = 'none'; } // Use prefixed variable
+                vsw_itemsPerPage = vsw_calculateItemsPerPage(); // Use prefixed variable/function
+                vsw_videoSliderNav.style.display = vsw_currentVideoItems.length > vsw_itemsPerPage ? 'flex' : 'none'; // Use prefixed variables
+            } else { vsw_hideVideoSections(); } // Use prefixed function
+        }
+
+        function vsw_hideVideoSections() {
+            vsw_videoSliderContainer.style.display = 'none'; // Use prefixed variable
+            vsw_videoDisplay.style.display = 'none'; // Use prefixed variable
+            vsw_videoSliderNav.style.display = 'none'; // Use prefixed variable
+        }
+
+        // Prefixed showMessage
+        function vsw_showMessage(messageText, duration = 3000) {
+            clearTimeout(vsw_messageTimeout); // Use prefixed variable
+            if (messageText) {
+                vsw_messageBox.textContent = messageText; // Use prefixed variable
+                vsw_messageBox.style.display = 'block'; // Use prefixed variable
+                vsw_messageTimeout = setTimeout(vsw_hideMessage, duration); // Use prefixed variables/function
+            } else {
+                console.error("showMessage called with invalid text.");
+                vsw_messageBox.textContent = vsw_getTextById('vsw-msgInternalError'); // Use prefixed variable/function/ID
+                vsw_messageBox.style.display = 'block'; // Use prefixed variable
+                vsw_messageTimeout = setTimeout(vsw_hideMessage, duration); // Use prefixed variables/function
+            }
+        }
+
+        // Prefixed hideMessage
+        function vsw_hideMessage() {
+            clearTimeout(vsw_messageTimeout); // Use prefixed variable
+            vsw_messageBox.style.display = 'none'; // Use prefixed variable
+        }
+    </script>
+
+
+</!doctype>
