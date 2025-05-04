@@ -1,40 +1,60 @@
 /* --- Prefixes: vsw- --- */
 
-/* Global Styles REMOVED to prevent theme conflicts */
-/* body { ... } REMOVED */
-/* h2.vsw-page-title { ... } REMOVED */
+/* Global Styles */
 
+/*   body { 
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e0e0e0; /* इसे हटा दें यदि आपकी थीम का बैकग्राउंड अलग है */
+    color: #333;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; 
+} */
+
+/* H1 changed to H2 */
+h2.vsw-page-title { /* Added class for specific styling */
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(to right, #3498db, #9b59b6);
+    color: white;
+    margin: 0 0 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.8em;
+}
 
 /* Main Widget Container */
 #vsw-main-widget { /* Prefixed ID */
     background-color: #0a192f;
     padding: 25px;
     margin: 0 auto 20px auto;
+    /* Increased max-width */
     max-width: 1800px;
-    width: 95%; /* Adjust width if needed within gadget */
+    width: 95%;
     box-sizing: border-box;
     border: 10px solid transparent;
     border-radius: 25px;
     background-clip: padding-box;
     position: relative;
-    -webkit-animation: vsw_shinyBorder 6s infinite linear; animation: vsw_shinyBorder 6s infinite linear;
+    animation: vsw_shinyBorder 6s infinite linear; /* Prefixed animation name */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     -webkit-mask-image: radial-gradient(white, black);
      overflow: hidden;
-     /* Set default font/color for widget content if theme doesn't penetrate */
-     font-family: 'Arial', sans-serif;
-     color: #333; /* Default text color inside widget */
 }
 
 /* Shiny Border Animation */
-@-webkit-keyframes vsw_shinyBorder {
+@-webkit-keyframes vsw_shinyBorder { /* Prefixed animation name */
     0% { border-image-source: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
     25% { border-image-source: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
     50% { border-image-source: linear-gradient(225deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
     75% { border-image-source: linear-gradient(315deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
     100% { border-image-source: linear-gradient(405deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
 }
-@keyframes vsw_shinyBorder {
+@keyframes vsw_shinyBorder { /* Prefixed animation name */
     0% { border-image-source: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
     25% { border-image-source: linear-gradient(135deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
     50% { border-image-source: linear-gradient(225deg, #ff00ff, #00ffff, #ffff00); border-image-slice: 1; }
@@ -44,7 +64,7 @@
 
 
 /* Stylish Header (Inside Widget - Already H2) */
-.vsw-stylish-header-container {
+.vsw-stylish-header-container { /* Prefixed class */
     text-align: center;
     padding: 15px;
     margin: 0 auto 25px auto;
@@ -53,31 +73,23 @@
     box-sizing: border-box;
 }
 
-.vsw-stylish-header {
+.vsw-stylish-header { /* Prefixed class */
     font-size: 1.6em;
     font-weight: bold;
     color: #e74c3c;
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.15), 3px 3px 8px rgba(0, 0, 0, 0.6);
-    -webkit-animation: vsw_colorChange 5s infinite alternate, vsw_wobble 2.5s infinite ease-in-out; animation: vsw_colorChange 5s infinite alternate, vsw_wobble 2.5s infinite ease-in-out;
+    animation: vsw_colorChange 5s infinite alternate, vsw_wobble 2.5s infinite ease-in-out; /* Prefixed animation names */
 }
 
-.vsw-stylish-description {
+.vsw-stylish-description { /* Prefixed class */
     font-size: 1.15em;
-    color: #5dade2; /* Ensure text color is suitable for dark bg */
-    -webkit-animation: vsw_fadeIn 2s ease-out, vsw_pulse 2.2s infinite alternate; animation: vsw_fadeIn 2s ease-out, vsw_pulse 2.2s infinite alternate;
+    color: #5dade2;
+    animation: vsw_fadeIn 2s ease-out, vsw_pulse 2.2s infinite alternate; /* Prefixed animation names */
     line-height: 1.5;
 }
 
 /* Text Animations (Keep Existing) */
-@-webkit-keyframes vsw_wobble {
-    0%, 100% { -webkit-transform: translateX(0) rotate(0); transform: translateX(0) rotate(0); }
-    15% { -webkit-transform: translateX(-6px) rotate(-4deg); transform: translateX(-6px) rotate(-4deg); }
-    30% { -webkit-transform: translateX(4px) rotate(3deg); transform: translateX(4px) rotate(3deg); }
-    45% { -webkit-transform: translateX(-4px) rotate(-2deg); transform: translateX(-4px) rotate(-2deg); }
-    60% { -webkit-transform: translateX(3px) rotate(1.5deg); transform: translateX(3px) rotate(1.5deg); }
-    75% { -webkit-transform: translateX(-2px) rotate(-1deg); transform: translateX(-2px) rotate(-1deg); }
-}
-@keyframes vsw_wobble {
+@-webkit-keyframes vsw_wobble { /* Prefixed animation name */
     0%, 100% { transform: translateX(0) rotate(0); }
     15% { transform: translateX(-6px) rotate(-4deg); }
     30% { transform: translateX(4px) rotate(3deg); }
@@ -85,22 +97,30 @@
     60% { transform: translateX(3px) rotate(1.5deg); }
     75% { transform: translateX(-2px) rotate(-1deg); }
 }
-@-webkit-keyframes vsw_fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@keyframes vsw_fadeIn { from { opacity: 0; } to { opacity: 1; } }
-@-webkit-keyframes vsw_colorChange {
+@keyframes vsw_wobble { /* Prefixed animation name */
+    0%, 100% { transform: translateX(0) rotate(0); }
+    15% { transform: translateX(-6px) rotate(-4deg); }
+    30% { transform: translateX(4px) rotate(3deg); }
+    45% { transform: translateX(-4px) rotate(-2deg); }
+    60% { transform: translateX(3px) rotate(1.5deg); }
+    75% { transform: translateX(-2px) rotate(-1deg); }
+}
+@-webkit-keyframes vsw_fadeIn { from { opacity: 0; } to { opacity: 1; } } /* Prefixed animation name */
+@keyframes vsw_fadeIn { from { opacity: 0; } to { opacity: 1; } } /* Prefixed animation name */
+@-webkit-keyframes vsw_colorChange { /* Prefixed animation name */
     0% { color: #e74c3c; } 25% { color: #3498db; } 50% { color: #2ecc71; }
     75% { color: #f1c40f; } 100% { color: #9b59b6; }
 }
-@keyframes vsw_colorChange {
+@keyframes vsw_colorChange { /* Prefixed animation name */
     0% { color: #e74c3c; } 25% { color: #3498db; } 50% { color: #2ecc71; }
     75% { color: #f1c40f; } 100% { color: #9b59b6; }
 }
-@-webkit-keyframes vsw_pulse { 0% { -webkit-transform: scale(1); transform: scale(1); } 100% { -webkit-transform: scale(1.03); transform: scale(1.03); } }
-@keyframes vsw_pulse { 0% { transform: scale(1); } 100% { transform: scale(1.03); } }
+@-webkit-keyframes vsw_pulse { 0% { transform: scale(1); } 100% { transform: scale(1.03); } } /* Prefixed animation name */
+@keyframes vsw_pulse { 0% { transform: scale(1); } 100% { transform: scale(1.03); } } /* Prefixed animation name */
 
 
 /* Category Buttons (Inside Widget) */
-.vsw-category-buttons {
+.vsw-category-buttons { /* Prefixed class */
     text-align: center;
     padding: 20px 10px;
     background-color: rgba(255, 255, 255, 0.05);
@@ -110,7 +130,7 @@
     gap: 15px;
     border-radius: 8px;
 }
-.vsw-category-buttons button {
+.vsw-category-buttons button { /* Prefixed class */
     flex-grow: 1;
     flex-basis: 150px;
     max-width: 200px;
@@ -150,7 +170,7 @@
 }
 
 /* --- Animated Banner --- */
-#vsw-category-banner {
+#vsw-category-banner { /* Prefixed ID */
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     color: white;
     text-align: center;
@@ -163,28 +183,28 @@
     width: 90%;
     max-width: 600px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-    animation: vsw_bannerPulse 2s infinite alternate ease-in-out, vsw_fadeInBanner 1s ease-out;
-    display: block;
+    animation: vsw_bannerPulse 2s infinite alternate ease-in-out, vsw_fadeInBanner 1s ease-out; /* Prefixed animation names */
+    display: block; /* Initially shown */
 }
-@-webkit-keyframes vsw_bannerPulse {
+@-webkit-keyframes vsw_bannerPulse { /* Prefixed animation name */
     0% { transform: scale(1); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); }
     100% { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5); }
 }
-@keyframes vsw_bannerPulse {
+@keyframes vsw_bannerPulse { /* Prefixed animation name */
     0% { transform: scale(1); box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3); }
     100% { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0, 212, 255, 0.5); }
 }
-@-webkit-keyframes vsw_fadeInBanner {
+@-webkit-keyframes vsw_fadeInBanner { /* Prefixed animation name */
      from { opacity: 0; transform: translateY(-10px); }
      to { opacity: 1; transform: translateY(0); }
 }
-@keyframes vsw_fadeInBanner {
+@keyframes vsw_fadeInBanner { /* Prefixed animation name */
      from { opacity: 0; transform: translateY(-10px); }
      to { opacity: 1; transform: translateY(0); }
 }
 
 /* Search Category Container (Inside Widget) */
-.vsw-search-category-container {
+.vsw-search-category-container { /* Prefixed class */
     padding: 10px 0;
     width: 100%;
     box-sizing: border-box;
@@ -194,21 +214,21 @@
     overflow: hidden;
     clear: both;
 }
-.vsw-search-category-container.vsw-active-search-box {
+.vsw-search-category-container.vsw-active-search-box { /* Prefixed class */
     opacity: 1;
-    max-height: 1500px;
+    max-height: 1500px; /* Adjust if content is taller */
     overflow: visible;
 }
 
 /* Search Box Styles (Inside Widget) */
-.vsw-search-box {
+.vsw-search-box { /* Prefixed class */
     max-width: 95%;
     margin: 10px auto 20px auto;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     text-align: center;
-    color: white; /* Default text color inside search box */
+    color: white;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     min-height: 280px;
     position: relative;
@@ -218,25 +238,25 @@
     align-items: center;
     justify-content: center;
 }
-#vsw-search-box-1 { background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335, #673ab7); }
-#vsw-search-box-2 { background: linear-gradient(45deg, #e91e63, #9c27b0, #673ab7, #3f51b5, #2196f3); }
-#vsw-college-search-box { background: linear-gradient(45deg, #009688, #4caf50, #8bc34a, #cddc39, #ffeb3b); }
-#vsw-search-box-3 { background: linear-gradient(45deg, #ff9800, #ff5722, #f44336, #e91e63, #9c27b0); }
-#vsw-news-search-box { background: linear-gradient(45deg, #607d8b, #795548, #9e9e9e, #455a64, #37474f); }
+#vsw-search-box-1 { background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335, #673ab7); } /* Prefixed ID */
+#vsw-search-box-2 { background: linear-gradient(45deg, #e91e63, #9c27b0, #673ab7, #3f51b5, #2196f3); } /* Prefixed ID */
+#vsw-college-search-box { background: linear-gradient(45deg, #009688, #4caf50, #8bc34a, #cddc39, #ffeb3b); } /* Prefixed ID */
+#vsw-search-box-3 { background: linear-gradient(45deg, #ff9800, #ff5722, #f44336, #e91e63, #9c27b0); } /* Prefixed ID */
+#vsw-news-search-box { background: linear-gradient(45deg, #607d8b, #795548, #9e9e9e, #455a64, #37474f); } /* Prefixed ID */
 .vsw-search-box:hover {
     transform: scale(1.02);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
 }
-.vsw-search-box h3 {
+/* H3 already used, keeping as is */
+.vsw-search-box h3 { /* Prefixed class */
     font-size: 1.5em;
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     font-weight: bold;
-    color: white; /* Ensure H3 color contrasts with background */
 }
 .vsw-search-box select,
 .vsw-search-box input[type="text"],
-.vsw-search-box button {
+.vsw-search-box button { /* Prefixed class */
     width: 90%;
     max-width: 450px;
     padding: 12px;
@@ -244,7 +264,7 @@
     border-radius: 6px;
     border: 1px solid #ccc;
     background-color: rgba(255, 255, 255, 0.95);
-    color: #333; /* Text color inside inputs/buttons */
+    color: #333;
     font-size: 1.1em;
     font-weight: normal;
     box-sizing: border-box;
@@ -253,7 +273,7 @@
 .vsw-search-box input[type="text"] { cursor: text; }
 .vsw-search-box button {
     background-color: #e74c3c;
-    color: white; /* Button text color */
+    color: white;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -263,41 +283,39 @@
 }
 .vsw-search-box button:hover { background-color: #c0392b; }
 .vsw-search-box button:active { transform: scale(0.98); }
-.vsw-custom-search-input::placeholder { color: #777; font-style: italic; }
-.vsw-custom-search-input::-webkit-input-placeholder { color: #777; font-style: italic; }
-.vsw-custom-search-input::-moz-placeholder { color: #777; font-style: italic; opacity: 1; } /* Firefox needs opacity */
-.vsw-custom-search-input:-ms-input-placeholder { color: #777; font-style: italic; }
-.vsw-custom-search-input::-ms-input-placeholder { color: #777; font-style: italic; }
-
+.vsw-custom-search-input::-webkit-input-placeholder { color: #777; font-style: italic; } /* Prefixed class */
+.vsw-custom-search-input::-moz-placeholder { color: #777; font-style: italic; } /* Prefixed class */
+.vsw-custom-search-input:-ms-input-placeholder { color: #777; font-style: italic; } /* Prefixed class */
+.vsw-custom-search-input::placeholder { color: #777; font-style: italic; } /* Prefixed class */
 
 /* Video Container (Inside Widget) */
-.vsw-video-container {
+.vsw-video-container { /* Prefixed class */
     padding: 15px 5px;
     text-align: center;
-    display: none;
+    /* display: none;  Controlled by JS */
     width: 100%;
     box-sizing: border-box;
 }
 
 /* Video Slider (Inside Widget) */
-.vsw-video-slider-container {
+.vsw-video-slider-container { /* Prefixed class */
     position: relative;
     width: 100%;
     max-width: 100%;
     margin: 15px auto;
     overflow: hidden;
     min-height: 160px;
-    display: none;
+    /* display: none; Controlled by JS */
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
-.vsw-video-slider {
+.vsw-video-slider { /* Prefixed class */
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
-.vsw-video-item {
+.vsw-video-item { /* Prefixed class */
     flex: 0 0 auto;
     width: 150px;
     margin: 0 6px;
@@ -325,27 +343,32 @@
     margin-top: 6px;
     font-size: 0.8em;
     line-height: 1.25;
-    height: 3em;
+    height: 3em; /* Approx 2 lines */
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #ccc; /* Video title text color */
+    color: #ccc;
+    /* Forcing 2 lines with webkit */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
+
 /* Navigation Buttons for Video Slider */
-.vsw-video-slider-nav {
+.vsw-video-slider-nav { /* Prefixed class */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 8px;
     right: 8px;
-    width: auto;
-    display: flex;
+    width: auto; /* Let flexbox handle spacing */
+    display: flex; /* Changed from none */
     justify-content: space-between;
     padding: 0;
-    display: none;
+    /* display: none; Controlled by JS */
     z-index: 10;
 }
-.vsw-video-slider-nav button {
+.vsw-video-slider-nav button { /* Prefixed class */
     background: rgba(0, 0, 0, 0.7);
     color: white;
     border: none;
@@ -364,7 +387,7 @@
 .vsw-video-slider-nav button:hover { background: rgba(0, 0, 0, 1); }
 
 /* Large Video Player (Inside Widget) */
-.vsw-video-player {
+.vsw-video-player { /* Prefixed class */
     width: 98%;
     max-width: 900px;
     margin: 20px auto;
@@ -373,31 +396,31 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     background-color: #000;
 }
-.vsw-video-player iframe {
+.vsw-video-player iframe { /* Prefixed class */
     display: block;
     width: 100%;
-    height: 500px;
+    height: 500px; /* Default height */
     border: none;
 }
 
 /* Message Box Styles (Appears Over Widget) */
-.vsw-message-box {
-    position: fixed;
-    top: 80px;
+.vsw-message-box { /* Prefixed class */
+    position: fixed; /* Changed from absolute */
+    top: 80px; /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%);
-    background-color: #ffc107;
-    color: #333; /* Message box text color */
+    background-color: #ffc107; /* Warning color */
+    color: #333;
     border: 1px solid #e0a800;
     padding: 15px 25px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1100;
+    z-index: 1100; /* Ensure it's above most elements */
     text-align: center;
-    display: none;
+    /* display: none; Controlled by JS */
     font-size: 1.1em;
     font-weight: bold;
-    max-width: 80%;
+    max-width: 80%; /* Prevent it being too wide */
 }
 
 /* Responsive Design */
@@ -408,7 +431,7 @@
      .vsw-category-buttons button { flex-basis: 140px; height: 45px; }
      .vsw-category-buttons { gap: 12px; }
      #vsw-category-banner { font-size: 1em; padding: 10px; }
-     .vsw-search-box { max-width: 100%; padding: 20px; min-height: auto; }
+     .vsw-search-box { max-width: 100%; padding: 20px; min-height: auto; } /* Allow shrinking */
      .vsw-search-box h3 { font-size: 1.3em; margin-bottom: 15px;}
      .vsw-search-box select,
      .vsw-search-box input[type="text"],
@@ -420,8 +443,8 @@
      .vsw-video-slider-nav button { width: 38px; height: 38px; font-size: 1em; }
 }
 @media (max-width: 480px) {
-     /* body styles removed */
-     /* h2.vsw-page-title styles removed */
+     body { padding: 10px; } /* Adjust body padding on small screens */
+     h2.vsw-page-title { font-size: 1.4em; padding: 12px; } /* Adjust H2 size */
      #vsw-main-widget { padding: 10px; border-width: 6px; border-radius: 15px; }
      .vsw-stylish-header { font-size: 1.2em; }
      .vsw-stylish-description { font-size: 0.95em; }
@@ -429,9 +452,9 @@
      .vsw-category-buttons button {
         font-size: 0.85em;
         padding: 8px 10px;
-        flex-basis: calc(50% - 15px); /* 2 columns with gap */
-        max-width: none;
-        height: 48px;
+        flex-basis: calc(50% - 15px); /* Adjust basis for 2 columns with gap */
+        max-width: none; /* Allow flexibility */
+        height: 48px; /* Maintain consistent height if needed */
      }
      #vsw-category-banner { font-size: 0.9em; padding: 8px; }
      .vsw-search-box h3 { font-size: 1.15em;}
@@ -440,12 +463,10 @@
      .vsw-search-box button { font-size: 0.9em; padding: 8px; }
      .vsw-video-item { width: 110px; }
      .vsw-video-item img { height: 62px; }
-     .vsw-video-item p { font-size: 0.7em; height: 2.8em; }
+     .vsw-video-item p { font-size: 0.7em; height: 2.8em; -webkit-line-clamp: 2; } /* Ensure line clamp works */
      .vsw-video-player iframe { height: 250px; }
      .vsw-video-slider-nav button { width: 32px; height: 32px; font-size: 0.9em; }
 }
 
-/* Hidden Message Texts */
-#vsw-message-texts {
-    display: none; /* Ensure this container itself is not visible */
-}
+/* Hidden Message Texts Container Style (Optional, only if needed for layout debugging) */
+/* #vsw-message-texts { display: none; } */ /* Already set inline in HTML */
