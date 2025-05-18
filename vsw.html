@@ -1,8 +1,5 @@
-<!-- संक्षिप्त परिचय: यह एक 'खोजें और सीखें' विजेट है जो उपयोगकर्ताओं को YouTube पर विभिन्न श्रेणियों (पढ़ाई, परीक्षा, मनोरंजन, समाचार) में वीडियो खोजने की अनुमति देता है। यह इनपुट विकल्पों के आधार पर खोज बटन को नियंत्रित करता है और परिणामों को एक स्लाइडर और प्लेयर में दिखाता है। -->
-<!-- निर्देश: 1. कैटेगरी बटन पर क्लिक करके एक श्रेणी चुनें। 2. ड्रॉपडाउन से कम से कम दो विकल्प चुनें या टेक्स्ट बॉक्स में टाइप करें। 3. जब 'खोजें' बटन सक्षम हो जाए, तो क्लिक करें। 4. वीडियो स्लाइडर में वीडियो देखें और प्ले करने के लिए थंबनेल पर क्लिक करें। 'Main Menu' बटन से वापस जाएं। -->
 
-<!-- Hidden Message Texts Container -->
-<!-- यह कंटेनर संदेशों के लिए स्थानीयकृत स्ट्रिंग्स रखता है -->
+<!-- you tube-->
 <div id="vsw-message-texts" style="display: none;">
     <span id="vsw-msgSearchingVideos">वीडियो खोजे जा रहे हैं...</span><span id="vsw-msgApiKeyError">त्रुटि: API कुंजी कॉन्फ़िगर नहीं है या अमान्य है।</span><span id="vsw-msgApiQuotaError">त्रुटि: YouTube API कोटा समाप्त हो गया है।</span><span id="vsw-msgApiKeyInvalid">त्रुटि: API कुंजी अमान्य है।</span><span id="vsw-msgNoVideosFound">इस खोज के लिए कोई वीडियो नहीं मिला।</span><span id="vsw-msgVideoLoadFailed">चयनित वीडियो लोड करने में विफल।</span><span id="vsw-msgApiGenericErrorPrefix">API त्रुटि</span><span id="vsw-msgVideoLoadErrorPrefix">वीडियो लोड करने में त्रुटि</span><span id="vsw-msgInternalError">एक आंतरिक त्रुटि हुई।</span><span id="vsw-msgMinInputRequired">कृपया कम से कम दो विकल्प चुनें या टेक्स्ट बॉक्स में टाइप करें।</span>
 </div>
@@ -26,35 +23,859 @@
         <div class="vsw-search-box" id="vsw-search-box-1">
             <h3>ऑनलाइन पढ़ाई करें (कक्षा 1-12)</h3>
             <select id="vsw-class-select">
-                <option value="">कक्षा चुनें</option>
-                <option value="कक्षा 1">कक्षा 1</option><option value="कक्षा 2">कक्षा 2</option><option value="कक्षा 3">कक्षा 3</option><option value="कक्षा 4">कक्षा 4</option><option value="कक्षा 5">कक्षा 5</option><option value="कक्षा 6">कक्षा 6</option><option value="कक्षा 7">कक्षा 7</option><option value="कक्षा 8">कक्षा 8</option><option value="कक्षा 9">कक्षा 9</option><option value="कक्षा 10">कक्षा 10</option>
+                <option value="" />कक्षा चुनें
+                <option value="कक्षा 1" />कक्षा 1<option value="कक्षा 2" />कक्षा 2<option value="कक्षा 3" />कक्षा 3<option value="कक्षा 4" />कक्षा 4<option value="कक्षा 5" />कक्षा 5<option value="कक्षा 6" />कक्षा 6<option value="कक्षा 7" />कक्षा 7<option value="कक्षा 8" />कक्षा 8<option value="कक्षा 9" />कक्षा 9<option value="कक्षा 10" />कक्षा 10<option value="कक्षा 11 - आर्ट्स" />कक्षा 11 - आर्ट्स<option value="कक्षा 11 - मैथ्स" />कक्षा 11 - मैथ्स<option value="कक्षा 11 - बायो" />कक्षा 11 - बायो<option value="कक्षा 11 - एग्रीकल्चर" />कक्षा 11 - एग्रीकल्चर<option value="कक्षा 11 - कॉमर्स" />कक्षा 11 - कॉमर्स<option value="कक्षा 11 - वोकेशनल" />कक्षा 11 - वोकेशनल
+                <!-- कक्षा 12 -->
+                <option value="कक्षा 12 - आर्ट्स" />कक्षा 12 - आर्ट्स<option value="कक्षा 12 - मैथ्स" />कक्षा 12 - मैथ्स<option value="कक्षा 12 - बायो" />कक्षा 12 - बायो<option value="कक्षा 12 - एग्रीकल्चर" />कक्षा 12 - एग्रीकल्चर<option value="कक्षा 12 - कॉमर्स" />कक्षा 12 - कॉमर्स<option value="कक्षा 12 - वोकेशनल" />कक्षा 12 - वोकेशनल<option value="प्रथमा प्रथम संस्कृत" />प्रथमा प्रथम संस्कृत<option value="प्रथमा द्वितीय संस्कृत" />प्रथमा द्वितीय संस्कृत<option value="मध्यमा प्रथम संस्कृत" />मध्यमा प्रथम संस्कृत<option value="मध्यमा द्वितीय संस्कृत" />मध्यमा द्वितीय संस्कृत<option value="उत्तरा प्रथम संस्कृत" />उत्तरा प्रथम संस्कृत<option value="उत्तरा द्वितीय संस्कृत" />उत्तरा द्वितीय संस्कृत
             </select><select id="vsw-subject-select">
-                <option value="">विषय चुनें</option>
-                <option value="हिंदी">हिंदी</option><option value="अंग्रेज़ी (English)">अंग्रेज़ी</option><option value="गणित (Mathematics)">गणित</option><option value="विज्ञान (Science)">विज्ञान</option><option value="सामाजिक विज्ञान (Social Science)">सामाजिक विज्ञान</option><option value="पर्यावरण अध्ययन (EVS)">पर्यावरण अध्ययन</option><option value="संस्कृत">संस्कृत</option><option value="कंप्यूटर">कंप्यूटर</option><option value="इतिहास (History)">इतिहास</option><option value="भूगोल (Geography)">भूगोल</option>
+                <option value="" />विषय चुनें
+                <!-- कक्षा 1 - 5 (प्राथमिक) -->
+                <optgroup label="कक्षा 1 - 5"><option value="हिंदी" />हिंदी<option value="अंग्रेज़ी" />अंग्रेज़ी<option value="गणित" />गणित<option value="पर्यावरण अध्ययन" />पर्यावरण अध्ययन<option value="चित्रकला" />चित्रकला<option value="संगीत" />संगीत<option value="नैतिक शिक्षा" />नैतिक शिक्षा</optgroup>
+                <!-- कक्षा 6 - 8 (मध्य) -->
+                <optgroup label="कक्षा 6 - 8"><option value="हिंदी" />हिंदी<option value="अंग्रेज़ी" />अंग्रेज़ी<option value="गणित" />गणित<option value="विज्ञान" />विज्ञान<option value="सामाजिक विज्ञान" />सामाजिक विज्ञान<option value="संस्कृत" />संस्कृत<option value="चित्रकला" />चित्रकला<option value="संगीत" />संगीत<option value="शारीरिक शिक्षा" />शारीरिक शिक्षा<option value="कंप्यूटर" />कंप्यूटर<option value="नैतिक शिक्षा" />नैतिक शिक्षा</optgroup>
+                <!-- कक्षा 9 - 10 (माध्यमिक) -->
+                <optgroup label="कक्षा 9 - 10"><option value="हिंदी" />हिंदी<option value="अंग्रेज़ी" />अंग्रेज़ी<option value="गणित" />गणित<option value="विज्ञान" />विज्ञान<option value="सामाजिक विज्ञान" />सामाजिक विज्ञान<option value="संस्कृत" />संस्कृत<option value="चित्रकला" />चित्रकला<option value="संगीत" />संगीत<option value="शारीरिक शिक्षा" />शारीरिक शिक्षा<option value="कंप्यूटर" />कंप्यूटर<option value="नैतिक शिक्षा" />नैतिक शिक्षा</optgroup>
+                <!-- कक्षा 11 - 12 (उच्च माध्यमिक) -->
+                <optgroup label="कक्षा 11 - 12"><option value="हिंदी" />हिंदी<option value="अंग्रेज़ी" />अंग्रेज़ी<option value="संस्कृत" />संस्कृत<option value="गणित" />गणित<option value="संरचनात्मक गणित" />संरचनात्मक गणित<option value="भौतिकी" />भौतिकी<option value="रसायन विज्ञान" />रसायन विज्ञान<option value="जीवविज्ञान" />जीवविज्ञान<option value="कृषि विज्ञान" />कृषि विज्ञान<option value="इतिहास" />इतिहास<option value="भूगोल" />भूगोल<option value="नागरिकशास्त्र" />नागरिकशास्त्र<option value="राजनीति विज्ञान" />राजनीति विज्ञान<option value="अर्थशास्त्र" />अर्थशास्त्र<option value="समाजशास्त्र" />समाजशास्त्र<option value="मनोविज्ञान" />मनोविज्ञान<option value="गृह विज्ञान" />गृह विज्ञान<option value="दर्शनशास्त्र" />दर्शनशास्त्र<option value="तर्कशास्त्र" />तर्कशास्त्र<option value="मानव विकास" />मानव विकास<option value="लेखा" />लेखा<option value="व्यवसाय अध्ययन" />व्यवसाय अध्ययन<option value="वित्तीय साक्षरता" />वित्तीय साक्षरता<option value="कंप्यूटर साइंस" />कंप्यूटर साइंस<option value="कंप्यूटर एप्लीकेशन" />कंप्यूटर एप्लीकेशन<option value="सूचना प्रौद्योगिकी" />सूचना प्रौद्योगिकी<option value="वेब एप्लिकेशन" />वेब एप्लिकेशन<option value="डेटा एंट्री ऑपरेशंस" />डेटा एंट्री ऑपरेशंस<option value="उद्यमिता" />उद्यमिता<option value="पर्यटन" />पर्यटन<option value="मीडिया अध्ययन" />मीडिया अध्ययन<option value="बैंकिंग" />बैंकिंग<option value="बीमा" />बीमा<option value="विक्रय प्रबंधन" />विक्रय प्रबंधन<option value="फ्रंट ऑफिस ऑपरेशंस" />फ्रंट ऑफिस ऑपरेशंस</optgroup>
+                <!-- भाषाएँ -->
+                <optgroup label="भाषाएँ"><option value="अरबी" />अरबी<option value="फारसी" />फारसी<option value="उर्दू" />उर्दू<option value="पंजाबी" />पंजाबी<option value="तमिल" />तमिल<option value="तेलुगू" />तेलुगू<option value="गुजराती" />गुजराती<option value="बांग्ला" />बांग्ला</optgroup>
+                <!-- कला, संगीत और नाटक -->
+                <optgroup label="कला, संगीत और नाटक"><option value="ललित कला" />ललित कला<option value="नृत्य" />नृत्य<option value="थियेटर स्टडीज़" />थियेटर स्टडीज़<option value="फैशन स्टडीज़" />फैशन स्टडीज़<option value="एप्लाइड आर्ट्स" />एप्लाइड आर्ट्स<option value="फोटोग्राफी" />फोटोग्राफी<option value="डिजाइन" />डिजाइन</optgroup>
+                <!-- अन्य विषय -->
+                <optgroup label="अन्य विषय"><option value="योग" />योग<option value="खाद्य उत्पादन" />खाद्य उत्पादन<option value="नैतिक शिक्षा" />नैतिक शिक्षा<option value="शारीरिक शिक्षा" />शारीरिक शिक्षा</optgroup>
+                <!-- संस्कृत प्रथमा – वर्ष 1 -->
+                <optgroup label="संस्कृत प्रथमा – वर्ष 1"><option value="संस्कृत भाषा परिचय" />संस्कृत भाषा परिचय<option value="शब्दरूप व धातुरूप (प्रारंभिक)" />शब्दरूप व धातुरूप (प्रारंभिक)<option value="सरल संधि व समास" />सरल संधि व समास<option value="नैतिक श्लोक व स्तोत्र" />नैतिक श्लोक व स्तोत्र<option value="सरल गद्य व पद्य" />सरल गद्य व पद्य<option value="शुद्धलेखन व उच्चारण" />शुद्धलेखन व उच्चारण</optgroup>
+                <!-- संस्कृत प्रथमा – वर्ष 2 -->
+                <optgroup label="प्रथमा – वर्ष 2"><option value="संधि व समास अभ्यास" />संधि व समास अभ्यास<option value="वाक्य रचना" />वाक्य रचना<option value="शब्दकोश प्रयोग" />शब्दकोश प्रयोग<option value="सरल निबंध लेखन" />सरल निबंध लेखन<option value="पठन – हितोपदेश" />पठन – हितोपदेश<option value="साहित्य बोध (प्रारंभिक)" />साहित्य बोध (प्रारंभिक)</optgroup>
+                <!-- संस्कृत मध्यमा – वर्ष 1 -->
+                <optgroup label="संस्कृत मध्यमा – वर्ष 1"><option value="संधि, समास, कारक" />संधि, समास, कारक<option value="उपसर्ग, प्रत्यय" />उपसर्ग, प्रत्यय<option value="हितोपदेश व पंचतंत्र पठन" />हितोपदेश व पंचतंत्र पठन<option value="संस्कृत संवाद लेखन" />संस्कृत संवाद लेखन<option value="सरल दर्शन – सांख्य, न्याय परिचय" />सरल दर्शन – सांख्य, न्याय परिचय</optgroup>
+                <!-- मध्यमा – वर्ष 2 -->
+                <optgroup label="संस्कृत मध्यमा – वर्ष 2"><option value="लघु शास्त्रीय ग्रंथ – भागवत, चरक" />लघु शास्त्रीय ग्रंथ – भागवत, चरक<option value="निबंध लेखन (माध्यमिक)" />निबंध लेखन (माध्यमिक)<option value="श्लोक अर्थ सहित पठन" />श्लोक अर्थ सहित पठन<option value="काव्यशास्त्र – परिचय" />काव्यशास्त्र – परिचय<option value="भाषांतर अभ्यास (हिंदी↔संस्कृत)" />भाषांतर अभ्यास (हिंदी↔संस्कृत)</optgroup>
+                <!-- उत्तरा – वर्ष 1 -->
+                <optgroup label="संस्कृत उत्तरा – वर्ष 1"><option value="अष्टाध्यायी परिचय" />अष्टाध्यायी परिचय<option value="न्याय दर्शन – तर्क विधि" />न्याय दर्शन – तर्क विधि<option value="मीमांसा दर्शन – सूत्र परिचय" />मीमांसा दर्शन – सूत्र परिचय<option value="काव्यशास्त्र – रस, अलंकार" />काव्यशास्त्र – रस, अलंकार<option value="संस्कृत भाषण व वाचन" />संस्कृत भाषण व वाचन</optgroup>
+                <!-- उत्तरा – वर्ष 2 -->
+                <optgroup label="संस्कृत उत्तरा – वर्ष 2"><option value="क्लासिकल ग्रंथ – रघुवंश, कुमारसंभव" />क्लासिकल ग्रंथ – रघुवंश, कुमारसंभव<option value="भगवद्गीता श्लोक व भाष्य" />भगवद्गीता श्लोक व भाष्य<option value="उपनिषद् अध्ययन – ईश, केन" />उपनिषद् अध्ययन – ईश, केन<option value="छंदशास्त्र – परिचय" />छंदशास्त्र – परिचय<option value="शास्त्रीय संवाद लेखन" />शास्त्रीय संवाद लेखन</optgroup>
             </select><select id="vsw-language-select">
-                <option value="">भाषा चुनें</option>
-                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option>
+             <option value="" />भाषा चुनें
+<option value="हिंदी" />हिंदी
+<option value="अंग्रेजी" />अंग्रेजी
+<option value="तमिल" />तमिल
+<option value="बंगाली" />बंगाली
+<option value="तेलुगु" />तेलुगु
+<option value="मराठी" />मराठी
+<option value="कन्नड़" />कन्नड़
+<option value="संथाली" />संथाली
+<option value="मणिपुरी" />मणिपुरी
+<option value="कश्मीरी" />कश्मीरी
+<option value="गोंडी" />गोंडी
+
             </select><select id="vsw-board-select">
-                <option value="">शिक्षा बोर्ड चुनें</option>
-                <option value="CBSE">सीबीएसई (CBSE)</option><option value="ICSE">आईसीएसई (ICSE)</option><option value="UP Board">उत्तर प्रदेश बोर्ड</option><option value="MP Board">मध्य प्रदेश बोर्ड</option><option value="Rajasthan Board">राजस्थान बोर्ड</option><option value="Bihar Board">बिहार बोर्ड</option><option value="State Board">अन्य राज्य बोर्ड</option><option value="NIOS">एनआईओएस (NIOS)</option>
-            </select><input type="text" id="vsw-text-input-study" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-1')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+                <option value="" />शिक्षा बोर्ड चुनें
+<optgroup label="राष्ट्रीय/केंद्रीय बोर्ड">
+    <option value="CBSE" />सीबीएसई (CBSE)
+    <option value="CISCE" />आईसीएसई/आईएससी (CISCE)
+    <option value="NIOS" />एनआईओएस (NIOS)
+</optgroup>
+<optgroup label="मध्य प्रदेश के बोर्ड">
+    <option value="MPBSE" />मध्य प्रदेश बोर्ड ऑफ सेकेंडरी एजुकेशन
+    <option value="MPSOS" />मध्य प्रदेश राज्य ओपन स्कूल
+    <option value="MPBSSM" />मध्य प्रदेश बोर्ड ऑफ सेकेंडरी संस्कृत एजुकेशन
+    <option value="MPMMB" />मध्य प्रदेश मदरसा बोर्ड
+</optgroup>
+<optgroup label="अन्य राज्य बोर्ड">
+    <option value="UPMSP" />उत्तर प्रदेश बोर्ड
+    <option value="RBSE" />राजस्थान बोर्ड
+    <option value="BSEB" />बिहार बोर्ड
+    <option value="MSBSHSE" />महाराष्ट्र बोर्ड
+    <option value="WBBSE" />पश्चिम बंगाल बोर्ड ऑफ सेकेंडरी एजुकेशन
+    <option value="WBCHSE" />पश्चिम बंगाल काउंसिल ऑफ हायर सेकेंडरी एजुकेशन
+    <option value="DGETN" />तमिलनाडु निदेशालय सरकारी परीक्षा
+    <option value="KSEEB" />कर्नाटक सेकेंडरी एजुकेशन एग्जामिनेशन बोर्ड
+    <option value="PUEKarnataka" />कर्नाटक प्री-यूनिवर्सिटी एजुकेशन
+    <option value="KBPE" />केरल बोर्ड ऑफ पब्लिक एग्जामिनेशन
+    <option value="DHSEKerala" />केरल निदेशालय हायर सेकेंडरी एजुकेशन
+    <option value="BSEAP" />आंध्र प्रदेश बोर्ड ऑफ सेकेंडरी एजुकेशन
+    <option value="BIEAP" />आंध्र प्रदेश बोर्ड ऑफ इंटरमीडिएट एजुकेशन
+    <option value="BSETS" />तेलंगाना बोर्ड ऑफ सेकेंडरी एजुकेशन
+    <option value="BIETS" />तेलंगाना बोर्ड ऑफ इंटरमीडिएट एजुकेशन
+    <option value="BSEOdisha" />ओडिशा बोर्ड ऑफ सेकेंडरी Education
+    <option value="CHSEOdisha" />ओडिशा काउंसिल ऑफ Higher Secondary Education
+    <option value="AHSEC" />असम Higher Secondary Education Council
+    <option value="SEBAAssam" />असम बोर्ड ऑफ Secondary Education
+    <option value="GSEB" />गुजरात Secondary And Higher Secondary Education Board
+    <option value="HBSE" />हरियाणा बोर्ड ऑफ School Education
+    <option value="PSEB" />पंजाब School Education Board
+    <option value="CGBSE" />छत्तीसगढ़ बोर्ड ऑफ Secondary Education
+    <option value="JAC" />झारखंड Academic Council
+    <option value="UBSE" />उत्तराखंड बोर्ड ऑफ School Education
+    <option value="HPBOSE" />हिमाचल प्रदेश बोर्ड ऑफ School Education
+    <option value="JKBOSE" />जम्मू एंड कश्मीर बोर्ड ऑफ School Education
+    <option value="GBSHSE" />गोवा बोर्ड ऑफ Secondary And Higher Secondary Education
+    <option value="TBSE" />त्रिपुरा बोर्ड ऑफ Secondary Education
+    <option value="MBOSE" />मेघालय बोर्ड ऑफ School Education
+    <option value="BSEM" />मणिपुर बोर्ड ऑफ Secondary Education
+    <option value="COHSEM" />मणिपुर Council Of Higher Secondary Education
+    <option value="MBSE" />मिजोरम बोर्ड ऑफ School Education
+    <option value="NBSE" />नागालैंड बोर्ड ऑफ School Education
+    <option value="SEBSikkim" />सिक्किम राज्य शिक्षा बोर्ड
+    <option value="DirEduAP" />अरुणाचल प्रदेश शिक्षा निदेशालय
+    <option value="DirEduPuducherry" />पुडुचेरी शिक्षा निदेशालय
+    <option value="DirEduDelhi" />दिल्ली शिक्षा निदेशालय
+    <option value="HOS" />हरियाणा ओपन School
+    <option value="RSOS" />राजस्थान State Open School
+    <option value="WBCROS" />पश्चिम बंगाल Council Of Rabindra Open Schooling
+    <option value="APOSS" />आंध्र प्रदेश Open School Society
+    <option value="TOSS" />तेलंगाना Open School Society
+    <option value="UPMSSP" />उत्तर प्रदेश माध्यमिक संस्कृत शिक्षा परिषद
+    <option value="RSSM" />राजस्थान संस्कृत शिक्षा बोर्ड
+    <option value="UBSSP" />उत्तराखंड संस्कृत शिक्षा परिषद
+    <option value="BMSBEB" />बिहार State Madrasa Education Board
+    <option value="WBBME" />पश्चिम बंगाल Board Of Madrasa Education
+    <option value="BOSEK" />केरल बोर्ड ऑफ संस्कृत एजुकेशन
+    <option value="BMEK" />केरल बोर्ड ऑफ मदरसा एजुकेशन
+</optgroup>
+          </select><input type="text" id="vsw-text-input-study" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-1')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
         </div>
     </div>
     <div class="vsw-search-category-container" id="vsw-exam-container">
         <div class="vsw-search-box" id="vsw-search-box-2">
             <h3>प्रतियोगी परीक्षा की तैयारी करें</h3>
             <select id="vsw-exam-select">
-                <option value="">परीक्षा चुनें</option>
-                <option value="UPSC Civil Services">UPSC सिविल सेवा</option><option value="SSC CGL">SSC CGL</option><option value="SSC CHSL">SSC CHSL</option><option value="RRB NTPC">रेलवे NTPC</option><option value="IBPS PO">IBPS PO</option><option value="SBI PO">SBI PO</option><option value="NEET">NEET</option><option value="JEE Main">JEE Main</option><option value="CTET">CTET</option><option value="State PSC">राज्य PSC</option>
-            </select><select id="vsw-exam-subject-select">
-                <option value="">विषय / सेक्शन चुनें</option>
-                <option value="गणित">गणित / क्वांट</option><option value="रीजनिंग">रीजनिंग</option><option value="अंग्रेजी">अंग्रेजी</option><option value="सामान्य ज्ञान">सामान्य ज्ञान / GA</option><option value="सामान्य विज्ञान">सामान्य विज्ञान</option><option value="करंट अफेयर्स">करंट अफेयर्स</option><option value="History">इतिहास</option><option value="Geography">भूगोल</option><option value="Polity">राजनीति विज्ञान</option><option value="Economics">अर्थशास्त्र</option>
+             <option value="" />प्रतियोगी परीक्षा का चयन करें
+
+<optgroup label="संघ लोक सेवा आयोग (UPSC)">
+    <option value="UPSC Civil Services" />UPSC सिविल सेवा परीक्षा (IAS, IPS, IFS)
+    <option value="UPSC CDS" />UPSC संयुक्त रक्षा सेवा परीक्षा (CDS)
+    <option value="UPSC NDA" />UPSC राष्ट्रीय रक्षा अकादमी परीक्षा (NDA)
+    <option value="CAPF AC" />केंद्रीय सशस्त्र पुलिस बल परीक्षा (CAPF – AC)
+    <option value="UPSC EPFO" />UPSC EPFO परीक्षा
+    <option value="UPSC CMS" />UPSC CMS (Combined Medical Services) परीक्षा
+    <option value="UPSC Engineering Services" />UPSC इंजीनियरिंग सेवा परीक्षा (ESE)
+</optgroup>
+
+<optgroup label="कर्मचारी चयन आयोग (SSC)">
+    <option value="SSC CGL" />SSC संयुक्त स्नातक स्तरीय परीक्षा (CGL)
+    <option value="SSC CHSL" />SSC संयुक्त उच्च माध्यमिक स्तर परीक्षा (CHSL)
+    <option value="SSC MTS" />SSC मल्टी टास्किंग स्टाफ परीक्षा (MTS)
+    <option value="SSC JE" />SSC जूनियर इंजीनियर परीक्षा (JE)
+    <option value="SSC GD" />केंद्रीय सशस्त्र पुलिस बल कांस्टेबल भर्ती परीक्षा (SSC GD)
+    <option value="SSC Stenographer" />SSC स्टेनोग्राफर परीक्षा
+    <option value="SSC CPO" />SSC केंद्रीय पुलिस संगठन परीक्षा (CPO)
+</optgroup>
+
+<optgroup label="रेलवे भर्ती परीक्षाएँ (Railway Recruitment)">
+    <option value="RRB NTPC" />रेलवे NTPC परीक्षा
+    <option value="RRB Group D" />रेलवे ग्रुप D परीक्षा
+    <option value="RRB ALP" />रेलवे लोको पायलट एवं तकनीशियन परीक्षा (ALP)
+    <option value="RRB JE" />रेलवे भर्ती बोर्ड जूनियर इंजीनियर परीक्षा (RRB JE)
+    <option value="RPF SI" />रेलवे सुरक्षा बल सब-इंस्पेक्टर भर्ती परीक्षा (RPF SI)
+    <option value="RPF Constable" />रेलवे सुरक्षा बल कांस्टेबल परीक्षा (RPF Constable)
+</optgroup>
+
+<optgroup label="बैंकिंग और बीमा परीक्षाएँ (Banking & Insurance)">
+    <option value="SBI PO" />SBI PO परीक्षा
+    <option value="SBI Clerk" />SBI क्लर्क परीक्षा
+    <option value="IBPS PO" />IBPS PO परीक्षा
+    <option value="IBPS Clerk" />IBPS क्लर्क परीक्षा
+    <option value="IBPS SO" />बैंकिंग कार्मिक चयन संस्थान स्पेशलिस्ट ऑफिसर परीक्षा (IBPS SO)
+    <option value="RBI Grade B" />RBI ग्रेड B परीक्षा
+    <option value="RBI Assistant" />भारतीय रिजर्व बैंक असिस्टेंट परीक्षा (RBI Assistant)
+    <option value="NABARD" />राष्ट्रीय कृषि और ग्रामीण विकास बैंक परीक्षा (NABARD)
+    <option value="SEBI" />भारतीय प्रतिभूति और विनिमय बोर्ड परीक्षा (SEBI)
+    <option value="LIC AAO" />LIC AAO परीक्षा
+    <option value="NIACL AO" />न्यू इंडिया एश्योरेंस कंपनी लिमिटेड प्रशासनिक अधिकारी परीक्षा (NIACL AO)
+    <option value="UIIC AO" />यूनीअन इंडिया इंश्योरेंस कंपनी प्रशासनिक अधिकारी परीक्षा (UIIC AO)
+    <option value="GIC AO" />जनरल इंश्योरेंस कंपनी प्रशासनिक अधिकारी परीक्षा (GIC AO)
+    <option value="SBI SO" />SBI स्पेशलिस्ट ऑफिसर परीक्षा (SBI SO)
+</optgroup>
+
+<optgroup label="रक्षा और सशस्त्र बल भर्ती (Defense & Armed Forces Recruitment)">
+    <option value="Agniveer" />अग्निवीर भर्ती परीक्षा
+    <option value="Airforce X Y" />एयरफोर्स ग्रुप X & Y परीक्षा
+    <option value="AFCAT" />वायु सेना कॉमन एडमिशन टेस्ट (AFCAT)
+    <option value="INET" />भारतीय नौसेना प्रवेश परीक्षा (INET)
+    <option value="Indian Coast Guard Exam" />भारतीय तटरक्षक भर्ती परीक्षा (Indian Coast Guard Exam)
+    <option value="Territorial Army Officer Exam" />टेरिटोरियल आर्मी ऑफिसर परीक्षा (Territorial Army Officer Exam)
+    <option value="BSF Recruitment" />सीमा सुरक्षा बल भर्ती परीक्षा (BSF Recruitment)
+    <option value="CISF Recruitment" />केंद्रीय औद्योगिक सुरक्षा बल भर्ती परीक्षा (CISF Recruitment)
+    <option value="CRPF Recruitment" />केंद्रीय रिजर्व पुलिस बल भर्ती परीक्षा (CRPF Recruitment)
+    <option value="ITBP Recruitment" />भारत-तिब्बत सीमा पुलिस भर्ती परीक्षा (ITBP Recruitment)
+    <option value="SSB Recruitment" />सशस्त्र सीमा बल भर्ती परीक्षा (SSB Recruitment)
+    <option value="NDA Technical Entry" />NDA टेक्निकल एंट्री परीक्षा
+</optgroup>
+
+<optgroup label="अनुसंधान और तकनीकी संगठन भर्ती (Research & Technical Recruitment)">
+    <option value="ISRO Recruitment" />भारतीय अंतरिक्ष अनुसंधान संगठन भर्ती परीक्षा (ISRO Recruitment)
+    <option value="DRDO CEPTAM" />रक्षा अनुसंधान और विकास संगठन CEPTAM परीक्षा (DRDO CEPTAM)
+    <option value="BARC Exam" />भाभा परमाणु अनुसंधान केंद्र परीक्षा (BARC Exam)
+    <option value="IOCL Recruitment" />इंडियन ऑयल कॉरपोरेशन लिमिटेड भर्ती परीक्षा (IOCL Recruitment)
+    <option value="GAIL Recruitment" />गैस ऑथोरिटी ऑफ इंडिया लिमिटेड भर्ती परीक्षा (GAIL Recruitment)
+    <option value="ONGC Recruitment" />तेल और प्राकृतिक गैस निगम भर्ती परीक्षा (ONGC Recruitment)
+    <option value="BHEL Recruitment" />भारतीय भारी इलेक्ट्रिकल्स लिमिटेड भर्ती परीक्षा (BHEL Recruitment)
+</optgroup>
+
+<optgroup label="अन्य केंद्रीय भर्ती परीक्षाएँ (Other Central Recruitment Exams)">
+    <option value="FCI" />भारतीय खाद्य निगम (FCI) परीक्षा
+    <option value="EPFO SSA" />EPFO SSA परीक्षा
+    <option value="ESIC" />कर्मचारी राज्य बीमा निगम परीक्षा (ESIC)
+    <option value="IB ACIO" />इंटेलिजेंस ब्यूरो असिस्टेंट सेंट्रल इंटेलिजेंस ऑफिसर परीक्षा (IB ACIO)
+    <option value="NHAI Recruitment" />राष्ट्रीय राजमार्ग प्राधिकरण भर्ती परीक्षा (NHAI Recruitment)
+    <option value="DMRC Recruitment" />दिल्ली मेट्रो रेलवे कॉर्पोरेशन भर्ती परीक्षा (DMRC Recruitment)
+</optgroup>
+
+<optgroup label="राष्ट्रीय पात्रता परीक्षाएँ (National Eligibility Tests - NET/GATE)">
+    <option value="UGC NET" />विश्वविद्यालय अनुदान आयोग राष्ट्रीय पात्रता परीक्षा (UGC NET)
+    <option value="CSIR NET" />वैज्ञानिक और औद्योगिक अनुसंधान परिषद राष्ट्रीय पात्रता परीक्षा (CSIR NET)
+    <option value="GATE" />ग्रेजुएट एप्टीट्यूड टेस्ट इन इंजीनियरिंग (GATE)
+    <option value="JEST" />जॉइंट एंट्रेंस स्कॉलरशिप टेस्ट (JEST)
+</optgroup>
+
+<optgroup label="प्रमुख राष्ट्रीय प्रवेश परीक्षाएँ (Major National Entrance Exams)">
+    <option value="NEET" />राष्ट्रीय पात्रता सह प्रवेश परीक्षा (NEET)
+    <option value="JEE Main" />संयुक्त प्रवेश परीक्षा (JEE Main)
+    <option value="JEE Advanced" />संयुक्त प्रवेश परीक्षा (JEE Advanced)
+    <option value="AIIMS" />अखिल भारतीय आयुर्विज्ञान संस्थान प्रवेश परीक्षा (AIIMS)
+    <option value="JIPMER" />जवाहरलाल इंस्टीट्यूट ऑफ पोस्ट ग्रेजुएट मेडिकल एजुकेशन एंड रिसर्च परीक्षा (JIPMER)
+    <option value="NIFT" />राष्ट्रीय फैशन प्रौद्योगिकी संस्थान प्रवेश परीक्षा (NIFT)
+    <option value="NDA" />राष्ट्रीय रक्षा अकादमी (NDA)
+    <option value="CLAT" />कॉमन लॉ एडमिशन टेस्ट (CLAT)
+    <option value="CAT" />कॉमन एडमिशन टेस्ट (CAT - IIMs के लिए)
+    <option value="MAT" />मैनेजमेंट एप्टीट्यूड टेस्ट (MAT)
+    <option value="XAT" />एक्जीक्यूटिव एप्टीट्यूड टेस्ट (XAT)
+    <option value="SNAP" />स्नैप परीक्षा (SNAP)
+    <option value="NMAT" />NMIMS मैनेजमेंट एप्टीट्यूड टेस्ट (NMAT)
+    <option value="GMAT" />ग्रेजुएट मैनेजमेंट एडमिशन टेस्ट (GMAT)
+</optgroup>
+
+<optgroup label="केंद्रीय विश्वविद्यालय प्रवेश परीक्षाएँ (Central University Entrance Exams)">
+    <option value="CTET" />केंद्रीय शिक्षक पात्रता परीक्षा (CTET)
+    <option value="CUCET" />केंद्रीय विश्वविद्यालय सामान्य प्रवेश परीक्षा (CUCET)
+    <option value="DUET" />दिल्ली विश्वविद्यालय प्रवेश परीक्षा (DUET)
+    <option value="JNU Entrance" />जवाहरलाल नेहरू विश्वविद्यालय प्रवेश परीक्षा (JNU Entrance)
+    <option value="IGNOU B.Ed Entrance" />इंदिरा गांधी राष्ट्रीय मुक्त विश्वविद्यालय बी.एड प्रवेश परीक्षा (IGNOU B.Ed Entrance)
+    <option value="DU B.Ed Entrance" />दिल्ली विश्वविद्यालय बी.एड प्रवेश परीक्षा (DU B.Ed Entrance)
+    <option value="JMI B.Ed Entrance" />जामिया मिलिया इस्लामिया बी.एड प्रवेश परीक्षा (JMI B.Ed Entrance)
+    <option value="AMU B.Ed Entrance" />अलीगढ़ मुस्लिम विश्वविद्यालय बी.एड प्रवेश परीक्षा (AMU B.Ed Entrance)
+</optgroup>
+
+<optgroup label="अन्य राष्ट्रीय परीक्षाएँ (Other National Exams)">
+    <option value="SLET" />स्टेट लेवल एलिजिबिलिटी टेस्ट (SLET - कुछ राज्यों में)
+    <option value="NCHMCT JEE" />राष्ट्रीय आतिथ्य और प्रबंधन संस्थान प्रवेश परीक्षा (NCHMCT JEE)
+    <option value="ICAR AIEEA" />कृषि शिक्षा प्रवेश परीक्षा (ICAR AIEEA)
+    <option value="CLAT PG" />कॉमन लॉ एडमिशन टेस्ट पोस्ट ग्रेजुएट (CLAT PG)
+    <option value="NTA NET" />राष्ट्रीय परीक्षण एजेंसी द्वारा NET परीक्षा (NTA NET)
+</optgroup>
+
+<optgroup label="मध्य प्रदेश लोक सेवा आयोग (MPPSC)">
+    <option value="MPPSC State Service" />राज्य सेवा परीक्षा (State Service Exam)
+    <option value="MPPSC State Forest Service" />राज्य वन सेवा परीक्षा (State Forest Service Exam)
+    <option value="MPPSC State Engineering Service" />राज्य इंजीनियरिंग सेवा परीक्षा (State Engineering Service Exam)
+    <option value="MPPSC Assistant Professor" />सहायक प्राध्यापक भर्ती परीक्षा (Assistant Professor Exam)
+    <option value="MPPSC Scientific Officer" />वैज्ञानिक अधिकारी परीक्षा (Scientific Officer Exam)
+    <option value="MPPSC Assistant Geologist" />सहायक भूवैज्ञानिक परीक्षा (Assistant Geologist Exam)
+    <option value="MPPSC Assistant Horticulture Officer" />सहायक उद्यान अधिकारी परीक्षा (Assistant Horticulture Officer Exam)
+    <option value="MPPSC Assistant Fisheries Development Officer" />सहायक मत्स्य विकास अधिकारी परीक्षा (Assistant Fisheries Development Officer Exam)
+    <option value="MPPSC Assistant Officer Social Justice" />सहायक अधिकारी (सामाजिक न्याय विभाग) परीक्षा (Assistant Officer - Social Justice Department Exam)
+    <option value="MPPSC Mining Inspector" />खनन निरीक्षक परीक्षा (Mining Inspector Exam)
+    <option value="MPPSC Culture Department" />संस्कृति विभाग परीक्षा (Culture Department Exam)
+</optgroup>
+
+<optgroup label="मध्य प्रदेश कर्मचारी चयन मंडल (MPESB / पूर्व में MPPEB / व्यापम)">
+    <option value="MP Vyapam Group 1" />ग्रुप 1 परीक्षा (वरिष्ठ अधिकारी)
+    <option value="MP Vyapam Group 2 Sub Group 1" />ग्रुप 2 सब ग्रुप 1 परीक्षा (राजस्व निरीक्षक आदि)
+    <option value="MP Vyapam Group 2 Sub Group 2" />ग्रुप 2 सब ग्रुप 2 परीक्षा (लेखा परीक्षक आदि)
+    <option value="MP Vyapam Group 2 Sub Group 3" />ग्रुप 2 सब ग्रुप 3 परीक्षा (कृषि विस्तार अधिकारी आदि)
+    <option value="MP Vyapam Group 2 Sub Group 4" />ग्रुप 2 सब ग्रुप 4 परीक्षा (सहायक संपरीक्षक आदि)
+    <option value="MP Vyapam Group 3" />ग्रुप 3 परीक्षा (सब इंजीनियर, ड्राफ्ट्समैन आदि)
+    <option value="MP Vyapam Group 4" />ग्रुप 4 परीक्षा (सहायक ग्रेड 3, डाटा एंट्री ऑपरेटर आदि)
+    <option value="MP Vyapam Group 5" />ग्रुप 5 परीक्षा (स्वास्थ्य विभाग भर्ती)
+    <option value="MP Vyapam Group 1 Sub Groups" />ग्रुप 1 सब ग्रुप 1 से 30 परीक्षाएं
+    <option value="MP Police SI" />पुलिस सब-इंस्पेक्टर भर्ती परीक्षा (MP Police SI)
+    <option value="MP Police Constable" />पुलिस कांस्टेबल भर्ती परीक्षा (MP Police Constable)
+    <option value="MP Patwari" />पटवारी भर्ती परीक्षा (MP Patwari)
+    <option value="MP Gram Sachiv" />ग्राम सचिव भर्ती परीक्षा (MP Gram Sachiv)
+    <option value="MP Teacher Recruitment" />शिक्षक भर्ती परीक्षा (प्राथमिक से उच्च माध्यमिक) (MP Teacher Recruitment)
+    <option value="MP Forest Guard" />वन रक्षक भर्ती परीक्षा (MP Forest Guard)
+    <option value="MP Jail Prahari" />जेल प्रहरी भर्ती परीक्षा (MP Jail Prahari)
+    <option value="MP Labour Inspector" />श्रम निरीक्षक भर्ती परीक्षा (MP Labour Inspector)
+    <option value="MP Sub Engineer" />सब इंजीनियर भर्ती परीक्षा (MP Sub Engineer)
+</optgroup>
+
+<optgroup label="मध्य प्रदेश शिक्षक पात्रता परीक्षाएँ (MP TET)">
+    <option value="MP HSTET" />उच्च माध्यमिक शिक्षक पात्रता परीक्षा (MP HSTET)
+    <option value="MP MSTET" />माध्यमिक शिक्षक पात्रता परीक्षा (MP MSTET)
+    <option value="MP PSTET" />प्राथमिक शिक्षक पात्रता परीक्षा (MP PSTET)
+</optgroup>
+
+<optgroup label="मध्य प्रदेश राज्य पात्रता परीक्षा (MP SET)">
+    <option value="MP SET" />राज्य पात्रता परीक्षा (MP SET)
+</optgroup>
+
+<optgroup label="मध्य प्रदेश न्यायिक सेवा परीक्षा (MP Judiciary)">
+    <option value="MP Judicial Service Exam" />न्यायिक सेवा परीक्षा (MP Judicial Service Exam)
+</optgroup>
+
+<optgroup label="मध्य प्रदेश प्रवेश परीक्षाएँ (MP Entrance Exams)">
+    <option value="MP B.Ed Entrance" />बी.एड प्रवेश परीक्षा (MP B.Ed Entrance)
+    <option value="MP Pre-Agriculture Test" />पूर्व कृषि परीक्षा (MP PAT)
+    <option value="MP Pre-Polytechnic Test" />पूर्व पॉलिटेक्निक परीक्षा (MP PPT)
+    <option value="MP Pre-Veterinary and Fisheries Test" />पूर्व पशु चिकित्सा और मत्स्य परीक्षा (MP PV&FT)
+    <option value="MP Animal Husbandry and Dairy Technology Diploma Entrance Test" />पशुपालन और डेयरी प्रौद्योगिकी डिप्लोमा प्रवेश परीक्षा (MP ADDET)
+    <option value="MP Pre-Nursing Selection Test" />पूर्व नर्सिंग चयन परीक्षा (MP PNST)
+    <option value="MP General Nursing Training Selection Test" />सामान्य नर्सिंग प्रशिक्षण चयन परीक्षा (MP GNTST)
+</optgroup>
+<optgroup label="दिल्ली प्रशासन">
+    <option value="Delhi Police" />दिल्ली पुलिस भर्ती परीक्षा
+    <option value="Delhi Fire Service" />दिल्ली फायर सर्विस भर्ती परीक्षा
+    <option value="Delhi MCD" />दिल्ली नगर निगम भर्ती परीक्षा
+    <option value="Delhi Forest Guard" />दिल्ली वन रक्षक भर्ती परीक्षा
+    <option value="Delhi Judiciary" />दिल्ली न्यायिक सेवा परीक्षा (DJS)
+</optgroup>
+
+<optgroup label="जम्मू और कश्मीर प्रशासन">
+    <option value="JKPSC" />जम्मू और कश्मीर लोक सेवा आयोग (JKPSC) परीक्षा
+    <option value="JK Police" />जम्मू और कश्मीर पुलिस भर्ती परीक्षा
+    <option value="JK Forest Guard" />जम्मू और कश्मीर वन रक्षक भर्ती परीक्षा
+    <option value="JK Judiciary" />जम्मू और कश्मीर न्यायिक सेवा परीक्षा (JKJS)
+</optgroup>
+
+<optgroup label="लद्दाख प्रशासन">
+    <option value="Ladakh Police" />लद्दाख पुलिस भर्ती परीक्षा
+    <option value="Ladakh Forest Guard" />लद्दाख वन रक्षक भर्ती परीक्षा
+</optgroup>
+
+<optgroup label="चंडीगढ़ प्रशासन">
+    <option value="Chandigarh Police" />चंडीगढ़ पुलिस भर्ती परीक्षा
+    <option value="Chandigarh Fire Service" />चंडीगढ़ फायर सर्विस भर्ती परीक्षा
+    <option value="Chandigarh Clerk" />चंडीगढ़ क्लर्क भर्ती परीक्षा
+    <option value="Chandigarh Multi Tasking Staff" />चंडीगढ़ मल्टी टास्किंग स्टाफ परीक्षा
+    <option value="Chandigarh Judiciary" />चंडीगढ़ न्यायिक सेवा परीक्षा (Chandigarh Judicial Services)
+</optgroup>
+
+<optgroup label="पुडुचेरी प्रशासन">
+    <option value="Puducherry Police" />पुडुचेरी पुलिस भर्ती परीक्षा
+    <option value="Puducherry Clerk" />पुडुचेरी क्लर्क भर्ती परीक्षा
+    <option value="Puducherry Multi Tasking Staff" />पुडुचेरी मल्टी टास्किंग स्टाफ परीक्षा
+</optgroup>
+
+<optgroup label="दादरा और नगर हवेली और दमन और दीव प्रशासन">
+    <option value="DNH Police" />दादरा और नगर हवेली पुलिस भर्ती परीक्षा
+    <option value="DNH Forest Guard" />दादरा और नगर हवेली वन रक्षक भर्ती परीक्षा
+    <option value="DNH Clerk" />दादरा और नगर हवेली क्लर्क भर्ती परीक्षा
+</optgroup>
+
+<optgroup label="अंडमान और निकोबार द्वीप समूह">
+    <option value="Andaman Police" />अंडमान और निकोबार पुलिस भर्ती परीक्षा
+    <option value="Andaman Forest Guard" />अंडमान वन रक्षक भर्ती परीक्षा
+    <option value="Andaman Clerk" />अंडमान क्लर्क भर्ती परीक्षा
+    <option value="Andaman Multi Tasking Staff" />अंडमान मल्टी टास्किंग स्टाफ परीक्षा
+</optgroup>
+
+<optgroup label="लक्षद्वीप प्रशासन">
+    <option value="Lakshadweep Police" />लक्षद्वीप पुलिस भर्ती परीक्षा
+    <option value="Lakshadweep Clerk" />लक्षद्वीप क्लर्क भर्ती परीक्षा
+    <option value="Lakshadweep Multi Tasking Staff" />लक्षद्वीप मल्टी टास्किंग स्टाफ परीक्षा
+</optgroup>
+<optgroup label="उत्तर प्रदेश लोक सेवा आयोग (UPPSC)">
+  <option value="UPPSC PCS" />UPPSC सम्मिलित राज्य/प्रवर अधीनस्थ सेवा परीक्षा (PCS)
+  <option value="UPPSC ACF RFO" />UPPSC सहायक वन संरक्षक / क्षेत्रीय वन अधिकारी परीक्षा (ACF/RFO)
+  <option value="UPPSC Staff Nurse" />UPPSC स्टाफ नर्स / पुरुष स्टाफ नर्स परीक्षा
+  <option value="UPPSC Assistant Professor" />UPPSC सहायक आचार्य (Assistant Professor)
+  <option value="UPPSC RO ARO" />UPPSC समीक्षा अधिकारी / सहायक समीक्षा अधिकारी (RO/ARO)
+</optgroup>
+
+<optgroup label="उत्तर प्रदेश अधीनस्थ सेवा चयन आयोग (UPSSSC)">
+  <option value="UPSSSC PET" />UPSSSC प्रारंभिक अहर्ता परीक्षा (PET)
+  <option value="UPSSSC Lekhpal" />UPSSSC लेखपाल भर्ती परीक्षा
+  <option value="UPSSSC VDO" />UPSSSC ग्राम विकास अधिकारी (VDO) परीक्षा
+  <option value="UPSSSC Forest Guard" />UPSSSC वन रक्षक (Forest Guard) परीक्षा
+  <option value="UPSSSC Junior Assistant" />UPSSSC कनिष्ठ सहायक भर्ती
+</optgroup>
+
+<optgroup label="उत्तर प्रदेश पुलिस भर्ती एवं प्रोन्नति बोर्ड (UPPRPB)">
+  <option value="UP Police Constable" />UP पुलिस कांस्टेबल भर्ती
+  <option value="UP Police SI" />UP पुलिस उप निरीक्षक (SI) भर्ती
+  <option value="UP Police ASI" />UP पुलिस सहायक उप निरीक्षक (ASI)
+  <option value="UP Jail Warder" />UP जेल वार्डर भर्ती
+</optgroup>
+
+<optgroup label="उत्तर प्रदेश शिक्षा विभाग">
+  <option value="UPTET" />उत्तर प्रदेश शिक्षक पात्रता परीक्षा (UPTET)
+  <option value="Super TET" />सुपर टीईटी (Super TET)
+  <option value="UP LT Grade" />UP एलटी ग्रेड शिक्षक भर्ती
+  <option value="UP KVS/NVS" />KVS / NVS शिक्षक भर्ती (उत्तर प्रदेश से सम्बंधित)
+</optgroup>
+
+<optgroup label="उत्तर प्रदेश तकनीकी विभाग एवं अन्य">
+  <option value="UPPCL JE" />UPPCL जूनियर इंजीनियर (JE)
+  <option value="UPPCL AE" />UPPCL सहायक अभियंता (AE)
+  <option value="UPPCL Technician" />UPPCL तकनीशियन भर्ती
+  <option value="UP Metro" />उत्तर प्रदेश मेट्रो रेल कॉर्पोरेशन भर्ती
+</optgroup>
+
+    <option value="UPPSC PCS" />उत्तर प्रदेश लोक सेवा आयोग - PCS परीक्षा
+    <option value="UPPSC ACF/RFO" />UPPSC सहायक वन संरक्षक / क्षेत्रीय वन अधिकारी परीक्षा
+    <option value="UPPSC RO/ARO" />UPPSC समीक्षा अधिकारी / सहायक समीक्षा अधिकारी परीक्षा
+    <option value="UPPSC AE" />UPPSC सहायक अभियंता परीक्षा
+    <option value="UPPSC Staff Nurse" />UPPSC स्टाफ नर्स परीक्षा
+    <option value="UPPSC Lecturer" />UPPSC व्याख्याता परीक्षा
+    <option value="UPPSC Medical Officer" />UPPSC चिकित्सा अधिकारी परीक्षा
+    <option value="UPPSC Assistant Professor" />UPPSC सहायक प्रोफेसर परीक्षा
+    <option value="UPPSC Assistant Registrar" />UPPSC सहायक रजिस्ट्रार परीक्षा
+    <option value="UPPSC Assistant Prosecution Officer" />UPPSC सहायक अभियोजन अधिकारी परीक्षा
+    <option value="UPPSC Computer Assistant" />UPPSC कंप्यूटर सहायक परीक्षा
+    <option value="UPPSC Programmer" />UPPSC प्रोग्रामर परीक्षा
+    <option value="UPPSC Assistant Statistical Officer" />UPPSC सहायक सांख्यिकी अधिकारी परीक्षा
+    <option value="UPPSC Assistant Chemist" />UPPSC सहायक रसायनज्ञ परीक्षा
+    <option value="UPPSC Assistant Engineer (Civil/Mechanical/Electrical)" />UPPSC सहायक अभियंता (सिविल/मैकेनिकल/इलेक्ट्रिकल) परीक्षा
+    <option value="UPPSC Assistant Architect" />UPPSC सहायक वास्तुकार परीक्षा
+    <option value="UPPSC Assistant Geologist" />UPPSC सहायक भूवैज्ञानिक परीक्षा
+    <option value="UPPSC Assistant Labour Commissioner" />UPPSC सहायक श्रम आयुक्त परीक्षा
+    <option value="UPPSC Assistant Conservator of Forest" />UPPSC सहायक वन संरक्षक परीक्षा
+    <option value="UPPSC Assistant Director" />UPPSC सहायक निदेशक परीक्षा
+    <option value="UPPSC Assistant Research Officer" />UPPSC सहायक अनुसंधान अधिकारी परीक्षा
+    <option value="UPPSC Assistant Statistical Officer" />UPPSC सहायक सांख्यिकी अधिकारी परीक्षा
+    <option value="UPPSC Assistant Registrar" />UPPSC सहायक रजिस्ट्रार परीक्षा
+    <option value="UPPSC Assistant Prosecution Officer" />UPPSC सहायक अभियोजन अधिकारी परीक्षा
+    <option value="UPPSC Assistant Engineer" />UPPSC सहायक अभियंता परीक्षा
+    <option value="UPPSC Assistant Professor" />UPPSC सहायक प्रोफेसर परीक्षा
+    <option value="UPPSC Assistant Director" />UPPSC सहायक निदेशक परीक्षा
+    <option value="UPPSC Assistant Labour Commissioner" />UPPSC सहायक श्रम आयुक्त परीक्षा
+    <option value="UPPSC Assistant Statistical Officer" />UPPSC सहायक सांख्यिकी अधिकारी परीक्षा
+    <option value="UPPSC Assistant Chemist" />UPPSC सहायक रसायनज्ञ परीक्षा
+    <option value="UPPSC Assistant Geologist" />UPPSC सहायक भूवैज्ञानिक परीक्षा
+    <option value="UPPSC Assistant Architect" />UPPSC सहायक वास्तुकार परीक्षा
+    <option value="UPPSC Assistant Research Officer" />UPPSC सहायक अनुसंधान अधिकारी परीक्षा
+    <option value="UPPSC Assistant Registrar" />UPPSC सहायक रजिस्ट्रार परीक्षा
+    <option value="UPPSC Assistant Prosecution Officer" />UPPSC सहायक अभियोजन अधिकारी परीक्षा
+    <option value="UPPSC Assistant Engineer" />UPPSC सहायक अभियंता परीक्षा
+    <option value="UPPSC Assistant Professor" />UPPSC सहायक प्रोफेसर परीक्षा
+    <option value="UPPSC Assistant Director" />UPPSC सहायक निदेशक परीक्षा
+    <option value="UPPSC Assistant Labour Commissioner" />UPPSC सहायक श्रम आयुक्त परीक्षा
+    <option value="UPPSC Assistant Statistical Officer" />UPPSC सहायक सांख्यिकी अधिकारी परीक्षा
+    <option value="UPPSC Assistant Chemist" />UPPSC सहायक रसायनज्ञ परीक्षा
+    <option value="UPPSC Assistant Geologist" />UPPSC सहायक भूवैज्ञानिक परीक्षा
+    <option value="UPPSC Assistant Architect" />UPPSC सहायक वास्तुकार परीक्षा
+    <option value="UPPSC Assistant Research Officer" />UPPSC सहायक अनुसंधान अधिकारी परीक्षा
+    <option value="UPPSC Assistant Registrar" />UPPSC सहायक रजिस्ट्रार परीक्षा
+    <option value="UPPSC Assistant Prosecution Officer" />UPPSC सहायक अभियोजन अधिकारी परीक्षा
+    <option value="UPPSC Assistant Engineer" />UPPSC सहायक अभियंता परीक्षा
+    <option value="UPPSC Assistant Professor" />UPPSC सहायक प्रोफेसर परीक्षा
+    <option value="UPPSC Assistant Director" />UPPSC सहायक निदेशक परीक्षा
+    <option value="UPPSC Assistant Labour Commissioner" />UPPSC सहायक श्रम आयुक्त परीक्षा
+    <option value="UPPSC Assistant Statistical Officer" />UPPSC सहायक सांख्यिकी अधिकारी परीक्षा
+    <option value="UPPSC Assistant Chemist" />UPPSC सहायक रसायनज्ञ परीक्षा
+    <option value="UPPSC Assistant Geologist" />UPPSC सहायक भूवैज्ञानिक परीक्षा
+    <option value="UPPSC Assistant Architect" />UPPSC सहायक वास्तुकार परीक्षा
+    <option value="UPPSC Assistant Research Officer" />UPPSC सहायक अनुसंधान अधिकारी परीक्षा
+    <option value="UPPSC Assistant Registrar" />UPPSC सहायक रजिस्ट्रार परीक्षा
+    <option value="UPPSC Assistant Prosecution Officer" />UPPSC सहायक अभियोजन अधिकारी परीक्षा
+    <option value="UPPSC Assistant Engineer" />UPPSC सहायक अभियंता परीक्षा
+    <option value="UPPSC Assistant Professor" />UPPSC सहायक प्रोफेसर परीक्षा
+    <option value="UPPSC Assistant Director" />UPPSC सहायक निदेशक परीक्षा
+    <option value="UPPSC Assistant Labour Commissioner" />UPPSC सहायक श्रम आयुक्त परीक्षा
+    <option value="UPPSC Assistant Statistical Officer" />UPPSC सहायक सांख्यिकी अधिकारी परीक्षा
+    <option value="UPPSC Assistant Chemist" />UPPSC सहायक रसायनज्ञ परीक्षा
+    <option value="UPPSC Assistant Geologist" />UPPSC सहायक भूवैज्ञानिक परीक्षा
+    <option value="UPPSC Assistant Architect" />UPPSC सहायक वास्तुकार परीक्षा
+    <option value="UPPSC Assistant Research Officer" />UPPSC सहायक अनुसंधान अधिकारी परीक्षा
+    <option value="UPPSC Assistant Registrar" />UPPSC सहायक रजिस्ट्रार परीक्षा
+    <option value="UPPSC Assistant Prosecution Officer" />UPPSC सहायक अभियोजन अधिकारी परीक्षा
+    <option value="UPPSC Assistant Engineer" />UPPSC सहायक अभियंता परीक्षा
+    <option value="UPPSC Assistant Professor" />UPPSC सहायक प्रोफेसर परीक्षा
+    <option value="UPPSC Assistant Director" />UPPSC सहायक निदेशक परीक्षा
+    <option value="UPPSC Assistant Labour Commissioner" />UPPSC सहायक श्रम आयुक्त परीक्षा
+    <option value="UPPSC Assistant Statistical Officer" />UPPSC सहायक सांख्यिकी अधिकारी परीक्षा
+    <option value="UPPSC Assistant Chemist" />UPPSC सहायक रसायनज्ञ परीक्षा
+    <option value="UPPSC Assistant Geologist" />UPPSC सहायक भूवैज्ञानिक परीक्षा
+    <option value="UPPSC Assistant Architect" />UPPSC सहायक वास्तुकार परीक्षा
+    <option value="UPPSC Assistant Research Officer" />UPPSC सहायक अनुसंधान अधिकारी परीक्षा
+    <option value="UPPSC Assistant Registrar" />UPPSC सहायक रजिस्ट्रार परीक्षा
+    <option value="UPPSC Assistant Prosecution Officer" />UPPSC सहायक अभियोजन अधिकारी परीक्षा
+    <option value="UPPSC Assistant Engineer" />UPPSC सहायक अभियंता परीक्षा
+    <option value="UPPSC Assistant Professor" />UPPSC सहायक प्रोफेसर परीक्षा
+    <option value="UPPSC Assistant Director" />UPPSC सहायक निदेशक परीक्षा
+    <option value="UPPSC Assistant Labour Commissioner" />UPPSC सहायक श्रम आयुक्त परीक्षा
+    <option value="UPPSC Assistant Statistical Officer" />UPPSC सहायक सांख्यिकी अधिकारी परीक्षा
+    <option value="UPPSC Assistant Chemist" />UPPSC सहायक रसायनज्ञ परीक्षा
+    <option value="UPPSC Assistant Geologist" />UPPSC सहायक भूवैज्ञानिक परीक्षा
+    <option value="UPPSC Assistant Architect" />UPPSC सहायक वास्तुकार परीक्षा
+    <option value="UPPSC Assistant Research Officer" />UPPSC सहायक अनुसंधान अधिकारी परीक्षा
+    <option value="UPPSC Assistant Registrar" />UPPSC सहायक रजिस्ट्रार परीक्षा
+    <option value="UPPSC Assistant Prosecution Officer" />UPPSC सहायक अभियोजन अधिकारी परीक्षा
+    <option value="UPPSC Assistant Engineer" />UPPSC सहायक अभियंता परीक्षा
+    <option value="UPPSC Assistant Professor" />UPPSC सहायक प्रोफेसर परीक्षा
+    <option value="UPPSC Assistant Director" />UPPSC सहायक निदेशक परीक्षा
+    <option value="UPPSC Assistant Labour Commissioner" />UPPSC सहायक श्रम आयुक्त परीक्षा
+    <option value="UPPSC Assistant Statistical Officer" />UPPSC सहायक सांख्यिकी अधिकारी परीक्षा
+    <option value="UPPSC Assistant Chemist" />UPPSC सहायक रसायनज्ञ परीक्षा
+    <option value="UPPSC Assistant Geologist" />UPPSC सहायक भूवैज्ञानिक परीक्षा
+    <optgroup label="आंध्र प्रदेश">
+    <option value="APPSC Group 1" />आंध्र प्रदेश लोक सेवा आयोग - ग्रुप 1 परीक्षा
+    <option value="APPSC Group 2" />आंध्र प्रदेश लोक सेवा आयोग - ग्रुप 2 परीक्षा
+    <option value="APPSC Group 3" />आंध्र प्रदेश लोक सेवा आयोग - ग्रुप 3 परीक्षा
+    <option value="AP Police SI" />आंध्र प्रदेश पुलिस सब-इंस्पेक्टर भर्ती
+    <option value="AP TET" />आंध्र प्रदेश शिक्षक पात्रता परीक्षा
+    <option value="AP VRO" />आंध्र प्रदेश ग्राम सचिव (VRO) भर्ती परीक्षा
+</optgroup>
+
+<optgroup label="अरुणाचल प्रदेश">
+    <option value="APPSC Arunachal" />अरुणाचल प्रदेश लोक सेवा आयोग परीक्षा
+    <option value="Arunachal Police" />अरुणाचल प्रदेश पुलिस भर्ती
+    <option value="Arunachal TET" />अरुणाचल प्रदेश शिक्षक पात्रता परीक्षा
+    <option value="Arunachal Forest Guard" />अरुणाचल प्रदेश वन रक्षक भर्ती
+    <option value="Arunachal Anganwadi Worker" />अरुणाचल प्रदेश आंगनवाड़ी कार्यकर्ता भर्ती
+    <option value="Arunachal Constable" />अरुणाचल प्रदेश कांस्टेबल भर्ती
+</optgroup>
+
+<optgroup label="असम">
+    <option value="Assam CEE" />असम कर्मचारी चयन आयोग (Assam CEE) भर्ती परीक्षाएँ
+    <option value="Assam Police" />असम पुलिस भर्ती
+    <option value="Assam TET" />असम शिक्षक पात्रता परीक्षा
+    <option value="Assam Forest Guard" />असम वन रक्षक भर्ती
+    <option value="Assam PSC" />असम लोक सेवा आयोग परीक्षा
+    <option value="Assam Jail Warder" />असम जेल वार्डर भर्ती
+</optgroup>
+
+<optgroup label="बिहार">
+    <option value="BPSC" />बिहार लोक सेवा आयोग (BPSC) परीक्षा
+    <option value="Bihar Police SI" />बिहार पुलिस सब-इंस्पेक्टर भर्ती
+    <option value="Bihar TET" />बिहार शिक्षक पात्रता परीक्षा
+    <option value="Bihar Jail Warder" />बिहार जेल वार्डर भर्ती
+    <option value="Bihar Forest Guard" />बिहार वन रक्षक भर्ती
+    <option value="Bihar Mukhya Sevika" />बिहार मुखिया सेविका भर्ती
+</optgroup>
+
+<optgroup label="छत्तीसगढ़">
+    <option value="CGPSC" />छत्तीसगढ़ लोक सेवा आयोग (CGPSC) - मुख्य सेवा परीक्षा
+    <option value="CG Vyapam Group 1" />छत्तीसगढ़ व्यापम ग्रुप 1 भर्ती परीक्षा
+    <option value="CG Vyapam Group 2" />छत्तीसगढ़ व्यापम ग्रुप 2 भर्ती परीक्षा
+    <option value="CG Vyapam Group 3" />छत्तीसगढ़ व्यापम ग्रुप 3 भर्ती परीक्षा
+    <option value="CG Police SI" />छत्तीसगढ़ पुलिस सब-इंस्पेक्टर भर्ती
+    <option value="CG Forest Guard" />छत्तीसगढ़ वन रक्षक भर्ती
+    <option value="CG TET" />छत्तीसगढ़ शिक्षक पात्रता परीक्षा
+    <option value="CG Jail Prahari" />छत्तीसगढ़ जेल प्रहरी भर्ती परीक्षा
+    <option value="CG Staff Nurse" />छत्तीसगढ़ स्टाफ नर्स भर्ती
+    <option value="CG Home Guard" />छत्तीसगढ़ होम गार्ड भर्ती
+</optgroup>
+
+<optgroup label="गोवा">
+    <option value="Goa PSC" />गोवा लोक सेवा आयोग भर्ती परीक्षा
+    <option value="Goa Police" />गोवा पुलिस भर्ती परीक्षा
+    <option value="Goa TET" />गोवा शिक्षक पात्रता परीक्षा
+    <option value="Goa Forest Guard" />गोवा वन रक्षक भर्ती
+    <option value="Goa Excise Constable" />गोवा एक्साइज कांस्टेबल भर्ती
+    <option value="Goa Fireman" />गोवा फायरमैन भर्ती
+</optgroup>
+
+<optgroup label="गुजरात">
+    <option value="GPSC" />गुजरात लोक सेवा आयोग (GPSC) परीक्षा
+    <option value="Gujarat Police" />गुजरात पुलिस भर्ती परीक्षा
+    <option value="Gujarat TET" />गुजरात शिक्षक पात्रता परीक्षा
+    <option value="Gujarat Forest Guard" />गुजरात वन रक्षक भर्ती
+    <option value="Gujarat Jail Prahari" />गुजरात जेल प्रहरी भर्ती
+    <option value="Gujarat Class 3 &amp; 4" />गुजरात क्लास 3 और 4 कर्मचारी भर्ती
+</optgroup>
+
+<optgroup label="हरियाणा">
+    <option value="HPSC" />हरियाणा लोक सेवा आयोग (HPSC) परीक्षा
+    <option value="Haryana Police" />हरियाणा पुलिस भर्ती परीक्षा
+    <option value="Haryana TET" />हरियाणा शिक्षक पात्रता परीक्षा
+    <option value="Haryana Forest Guard" />हरियाणा वन रक्षक भर्ती
+    <option value="Haryana Jail Warder" />हरियाणा जेल वार्डर भर्ती
+    <option value="Haryana Patwari" />हरियाणा पटवारी भर्ती
+</optgroup>
+
+<optgroup label="हिमाचल प्रदेश">
+    <option value="HPPSC" />हिमाचल प्रदेश लोक सेवा आयोग (HPPSC) परीक्षा
+    <option value="Himachal Police" />हिमाचल प्रदेश पुलिस भर्ती परीक्षा
+    <option value="HP TET" />हिमाचल प्रदेश शिक्षक पात्रता परीक्षा
+    <option value="HP Forest Guard" />हिमाचल प्रदेश वन रक्षक भर्ती
+    <option value="HP Jail Warder" />हिमाचल प्रदेश जेल वार्डर भर्ती
+    <option value="HP Patwari" />हिमाचल प्रदेश पटवारी भर्ती
+</optgroup>
+
+<optgroup label="झारखंड">
+    <option value="JPSC" />झारखंड लोक सेवा आयोग (JPSC) परीक्षा
+    <option value="Jharkhand Police" />झारखंड पुलिस भर्ती परीक्षा
+    <option value="Jharkhand TET" />झारखंड शिक्षक पात्रता परीक्षा
+    <option value="Jharkhand Forest Guard" />झारखंड वन रक्षक भर्ती
+    <option value="Jharkhand Jail Warder" />झारखंड जेल वार्डर भर्ती
+    <option value="Jharkhand Gram Sevak" />झारखंड ग्राम सेवक भर्ती
+</optgroup>
+
+<optgroup label="कर्नाटक">
+    <option value="KPSC" />कर्नाटक लोक सेवा आयोग (KPSC) परीक्षा
+    <option value="Karnataka Police" />कर्नाटक पुलिस भर्ती परीक्षा
+    <option value="Karnataka TET" />कर्नाटक शिक्षक पात्रता परीक्षा
+    <option value="Karnataka Forest Guard" />कर्नाटक वन रक्षक भर्ती
+    <option value="Karnataka Jail Warder" />कर्नाटक जेल वार्डर भर्ती
+    <option value="Karnataka Revenue Department" />कर्नाटक राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="केरल">
+    <option value="Kerala PSC" />केरल लोक सेवा आयोग (Kerala PSC) परीक्षा
+    <option value="Kerala Police" />केरल पुलिस भर्ती परीक्षा
+    <option value="Kerala TET" />केरल शिक्षक पात्रता परीक्षा
+    <option value="Kerala Forest Guard" />केरल वन रक्षक भर्ती
+    <option value="Kerala Jail Warder" />केरल जेल वार्डर भर्ती
+    <option value="Kerala Village Assistant" />केरल ग्राम सहायको भर्ती
+</optgroup>
+
+<optgroup label="महाराष्ट्र">
+    <option value="MPSC" />महाराष्ट्र लोक सेवा आयोग (MPSC) परीक्षा
+    <option value="Maharashtra Police" />महाराष्ट्र पुलिस भर्ती परीक्षा
+    <option value="Maharashtra TET" />महाराष्ट्र शिक्षक पात्रता परीक्षा
+    <option value="Maharashtra Forest Guard" />महाराष्ट्र वन रक्षक भर्ती
+    <option value="Maharashtra Jail Prahari" />महाराष्ट्र जेल प्रहरी भर्ती
+    <option value="Maharashtra Revenue Department" />महाराष्ट्र राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="मणिपुर">
+    <option value="MPSC Manipur" />मणिपुर लोक सेवा आयोग परीक्षा
+    <option value="Manipur Police" />मणिपुर पुलिस भर्ती
+    <option value="Manipur TET" />मणिपुर शिक्षक पात्रता परीक्षा
+    <option value="Manipur Forest Guard" />मणिपुर वन रक्षक भर्ती
+    <option value="Manipur Jail Prahari" />मणिपुर जेल प्रहरी भर्ती
+    <option value="Manipur Agriculture Dept" />मणिपुर कृषि विभाग भर्ती
+</optgroup>
+
+<optgroup label="मेघालय">
+    <option value="Meghalaya PSC" />मेघालय लोक सेवा आयोग परीक्षा
+    <option value="Meghalaya Police" />मेघालय पुलिस भर्ती
+    <option value="Meghalaya TET" />मेघालय शिक्षक पात्रता परीक्षा
+    <option value="Meghalaya Forest Guard" />मेघालय वन रक्षक भर्ती
+    <option value="Meghalaya Jail Warder" />मेघालय जेल वार्डर भर्ती
+    <option value="Meghalaya Revenue Dept" />मेघालय राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="मिज़ोरम">
+    <option value="Mizoram PSC" />मिज़ोरम लोक सेवा आयोग परीक्षा
+    <option value="Mizoram Police" />मिज़ोरम पुलिस भर्ती
+    <option value="Mizoram TET" />मिज़ोरम शिक्षक पात्रता परीक्षा
+    <option value="Mizoram Forest Guard" />मिज़ोरम वन रक्षक भर्ती
+    <option value="Mizoram Jail Warder" />मिज़ोरम जेल वार्डर भर्ती
+    <option value="Mizoram Revenue Dept" />मिज़ोरम राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="नागालैंड">
+    <option value="Nagaland PSC" />नागालैंड लोक सेवा आयोग परीक्षा
+    <option value="Nagaland Police" />नागालैंड पुलिस भर्ती
+    <option value="Nagaland TET" />नागालैंड शिक्षक पात्रता परीक्षा
+    <option value="Nagaland Forest Guard" />नागालैंड वन रक्षक भर्ती
+    <option value="Nagaland Jail Warder" />नागालैंड जेल वार्डर भर्ती
+    <option value="Nagaland Revenue Dept" />नागालैंड राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="ओडिशा">
+    <option value="Odisha PSC" />ओ
+डिशा लोक सेवा आयोग परीक्षा <option value="Odisha Police" />ओडिशा पुलिस भर्ती परीक्षा <option value="Odisha TET" />ओडिशा शिक्षक पात्रता परीक्षा <option value="Odisha Forest Guard" />ओडिशा वन रक्षक भर्ती <option value="Odisha Jail Warder" />ओडिशा जेल वार्डर भर्ती <option value="Odisha Revenue Dept" />ओडिशा राजस्व विभाग भर्ती
+
+</optgroup>
+
+<optgroup label="पंजाब">
+    <option value="PPSC" />पंजाब लोक सेवा आयोग (PPSC) परीक्षा
+    <option value="Punjab Police" />पंजाब पुलिस भर्ती परीक्षा
+    <option value="Punjab TET" />पंजाब शिक्षक पात्रता परीक्षा
+    <option value="Punjab Forest Guard" />पंजाब वन रक्षक भर्ती
+    <option value="Punjab Jail Warder" />पंजाब जेल वार्डर भर्ती
+    <option value="Punjab Revenue Dept" />पंजाब राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="राजस्थान">
+    <option value="RPSC" />राजस्थान लोक सेवा आयोग (RPSC) परीक्षा
+    <option value="Rajasthan Police" />राजस्थान पुलिस भर्ती परीक्षा
+    <option value="Rajasthan TET" />राजस्थान शिक्षक पात्रता परीक्षा
+    <option value="Rajasthan Forest Guard" />राजस्थान वन रक्षक भर्ती
+    <option value="Rajasthan Jail Warder" />राजस्थान जेल वार्डर भर्ती
+    <option value="Rajasthan Patwari" />राजस्थान पटवारी भर्ती परीक्षा
+</optgroup>
+
+<optgroup label="सिक्किम">
+    <option value="Sikkim PSC" />सिक्किम लोक सेवा आयोग परीक्षा
+    <option value="Sikkim Police" />सिक्किम पुलिस भर्ती
+    <option value="Sikkim TET" />सिक्किम शिक्षक पात्रता परीक्षा
+    <option value="Sikkim Forest Guard" />सिक्किम वन रक्षक भर्ती
+    <option value="Sikkim Jail Warder" />सिक्किम जेल वार्डर भर्ती
+    <option value="Sikkim Revenue Dept" />सिक्किम राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="तमिलनाडु">
+    <option value="TNPSC" />तमिलनाडु लोक सेवा आयोग (TNPSC) परीक्षा
+    <option value="Tamil Nadu Police" />तमिलनाडु पुलिस भर्ती परीक्षा
+    <option value="Tamil Nadu TET" />तमिलनाडु शिक्षक पात्रता परीक्षा
+    <option value="Tamil Nadu Forest Guard" />तमिलनाडु वन रक्षक भर्ती
+    <option value="Tamil Nadu Jail Warder" />तमिलनाडु जेल वार्डर भर्ती
+    <option value="Tamil Nadu Revenue Dept" />तमिलनाडु राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="तेलंगाना">
+    <option value="TSPSC" />तेलंगाना लोक सेवा आयोग (TSPSC) परीक्षा
+    <option value="Telangana Police" />तेलंगाना पुलिस भर्ती परीक्षा
+    <option value="Telangana TET" />तेलंगाना शिक्षक पात्रता परीक्षा
+    <option value="Telangana Forest Guard" />तेलंगाना वन रक्षक भर्ती
+    <option value="Telangana Jail Warder" />तेलंगाना जेल वार्डर भर्ती
+    <option value="Telangana Revenue Dept" />तेलंगाना राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="त्रिपुरा">
+    <option value="Tripura PSC" />त्रिपुरा लोक सेवा आयोग परीक्षा
+    <option value="Tripura Police" />त्रिपुरा पुलिस भर्ती
+    <option value="Tripura TET" />त्रिपुरा शिक्षक पात्रता परीक्षा
+    <option value="Tripura Forest Guard" />त्रिपुरा वन रक्षक भर्ती
+    <option value="Tripura Jail Warder" />त्रिपुरा जेल वार्डर भर्ती
+    <option value="Tripura Revenue Dept" />त्रिपुरा राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="उत्तर प्रदेश">
+    <option value="UPPSC" />उत्तर प्रदेश लोक सेवा आयोग (UPPSC) परीक्षा
+    <option value="UP Police SI" />उत्तर प्रदेश पुलिस सब-इंस्पेक्टर भर्ती
+    <option value="UP TET" />उत्तर प्रदेश शिक्षक पात्रता परीक्षा
+    <option value="UP Forest Guard" />उत्तर प्रदेश वन रक्षक भर्ती
+    <option value="UP Jail Warder" />उत्तर प्रदेश जेल वार्डर भर्ती
+    <option value="UP Revenue Dept" />उत्तर प्रदेश राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="उत्तराखंड">
+    <option value="UKPSC" />उत्तराखंड लोक सेवा आयोग (UKPSC) परीक्षा
+    <option value="Uttarakhand Police" />उत्तराखंड पुलिस भर्ती परीक्षा
+    <option value="Uttarakhand TET" />उत्तराखंड शिक्षक पात्रता परीक्षा
+    <option value="Uttarakhand Forest Guard" />उत्तराखंड वन रक्षक भर्ती
+    <option value="Uttarakhand Jail Warder" />उत्तराखंड जेल वार्डर भर्ती
+    <option value="Uttarakhand Revenue Dept" />उत्तराखंड राजस्व विभाग भर्ती
+</optgroup>
+
+<optgroup label="पश्चिम बंगाल">
+    <option value="WBPSC" />पश्चिम बंगाल लोक सेवा आयोग (WBPSC) परीक्षा
+    <option value="West Bengal Police" />पश्चिम बंगाल पुलिस भर्ती परीक्षा
+    <option value="West Bengal TET" />पश्चिम बंगाल शिक्षक पात्रता परीक्षा
+    <option value="WB Forest Guard" />पश्चिम बंगाल वन रक्षक भर्ती
+    <option value="WB Jail Prahari" />पश्चिम बंगाल जेल प्रहरी भर्ती
+    <option value="WB Revenue Dept" />पश्चिम बंगाल राजस्व विभाग भर्ती
+</optgroup>
+  <optgroup label="संघ लोक सेवा आयोग (UPSC)">
+    <option value="UPSC Civil Services" />UPSC सिविल सेवा परीक्षा (IAS, IPS, IFS)
+    <option value="UPSC CDS" />UPSC संयुक्त रक्षा सेवा परीक्षा (CDS)
+    <option value="UPSC NDA" />UPSC राष्ट्रीय रक्षा अकादमी परीक्षा (NDA)
+    <option value="UPSC CAPF" />UPSC केंद्रीय सशस्त्र पुलिस बल परीक्षा (CAPF)
+    <option value="UPSC IES/ESE" />UPSC इंजीनियरिंग सेवा परीक्षा (IES/ESE)
+    <option value="UPSC EPFO" />UPSC कर्मचारी भविष्य निधि संगठन परीक्षा (EPFO)
+    <option value="UPSC CISF" />UPSC केंद्रीय औद्योगिक सुरक्षा बल भर्ती परीक्षा (CISF)
+    <option value="UPSC CMS" />UPSC चिकित्सा सेवा परीक्षा (CMS)
+    <option value="UPSC Indian Forest Service" />UPSC भारतीय वन सेवा परीक्षा (IFS)
+    <option value="UPSC Special Class Railway Apprentice" />UPSC विशेष वर्ग रेलवे प्रशिक्षु परीक्षा (SCRA)
+</optgroup>
+
+<optgroup label="राज्य लोक सेवा आयोग (State PSCs)">
+    <option value="State PSC Civil Services" />राज्य सिविल सेवा परीक्षा (State Civil Services)
+    <option value="State PSC Judicial Service" />राज्य न्यायिक सेवा परीक्षा (State Judicial Service Exam)
+    <option value="State PSC Police Service" />राज्य पुलिस सेवा परीक्षा (State Police Service Exam)
+    <option value="State PSC Law Officer" />राज्य कानून अधिकारी भर्ती परीक्षा
+    <option value="State PSC Public Prosecutor" />राज्य जन अभियोजक भर्ती परीक्षा
+    <option value="State PSC Legal Advisor" />राज्य कानूनी सलाहकार भर्ती परीक्षा
+    <option value="State PSC Forest Service" />राज्य वन सेवा परीक्षा (Forest Service Exam)
+    <option value="State PSC Revenue Officer" />राज्य राजस्व अधिकारी परीक्षा
+    <option value="State PSC Excise Officer" />राज्य शुल्क अधिकारी भर्ती परीक्षा
+    <option value="State PSC Tax Inspector" />राज्य कर निरीक्षक परीक्षा
+</optgroup>
+
+<optgroup label="न्यायिक सेवा परीक्षाएं (Judicial Services Exams)">
+    <option value="High Court Judicial Services" />उच्च न्यायालय न्यायिक सेवा परीक्षा (High Court Judicial Services Exam)
+    <option value="District Judge Exam" />जिला न्यायाधीश परीक्षा (District Judge Exam)
+    <option value="Civil Judge Junior Division Exam" />सिविल जज जूनियर डिवीजन परीक्षा (Civil Judge Junior Division Exam)
+    <option value="Subordinate Judicial Services" />सहायक न्यायिक सेवा परीक्षा (Subordinate Judicial Services)
+    <option value="Magistrate Exam" />मेजिस्ट्रेट परीक्षा (Magistrate Exam)
+    <option value="Judicial Clerk Exam" />न्यायिक क्लर्क भर्ती परीक्षा (Judicial Clerk Exam)
+    <option value="Junior Civil Judge Exam" />जूनियर सिविल जज परीक्षा
+    <option value="Legal Assistant Exam" />कानूनी सहायक परीक्षा (Legal Assistant Exam)
+    <option value="Civil Judge Senior Division Exam" />सिविल जज सीनियर डिवीजन परीक्षा
+    <option value="Munsif Magistrate Exam" />मंसिफ मजिस्ट्रेट परीक्षा
+</optgroup>
+
+<optgroup label="कानूनी क्षेत्र विशेष परीक्षाएं (Specialized Legal Exams)">
+    <option value="AIBE" />बार काउंसिल ऑफ इंडिया का ऑल इंडिया बार एग्जामिनेशन (AIBE - All India Bar Examination)
+    <option value="Law Officer Recruitment" />कानून अधिकारी भर्ती परीक्षा (Law Officer Recruitment Exam)
+    <option value="Legal Advisor Exam" />कानूनी सलाहकार परीक्षा (Legal Advisor Exam)
+    <option value="Public Prosecutor Exam" />जन अभियोजक भर्ती परीक्षा (Public Prosecutor Recruitment Exam)
+    <option value="Legal Assistant Exam" />कानूनी सहायक भर्ती परीक्षा (Legal Assistant Exam)
+    <option value="Legal Researcher Exam" />कानूनी शोधकर्ता परीक्षा (Legal Researcher Exam)
+    <option value="Legal Draftsman Exam" />कानूनी ड्राफ्ट्समैन परीक्षा (Legal Draftsman Exam)
+    <option value="Legal Consultant Exam" />कानूनी सलाहकार परीक्षा (Legal Consultant Exam)
+    <option value="Legal Advisor in Banks" />बैंकों में कानूनी सलाहकार भर्ती (Legal Advisor in Banks)
+    <option value="Legal Officer in PSU" />सार्वजनिक क्षेत्र की इकाइयों में कानूनी अधिकारी भर्ती (Legal Officer in PSU)
+</optgroup>
+
+<optgroup label="अन्य महत्वपूर्ण विधिक एवं न्यायिक परीक्षाएं">
+    <option value="Law Clerk Exam" />लॉ क्लर्क भर्ती परीक्षा (Law Clerk Recruitment Exam)
+    <option value="Lokpal Lokayukt Recruitment" />लोकपाल एवं लोकायुक्त आयोग भर्ती (Lokpal & Lokayukt Recruitment)
+    <option value="Judicial Magistrate Exam" />न्यायिक मजिस्ट्रेट परीक्षा (Judicial Magistrate Exam)
+    <option value="Legal Consultant Exam" />कानूनी सलाहकार परीक्षा (Legal Consultant Exam)
+    <option value="Legal Officer in PSU" />सार्वजनिक क्षेत्र की इकाइयों में कानूनी अधिकारी भर्ती (Legal Officer in PSU)
+    <option value="Legal Advisor in Banks" />बैंकों में कानूनी सलाहकार भर्ती (Legal Advisor in Banks)
+    <option value="Public Service Commission Exams" />लोक सेवा आयोग परीक्षाएं (Various PSC Exams)
+    <option value="Judicial Researcher Exam" />न्यायिक शोधकर्ता परीक्षा (Judicial Researcher Exam)
+    <option value="Legal Translator Exam" />कानूनी अनुवादक परीक्षा (Legal Translator Exam)
+    <option value="Legal Trainer Exam" />कानूनी प्रशिक्षक परीक्षा (Legal Trainer Exam)
+</optgroup>
+  <optgroup label="संयुक्त राष्ट्र एवं वैश्विक संगठन">
+    <option value="UN YPP" />संयुक्त राष्ट्र यंग प्रोफेशनल्स प्रोग्राम (UN YPP)
+    <option value="World Bank YPP" />विश्व बैंक यंग प्रोफेशनल्स प्रोग्राम
+    <option value="OECD Internship" />OECD इंटर्नशिप और फेलोशिप परीक्षाएं
+  </optgroup>
+
+  <optgroup label="अमेरिका (USA)">
+    <option value="GRE" />ग्रेजुएट रिकॉर्ड एग्जामिनेशन (GRE)
+    <option value="GMAT" />ग्रेजुएट मैनेजमेंट एडमिशन टेस्ट (GMAT)
+    <option value="TOEFL" />टेस्ट ऑफ इंग्लिश एज ए फॉरेन लैंग्वेज (TOEFL)
+    <option value="SAT" />स्कोलास्टिक एपटिट्यूड टेस्ट (SAT)
+    <option value="USMLE" />यूएस मेडिकल लाइसेंस एग्जामिनेशन (USMLE)
+    <option value="LSAT-USA" />लॉ स्कूल एपटिट्यूड टेस्ट (LSAT - USA)
+  </optgroup>
+
+  <optgroup label="यूरोप / यूके">
+    <option value="IELTS" />इंटरनेशनल इंग्लिश लैंग्वेज टेस्टिंग सिस्टम (IELTS)
+    <option value="EIT" />यूरोपियन इंजीनियरिंग ट्रिब्यूनल (EIT)
+    <option value="EPSO" />यूरोपियन पर्सनल सेलेक्शन ऑफिस (EPSO) परीक्षा
+    <option value="GAMSAT" />ग्रेजुएट ऑस्ट्रेलियन मेडिकल स्कूल एडमिशन टेस्ट (GAMSAT)
+  </optgroup>
+
+  <optgroup label="कनाडा / ऑस्ट्रेलिया">
+    <option value="MCAT" />मेडिकल कॉलेज एडमिशन टेस्ट (MCAT)
+    <option value="CPA Canada" />चार्टर्ड प्रोफेशनल एकाउंटेंट परीक्षा (CPA - कनाडा)
+    <option value="PTE" />पियर्सन टेस्ट ऑफ इंग्लिश (PTE)
+    <option value="Australian PR SkillSelect" />ऑस्ट्रेलिया स्किल सेलेक्ट स्किल असेसमेंट टेस्ट
+  </optgroup>
+
+  <optgroup label="अंतरराष्ट्रीय छात्रवृत्तियाँ / फैलोशिप">
+    <option value="Chevening" />चिवनिंग स्कॉलरशिप इंटरव्यू परीक्षा
+    <option value="Fulbright" />फुलब्राइट फैलोशिप चयन परीक्षा
+    <option value="DAAD" />DAAD जर्मनी स्कॉलरशिप चयन परीक्षा
+    <option value="Rhodes Scholarship" />रोड्स स्कॉलरशिप इंटरव्यू चयन
+  </optgroup>
+
+  <optgroup label="तकनीकी और वैज्ञानिक संगठन">
+    <option value="CERN Fellowship" />CERN फेलोशिप चयन परीक्षा
+    <option value="IAEA Jobs" />IAEA तकनीकी/वैज्ञानिक भर्ती
+    <option value="NASA Internship" />NASA इंटरनेशनल रिसर्च इंटर्नशिप इंटरव्यू
+  </optgroup>
+
+  <optgroup label="प्रबंधन एवं MBA प्रवेश">
+    <option value="INSEAD Assessment" />INSEAD इंटरनेशनल MBA चयन मूल्यांकन
+    <option value="IE Business School Entry" />IE बिजनेस स्कूल MBA प्रवेश प्रक्रिया
+    <option value="HKUST MBA Exam" />हांगकांग यूनिवर्सिटी ऑफ साइंस एंड टेक MBA चयन
+  </optgroup>
+</select>
+
+             
+            <select id="vsw-exam-subject-select">
+                <option value="" />विषय / सेक्शन चुनें
+                <option value="गणित" />गणित / क्वांट<option value="रीजनिंग" />रीजनिंग<option value="अंग्रेजी" />अंग्रेजी<option value="सामान्य ज्ञान" />सामान्य ज्ञान / GA<option value="सामान्य विज्ञान" />सामान्य विज्ञान<option value="करंट अफेयर्स" />करंट अफेयर्स<option value="History" />इतिहास<option value="Geography" />भूगोल<option value="Polity" />राजनीति विज्ञान<option value="Economics" />अर्थशास्त्र
             </select><select id="vsw-exam-resource-select">
-                <option value="">संसाधन प्रकार चुनें</option>
-                <option value="लेक्चर वीडियो">लेक्चर वीडियो</option><option value="रणनीति टिप्स">रणनीकी / टिप्स</option><option value="मॉक टेस्ट">मॉक टेस्ट / प्रश्न</option><option value="सिलेबस">सिलेबस विश्लेषण</option><option value="नोट्स">नोट्स / PDF</option>
+                <option value="" />संसाधन प्रकार चुनें
+                <option value="लेक्चर वीडियो" />लेक्चर वीडियो<option value="रणनीति टिप्स" />रणनीकी / टिप्स<option value="मॉक टेस्ट" />मॉक टेस्ट / प्रश्न<option value="सिलेबस" />सिलेबस विश्लेषण<option value="नोट्स" />नोट्स / PDF
             </select><select id="vsw-exam-language-select">
-                <option value="">भाषा चुनें</option>
-                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option>
+                <option value="" />भाषा चुनें
+                <option value="हिंदी" />हिंदी<option value="अंग्रेजी" />अंग्रेजी
             </select><input type="text" id="vsw-text-input-exam" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-2')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
         </div>
     </div>
@@ -62,17 +883,291 @@
         <div class="vsw-search-box" id="vsw-college-search-box">
             <h3>महाविद्यालयीन / विश्वविद्यालय शिक्षा</h3>
             <select id="vsw-degree-select">
-                <option value="">डिग्री / कोर्स चुनें</option>
-                <option value="BA">बी.ए. (BA)</option><option value="BSc">बी.एस.सी. (BSc)</option><option value="BCom">बी.कॉम. (BCom)</option><option value="BTech">बी.टेक. (BTech)</option><option value="BE">बी.ई. (BE)</option><option value="BBA">बी.बी.ए. (BBA)</option><option value="BCA">बी.सी.ए. (BCA)</option><option value="MA">एम.ए. (MA)</option><option value="MSc">एम.एस.सी. (MSc)</option><option value="MBA">एम.बी.ए. (MBA)</option>
+              <option value="" />कोर्स चुनें
+
+<optgroup label="स्नातक डिग्री कोर्स (UG Degree Courses)">
+    <option value="BA" />बैचलर ऑफ आर्ट्स (BA)
+    <option value="BSc" />बैचलर ऑफ साइंस (BSc)
+    <option value="BCom" />बैचलर ऑफ कॉमर्स (BCom)
+    <option value="BBA" />बैचलर ऑफ बिजनेस एडमिनिस्ट्रेशन (BBA)
+    <option value="BCA" />बैचलर ऑफ कंप्यूटर एप्लीकेशन्स (BCA)
+    <option value="BTech" />बैचलर ऑफ टेक्नोलॉजी (BTech)
+    <option value="BE" />बैचलर ऑफ इंजीनियरिंग (BE)
+    <option value="MBBS" />बैचलर ऑफ मेडिसिन, बैचलर ऑफ सर्जरी (MBBS)
+    <option value="BDS" />बैचलर ऑफ डेंटल सर्जरी (BDS)
+    <option value="BAMS" />बैचलर ऑफ आयुर्वेदिक मेडिसिन एंड सर्जरी (BAMS)
+    <option value="BHMS" />बैचलर ऑफ होम्योपैथिक मेडिसिन एंड सर्जरी (BHMS)
+    <option value="BPT" />बैचलर ऑफ फिजियोथेरेपी (BPT)
+    <option value="BPharm" />बैचलर ऑफ फार्मेसी (BPharm)
+    <option value="LLB" />बैचलर ऑफ लॉ (LLB)
+    <option value="BEd" />बैचलर ऑफ एजुकेशन (BEd)
+    <option value="BFA" />बैचलर ऑफ फाइन आर्ट्स (BFA)
+    <option value="BHM" />बैचलर ऑफ होटल मैनेजमेंट (BHM)
+    <option value="BArch" />बैचलर ऑफ आर्किटेक्चर (BArch)
+    <option value="BPlan" />बैचलर ऑफ प्लानिंग (BPlan)
+    <option value="BScAgri" />बैचलर ऑफ साइंस (कृषि)
+    <option value="BDes" />बैचलर ऑफ डिजाइन (BDes)
+    <option value="BJMC" />बैचलर ऑफ जर्नलिज्म एंड मास कम्युनिकेशन (BJMC)
+    <option value="BLIS" />बैचलर ऑफ लाइब्रेरी एंड इंफॉर्मेशन साइंस (BLIS)
+    <option value="BSW" />बैचलर ऑफ सोशल वर्क (BSW)
+    <option value="BSc IT" />बैचलर ऑफ साइंस (सूचना प्रौद्योगिकी)
+    <option value="BSc CS" />बैचलर ऑफ Science (कंप्यूटर साइंस)
+    <option value="BSc Animation" />बैचलर ऑफ साइंस (एनिमेशन)
+    <option value="BBA LLB" />बैचलर ऑफ बिजनेस एडमिनिस्ट्रेशन - बैचलर ऑफ लॉ
+    <option value="BCom LLB" />बैचलर ऑफ कॉमर्स - बैचलर ऑफ लॉ
+    <option value="BSc Nursing" />बैचलर ऑफ साइंस (नर्सिंग)
+    <option value="BOT" />बैचलर ऑफ ऑक्यूपेशनल थेरेपी
+    <option value="BMLT" />बैचलर ऑफ मेडिकल लैब टेक्नोलॉजी
+    <option value="BMRIT" />बैचलर ऑफ मेडिकल रेडियोलॉजी एंड इमेजिंग टेक्नोलॉजी
+    <option value="BBA HM" />बैचलर ऑफ बिजनेस एडमिनिस्ट्रेशन (होटल मैनेजमेंट)
+    <option value="BTTM" />बैचलर ऑफ टूरिज्म एंड ट्रैवल मैनेजमेंट
+    <option value="BSc Home Science" />बैचलर ऑफ साइंस (गृह विज्ञान)
+    <option value="BPEd" />बैचलर ऑफ फिजिकल एजुकेशन
+    <option value="BMus" />बैचलर ऑफ म्यूजिक
+    <option value="BVoc" />बैचलर ऑफ वोकेशन
+    <option value="BMS" />बैचलर ऑफ मैनेजमेंट स्टडीज
+</optgroup>
+
+<optgroup label="परास्नातक डिग्री कोर्स (PG Degree Courses)">
+    <option value="MA" />मास्टर ऑफ आर्ट्स (MA)
+    <option value="MSc" />मास्टर ऑफ साइंस (MSc)
+    <option value="MCom" />मास्टर ऑफ कॉमर्स (MCom)
+    <option value="MBA" />मास्टर ऑफ बिजनेस एडमिनिस्ट्रेशन (MBA)
+    <option value="MCA" />मास्टर ऑफ Computer Applications (MCA)
+    <option value="MTech" />मास्टर ऑफ टेक्नोलॉजी (MTech)
+    <option value="ME" />मास्टर ऑफ Engineering (ME)
+    <option value="MD" />डॉक्टर ऑफ मेडिसिन (MD)
+    <option value="MS" />मास्टर ऑफ सर्जरी (MS)
+    <option value="MDS" />मास्टर ऑफ डेंटल सर्जरी (MDS)
+    <option value="MD Ayurveda" />आयुर्वेद में डॉक्टर ऑफ मेडिसिन
+    <option value="MD Homeopathy" />होम्योपैथी में डॉक्टर ऑफ मेडिसिन
+    <option value="MPT" />मास्टर ऑफ फिजियोथेरेपी (MPT)
+    <option value="MPharm" />मास्टर ऑफ फार्मेसी (MPharm)
+    <option value="LLM" />मास्टर ऑफ लॉ (LLM)
+    <option value="MEd" />मास्टर ऑफ एजुकेशन (MEd)
+    <option value="MFA" />मास्टर ऑफ फाइन आर्ट्स (MFA)
+    <option value="MHM" />मास्टर ऑफ होटल मैनेजमेंट (MHM)
+    <option value="MArch" />मास्टर ऑफ आर्किटेक्चर (MArch)
+    <option value="MPlan" />मास्टर ऑफ प्लानिंग (MPlan)
+    <option value="MScAgri" />मास्टर ऑफ साइंस (कृषि)
+    <option value="MDes" />मास्टर ऑफ डिजाइन (MDes)
+    <option value="MJMC" />मास्टर ऑफ जर्नलिज्म एंड मास कम्युनिकेशन (MJMC)
+    <option value="MLIS" />मास्टर ऑफ लाइब्रेरी एंड इंफॉर्मेशन साइंस (MLIS)
+    <option value="MSW" />मास्टर ऑफ सोशल वर्क (MSW)
+    <option value="MSc IT" />मास्टर ऑफ Science (सूचना प्रौद्योगिकी)
+    <option value="MSc CS" />मास्टर ऑफ Science (कंप्यूटर साइंस)
+    <option value="MSc Data Science" />मास्टर ऑफ Science (डेटा साइंस)
+    <option value="MSc AI ML" />मास्टर ऑफ Science (आर्टिफिशियल इंटेलिजेंस और मशीन लर्निंग)
+    <option value="PGDM" />पोस्ट ग्रेजुएट डिप्लोमा इन मैनेजमेंट (MBA के समकक्ष हो सकता है)
+    <option value="MSc Nursing" />मास्टर ऑफ साइंस (नर्सिंग)
+    <option value="MOT" />मास्टर ऑफ ऑक्यूपेशनल थेरेपी
+    <option value="MMLT" />मास्टर ऑफ Medical Lab Technology
+    <option value="MMRIT" />मास्टर ऑफ Medical Radiology And Imaging Technology
+    <option value="MHA" />मास्टर ऑफ हॉस्पिटल एडमिनिस्ट्रेशन
+    <option value="MSc Environmental Science" />मास्टर ऑफ साइंस (पर्यावरण विज्ञान)
+    <option value="MSc Biotechnology" />मास्टर ऑफ Science (बायोटेक्नोलॉजी)
+    <option value="MPEd" />मास्टर ऑफ Physical Education
+    <option value="MMus" />मास्टर ऑफ Music
+    <option value="MVoc" />मास्टर ऑफ Vocation
+</optgroup>
+
+<optgroup label="डिप्लोमा कोर्स (Diploma Courses)">
+    <option value="Diploma Civil Engg" />डिप्लोमा इन सिविल इंजीनियरिंग
+    <option value="Diploma Mech Engg" />डिप्लोमा इन मैकेनिकल इंजीनियरिंग
+    <option value="Diploma Elect Engg" />डिप्लोमा इन इलेक्ट्रिकल इंजीनियरिंग
+    <option value="Diploma ECE Engg" />डिप्लोमा इन इलेक्ट्रॉनिक्स एंड कम्युनिकेशन इंजीनियरिंग
+    <option value="Diploma CS Engg" />डिप्लोमा इन कंप्यूटर साइंस इंजीनियरिंग
+    <option value="Diploma IT" />डिप्लोमा इन Information Technology
+    <option value="Diploma Auto Engg" />डिप्लोमा इन ऑटोमोबाइल इंजीनियरिंग
+    <option value="DCA" />डिप्लोमा इन Computer Applications
+    <option value="PGDCA" />पोस्ट ग्रेजुएट डिप्लोमा इन Computer Applications
+    <option value="DPharmacy" />डिप्लोमा इन फार्मेसी (D.Pharm)
+    <option value="GNM" />जनरल नर्सिंग एंड मिडवाइफरी (GNM)
+    <option value="ANM" />Auxiliary Nurse Midwife (ANM)
+    <option value="Diploma Lab Tech" />डिप्लोमा इन लैब टेक्नीशियन
+    <option value="Diploma XRay" />डिप्लोमा इन X-Ray टेक्नोलॉजी
+    <option value="Diploma ECG" />डिप्लोमा इन ECG टेक्नोलॉजी
+    <option value="Diploma Physiotherapy" />डिप्लोमा इन फिजियोथेरेपी
+    <option value="Diploma Dental Hygienist" />डिप्लोमा इन डेंटल हाइजीनिस्ट
+    <option value="Diploma Hotel Mgmt" />डिप्लोमा इन होटल मैनेजमेंट
+    <option value="Diploma Food Prod" />डिप्लोमा इन Food Production
+    <option value="Diploma F&B Service" />डिप्लोमा इन Food & Beverage Service
+    <option value="Diploma Front Office" />डिप्लोमा इन फ्रंट ऑफिस
+    <option value="DHM" />डिप्लोमा इन हॉस्पिटैलिटी मैनेजमेंट
+    <option value="D.El.Ed" />डिप्लोमा इन एलीमेंट्री एजुकेशन (D.El.Ed)
+    <option value="JBT" />जूनियर बेसिक ट्रेनिंग (JBT)
+    <option value="Diploma Fine Arts" />डिप्लोमा इन फाइन आर्ट्स
+    <option value="Diploma Fashion Design" />डिप्लोमा इन फैशन डिजाइन
+    <option value="Diploma Interior Design" />डिप्लोमा इन Interior Design
+    <option value="Diploma Animation" />डिप्लोमा इन Animation
+    <option value="Diploma Photography" />डिप्लोमा इन Photography
+    <option value="Diploma Web Design" />डिप्लोमा इन Web Design
+    <option value="Diploma Digital Marketing" />डिप्लोमा इन Digital Marketing
+    <option value="Diploma Yoga" />डिप्लोमा इन Yoga
+    <option value="Diploma Foreign Language" />डिप्लोमा इन Foreign Language
+    <option value="Diploma Travel Tourism" />डिप्लोमा इन Travel & Tourism
+    <option value="Diploma Event Mgmt" />डिप्लोमा इन Event Management
+    <option value="Diploma Counselling" />डिप्लोमा इन Counselling
+    <option value="Diploma Healthcare" />डिप्लोमा इन Healthcare Management
+    <option value="Diploma HR" />डिप्लोमा इन Human Resources
+    <option value="Diploma Marketing" />डिप्लोमा इन Marketing
+    <option value="Diploma Supply Chain" />डिप्लोमा इन Supply Chain Management
+</optgroup>
             </select><select id="vsw-college-subject-select">
-                <option value="">विषय / विशेषज्ञता चुनें</option>
-                <option value="History">इतिहास</option><option value="Economics">अर्थशास्त्र</option><option value="Physics">भौतिकी</option><option value="Chemistry">रसायन विज्ञान</option><option value="Mathematics">गणित</option><option value="Computer Science">कंप्यूटर विज्ञान</option><option value="Engineering">इंजीनियरिंग (सामान्य)</option><option value="Management">प्रबंधन (Management)</option><option value="Law">कानून (Law)</option><option value="Commerce">वाणिज्य (Commerce)</option>
+                <option value="" />विषय / विशेषज्ञता चुनें
+
+<optgroup label="मानविकी और सामाजिक विज्ञान">
+    <option value="History" />इतिहास (History)
+    <option value="PoliticalScience" />राजनीति विज्ञान (Political Science)
+    <option value="Economics" />अर्थशास्त्र (Economics)
+    <option value="Sociology" />समाजशास्त्र (Sociology)
+    <option value="Psychology" />मनोविज्ञान (Psychology)
+    <option value="Philosophy" />दर्शनशास्त्र (Philosophy)
+    <option value="Geography" />भूगोल (Geography)
+    <option value="English" />अंग्रेजी भाषा और साहित्य (English Language & Literature)
+    <option value="Hindi" />हिंदी भाषा और साहित्य (Hindi Language & Literature)
+    <option value="Sanskrit" />संस्कृत भाषा और साहित्य (Sanskrit Language & Literature)
+    <option value="Linguistics" />भाषाविज्ञान (Linguistics)
+    <option value="Archaeology" />पुरातत्व (Archaeology)
+    <option value="Anthropology" />मानव विज्ञान (Anthropology)
+    <option value="PublicAdministration" />लोक प्रशासन (Public Administration)
+    <option value="SocialWork" />सामाजिक कार्य (Social Work)
+    <option value="InternationalRelations" />अंतर्राष्ट्रीय संबंध (International Relations)
+    <option value="WomenStudies" />महिला अध्ययन (Women's Studies)
+    <option value="JournalismMassComm" />पत्रकारिता और जनसंचार (Journalism & Mass Communication)
+    <option value="LibraryScience" />पुस्तकालय और सूचना विज्ञान (Library & Information Science)
+    <option value="DefenceStudies" />रक्षा अध्ययन (Defence Studies)
+</optgroup>
+
+<optgroup label="विज्ञान">
+    <option value="Physics" />भौतिकी (Physics)
+    <option value="Chemistry" />रसायन विज्ञान (Chemistry)
+    <option value="Mathematics" />गणित (Mathematics)
+    <option value="Botany" />वनस्पति विज्ञान (Botany)
+    <option value="Zoology" />प्राणी विज्ञान (Zoology)
+    <option value="Biology" />जीव विज्ञान (Biology)
+    <option value="Biotechnology" />जैव प्रौद्योगिकी (Biotechnology)
+    <option value="Microbiology" />सूक्ष्म जीव विज्ञान (Microbiology)
+    <option value="EnvironmentalScience" />पर्यावरण विज्ञान (Environmental Science)
+    <option value="Geology" />भूविज्ञान (Geology)
+    <option value="Statistics" />सांख्यिकी (Statistics)
+    <option value="HomeScience" />गृह विज्ञान (Home Science)
+    <option value="ForensicScience" />फोरेंसिक विज्ञान (Forensic Science)
+    <option value="Genetics" />आनुवंशिकी (Genetics)
+    <option value="Biochemistry" />जैव रसायन विज्ञान (Biochemistry)
+</optgroup>
+
+<optgroup label="वाणिज्य और व्यवसाय">
+    <option value="Commerce" />वाणिज्य (Commerce)
+    <option value="AccountingTaxation" />लेखा और कराधान (Accounting & Taxation)
+    <option value="Finance" />वित्त (Finance)
+    <option value="Marketing" />विपणन (Marketing)
+    <option value="HumanResources" />मानव संसाधन (Human Resources)
+    <option value="BusinessAdministration" />व्यवसाय प्रशासन (Business Administration)
+    <option value="BankingInsurance" />बैंकिंग और बीमा (Banking & Insurance)
+    <option value="InternationalBusiness" />अंतर्राष्ट्रीय व्यापार (International Business)
+    <option value="Entrepreneurship" />उद्यमिता (Entrepreneurship)
+    <option value="OperationsManagement" />संचालन प्रबंधन (Operations Management)
+    <option value="SupplyChainManagement" />सप्लाई चेन प्रबंधन (Supply Chain Management)
+</optgroup>
+
+<optgroup label="इंजीनियरिंग और प्रौद्योगिकी">
+    <option value="Engineering" />इंजीनियरिंग (सामान्य) (Engineering - General)
+    <option value="CivilEngineering" />सिविल इंजीनियरिंग (Civil Engineering)
+    <option value="MechanicalEngineering" />मैकेनिकल इंजीनियरिंग (Mechanical Engineering)
+    <option value="ElectricalEngineering" />इलेक्ट्रिकल इंजीनियरिंग (Electrical Engineering)
+    <option value="ECEEngineering" />इलेक्ट्रॉनिक्स एंड कम्युनिकेशन इंजीनियरिंग (Electronics & Communication Engg)
+    <option value="CSEngineering" />कंप्यूटर साइंस इंजीनियरिंग (Computer Science Engineering)
+    <option value="InformationTechnology" />सूचना प्रौद्योगिकी (Information Technology)
+    <option value="ChemicalEngineering" />केमिकल इंजीनियरिंग (Chemical Engineering)
+    <option value="AeronauticalEngineering" />एरोनॉटिकल इंजीनियरिंग (Aeronautical Engineering)
+    <option value="AutomobileEngineering" />ऑटोमोबाइल इंजीनियरिंग (Automobile Engineering)
+    <option value="InstrumentationEngineering" />इंस्ट्रूमेंटेशन इंजीनियरिंग (Instrumentation Engineering)
+    <option value="BiomedicalEngineering" />बायोमेडिकल इंजीनियरिंग (Biomedical Engineering)
+    <option value="MetallurgicalEngineering" />धातुकर्म इंजीनियरिंग (Metallurgical Engineering)
+    <option value="MiningEngineering" />खनन इंजीनियरिंग (Mining Engineering)
+    <option value="Robotics" />रोबोटिक्स (Robotics)
+    <option value="ArtificialIntelligence" />आर्टिफिशियल इंटेलिजेंस (Artificial Intelligence - AI)
+    <option value="MachineLearning" />मशीन लर्निंग (Machine Learning - ML)
+    <option value="DataScience" />डेटा साइंस (Data Science)
+    <option value="SoftwareEngineering" />सॉफ्टवेयर इंजीनियरिंग (Software Engineering)
+    <option value="CyberSecurity" />साइबर सुरक्षा (Cyber Security)
+    <option value="Networking" />नेटवर्किंग (Networking)
+    <option value="RenewableEnergy" />अक्षय ऊर्जा (Renewable Energy)
+    <option value="Nanotechnology" />नैनोटेक्नोलॉजी (Nanotechnology)
+</optgroup>
+
+<optgroup label="चिकित्सा और स्वास्थ्य विज्ञान">
+    <option value="Medicine" />चिकित्सा (Medicine)
+    <option value="Surgery" />सर्जरी (Surgery)
+    <option value="Dentistry" />दंत चिकित्सा (Dentistry)
+    <option value="Ayurveda" />आयुर्वेद (Ayurveda)
+    <option value="Homeopathy" />होम्योपैथी (Homeopathy)
+    <option value="Unani" />यूनानी (Unani)
+    <option value="Nursing" />नर्सिंग (Nursing)
+    <option value="Physiotherapy" />फिजियोथेरेपी (Physiotherapy)
+    <option value="MedicalLabTech" />मेडिकल लैब टेक्नोलॉजी (Medical Lab Technology)
+    <option value="RadiologyImaging" />रेडियोलॉजी और इमेजिंग टेक्नोलॉजी (Radiology & Imaging Technology)
+    <option value="Pharmacy" />फार्मेसी (Pharmacy)
+    <option value="HospitalAdministration" />अस्पताल प्रशासन (Hospital Administration)
+    <option value="PublicHealth" />सार्वजनिक स्वास्थ्य (Public Health)
+    <option value="NutritionDietetics" />पोषण और आहार विज्ञान (Nutrition & Dietetics)
+    <option value="OccupationalTherapy" />ऑक्यूपेशनल थेरेपी (Occupational Therapy)
+</optgroup>
+
+<optgroup label="कानून">
+    <option value="Law" />कानून (Law)
+    <option value="CriminalLaw" />आपराधिक कानून (Criminal Law)
+    <option value="CorporateLaw" />कॉर्पोरेट कानून (Corporate Law)
+    <option value="ConstitutionalLaw" />संवैधानिक कानून (Constitutional Law)
+    <option value="InternationalLaw" />अंतर्राष्ट्रीय कानून (International Law)
+</optgroup>
+
+<optgroup label="कला और रचनात्मक अध्ययन">
+    <option value="FineArts" />ललित कला (Fine Arts)
+    <option value="Painting" />चित्रकला (Painting)
+    <option value="Sculpture" />मूर्तिकला (Sculpture)
+    <option value="AppliedArt" />अनुप्रयुक्त कला (Applied Art)
+    <option value="Music" />संगीत (Music)
+    <option value="Dance" />नृत्य (Dance)
+    <option value="DramaTheatre" />नाटक और रंगमंच (Drama & Theatre)
+    <option value="FashionDesign" />फैशन डिजाइन (Fashion Design)
+    <option value="InteriorDesign" />इंटीरियर डिजाइन (Interior Design)
+    <option value="GraphicDesign" />ग्राफिक डिजाइन (Graphic Design)
+    <option value="Animation" />एनीमेशन (Animation)
+    <option value="Photography" />फोटोग्राफी (Photography)
+    <option value="Architecture" />वास्तुकला (Architecture)
+</optgroup>
+
+<optgroup label="शिक्षा">
+    <option value="Education" />शिक्षा (Education)
+    <option value="ElementaryEducation" />प्रारंभिक शिक्षा (Elementary Education)
+    <option value="PhysicalEducation" />शारीरिक शिक्षा (Physical Education)
+    <option value="SpecialEducation" />विशेष शिक्षा (Special Education)
+</optgroup>
+
+<optgroup label="पर्यटन, होटल और आतिथ्य प्रबंधन">
+    <option value="TourismTravel" />पर्यटन और यात्रा प्रबंधन (Tourism & Travel Management)
+    <option value="HotelManagement" />होटल प्रबंधन (Hotel Management)
+    <option value="HospitalityManagement" />आतिथ्य प्रबंधन (Hospitality Management)
+    <option value="EventManagement" />इवेंट मैनेजमेंट (Event Management)
+</optgroup>
+
+<optgroup label="अन्य विशिष्ट क्षेत्र">
+    <option value="Yoga" />योग (Yoga)
+    <option value="Counselling" />परामर्श (Counselling)
+    <option value="RuralDevelopment" />ग्रामीण विकास (Rural Development)
+    <option value="UrbanStudies" />शहरी अध्ययन (Urban Studies)
+    <option value="FilmStudies" />फिल्म अध्ययन (Film Studies)
+    <option value="ForeignLanguages" />विदेशी भाषाएँ (Foreign Languages)
+    <option value="Dietetics" />डाइटेटिक्स (Dietetics)
+</optgroup>
             </select><select id="vsw-college-resource-select">
-                <option value="">संसाधन प्रकार चुनें</option>
-                <option value="Lecture">व्याख्यान (Lecture)</option><option value="Notes">नोट्स / अध्ययन सामग्री</option><option value="Seminar">सेमिनार / वेबिनार</option><option value="Practical">प्रैक्टिकल / लैब</option><option value="Exam Preparation">परीक्षा तैयारी</option><option value="Thesis Help">थीसिस सहायता</option>
+                <option value="" />संसाधन प्रकार चुनें
+                <option value="Lecture" />व्याख्यान (Lecture)<option value="Notes" />नोट्स / अध्ययन सामग्री<option value="Seminar" />सेमिनार / वेबिनार<option value="Practical" />प्रैक्टिकल / लैब<option value="Exam Preparation" />परीक्षा तैयारी<option value="Thesis Help" />थीसिस सहायता
             </select><select id="vsw-college-language-select">
-                <option value="">भाषा चुनें</option>
-                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option>
+                <option value="" />भाषा चुनें
+                <option value="हिंदी" />हिंदी<option value="अंग्रेजी" />अंग्रेजी
             </select><input type="text" id="vsw-text-input-college" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-college-search-box')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
         </div>
     </div>
@@ -80,17 +1175,17 @@
         <div class="vsw-search-box" id="vsw-search-box-3">
             <h3>मनोरंजन करें और आनंद पूर्वक सीखें</h3>
             <select id="vsw-entertainment-select">
-                <option value="">श्रेणी चुनें</option>
-                <option value="आज का पंचांग">आज का पंचांग</option><option value="मनोरंजक कहानियां">कहानी</option><option value="कविताएं">कविता</option><option value="Science Experiments">साइंस एक्सपेरिमेंट्स</option><option value="Fun Math Tricks">रोचक गणित ट्रिक्स</option><option value="Untold History Facts">इतिहास के अनसुने तथ्य</option><option value="Amazing Geography">भूगोल के अजूबे</option><option value="Space and Universe">अंतरिक्ष और ब्रह्मांड</option><option value="Technology Explained">तकनीक सरल भाषा में</option><option value="DIY Projects">DIY प्रोजेक्ट्स</option>
+                <option value="" />श्रेणी चुनें
+                <option value="आज का पंचांग" />आज का पंचांग<option value="मनोरंजक कहानियां" />कहानी<option value="कविताएं" />कविता<option value="Science Experiments" />साइंस एक्सपेरिमेंट्स<option value="Fun Math Tricks" />रोचक गणित ट्रिक्स<option value="Untold History Facts" />इतिहास के अनसुने तथ्य<option value="Amazing Geography" />भूगोल के अजूबे<option value="Space and Universe" />अंतरिक्ष और ब्रह्मांड<option value="Technology Explained" />तकनीक सरल भाषा में<option value="DIY Projects" />DIY प्रोजेक्ट्स
             </select><select id="vsw-entertainment-format-select">
-                <option value="">प्रारूप चुनें</option>
-                <option value="वीडियो">वीडियो</option><option value="एनिमेशन">एनिमेशन</option><option value="कहानी सुनाना">कहानी सुनाना (ऑडियो/वीडियो)</option><option value="डॉक्यूमेंट्री">डॉक्यूमेंट्री</option><option value="गाना">गाना / संगीत</option>
+                <option value="" />प्रारूप चुनें
+                <option value="वीडियो" />वीडियो<option value="एनिमेशन" />एनिमेशन<option value="कहानी सुनाना" />कहानी सुनाना (ऑडियो/वीडियो)<option value="डॉक्यूमेंट्री" />डॉक्यूमेंट्री<option value="गाना" />गाना / संगीत
             </select><select id="vsw-entertainment-target-audience">
-                <option value="">किसके लिए?</option>
-                <option value="बच्चों के लिए">बच्चों के लिए</option><option value="छात्रों के लिए">छात्रों के लिए</option><option value="सभी के लिए">सभी के लिए</option>
+                <option value="" />किसके लिए?
+                <option value="बच्चों के लिए" />बच्चों के लिए<option value="छात्रों के लिए" />छात्रों के लिए<option value="सभी के लिए" />सभी के लिए
             </select><select id="vsw-entertainment-language-select">
-                <option value="">भाषा चुनें</option>
-                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option><option value="बघेली">बघेली</option><option value="बुंदेली">बुंदेली</option><option value="भोजपुरी">भोजपुरी</option><option value="क्षेत्रीय भाषा">अन्य क्षेत्रीय भाषा</option>
+                <option value="" />भाषा चुनें
+                <option value="हिंदी" />हिंदी<option value="अंग्रेजी" />अंग्रेजी<option value="बघेली" />बघेली<option value="बुंदेली" />बुंदेली<option value="भोजपुरी" />भोजपुरी<option value="क्षेत्रीय भाषा" />अन्य क्षेत्रीय भाषा
             </select><input type="text" id="vsw-text-input-entertainment" class="vsw-custom-search-input" placeholder="या यहाँ कुछ टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-3')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
         </div>
     </div>
@@ -98,17 +1193,17 @@
          <div class="vsw-search-box" id="vsw-news-search-box">
             <h3>लाइव न्यूज़ देखें</h3>
             <select id="vsw-news-channel-select">
-                <option value="">न्यूज़ चैनल चुनें (उदाहरण)</option>
-                <option value="Aaj Tak Live">आज तक लाइव</option><option value="NDTV India Live">NDTV इंडिया लाइव</option><option value="India TV Live">इंडिया टीवी लाइव</option><option value="ABP News Live">ABP न्यूज़ लाइव</option><option value="Zee News Live">ज़ी न्यूज़ लाइव</option><option value="DD News Live">DD न्यूज़ लाइव</option><option value="BBC Hindi Live">BBC हिंदी लाइव</option><option value="WION Live">WION लाइव (अंग्रेजी)</option><option value="Al Jazeera Live">अल जज़ीरा लाइव (अंग्रेजी)</option>
+                <option value="" />न्यूज़ चैनल चुनें (उदाहरण)
+                <option value="Aaj Tak Live" />आज तक लाइव<option value="NDTV India Live" />NDTV इंडिया लाइव<option value="India TV Live" />इंडिया टीवी लाइव<option value="ABP News Live" />ABP न्यूज़ लाइव<option value="Zee News Live" />ज़ी न्यूज़ लाइव<option value="DD News Live" />DD न्यूज़ लाइव<option value="BBC Hindi Live" />BBC हिंदी लाइव<option value="WION Live" />WION लाइव (अंग्रेजी)<option value="Al Jazeera Live" />अल जज़ीरा लाइव (अंग्रेजी)
             </select><select id="vsw-news-type">
-                <option value="">समाचार का प्रकार चुनें</option>
-                <option value="राष्ट्रीय">राष्ट्रीय (National)</option><option value="अंतरराष्ट्रीय">अंतरराष्ट्रीय (International)</option><option value="व्यापार">व्यापार (Business)</option><option value="खेल">खेल (Sports)</option><option value="टेक्नोलॉजी">टेक्नोलॉजी</option><option value="मनोरंजन">मनोरंजन (Entertainment)</option><option value="राज्य समाचार">राज्य समाचार</option>
+                <option value="" />समाचार का प्रकार चुनें
+                <option value="राष्ट्रीय" />राष्ट्रीय (National)<option value="अंतरराष्ट्रीय" />अंतरराष्ट्रीय (International)<option value="व्यापार" />व्यापार (Business)<option value="खेल" />खेल (Sports)<option value="टेक्नोलॉजी" />टेक्नोलॉजी<option value="मनोरंजन" />मनोरंजन (Entertainment)<option value="राज्य समाचार" />राज्य समाचार
             </select><select id="vsw-news-focus-select">
-                <option value="">फोकस चुनें</option>
-                <option value="ब्रेकिंग न्यूज़">ब्रेकिंग न्यूज़</option><option value="विश्लेषण">विश्लेषण / डिबेट</option><option value="मुख्य समाचार">मुख्य समाचार बुलेटिन</option><option value="विशेष रिपोर्ट">विशेष रिपोर्ट</option>
+                <option value="" />फोकस चुनें
+                <option value="ब्रेकिंग न्यूज़" />ब्रेकिंग न्यूज़<option value="विश्लेषण" />विश्लेषण / डिबेट<option value="मुख्य समाचार" />मुख्य समाचार बुलेटिन<option value="विशेष रिपोर्ट" />विशेष रिपोर्ट
             </select><select id="vsw-news-language-select">
-                <option value="">भाषा चुनें</option>
-                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option><option value="बंगाली">बंगाली</option><option value="मराठी">मराठी</option><option value="तमिल">तमिल</option><option value="तेलुगु">तेलुगु</option><option value="गुजराती">गुजराती</option>
+                <option value="" />भाषा चुनें
+                <option value="हिंदी" />हिंदी<option value="अंग्रेजी" />अंग्रेजी<option value="बंगाली" />बंगाली<option value="मराठी" />मराठी<option value="तमिल" />तमिल<option value="तेलुगु" />तेलुगु<option value="गुजराती" />गुजराती
             </select><input type="text" id="vsw-text-input-news" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक/चैनल टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-news-search-box')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
         </div>
     </div>
