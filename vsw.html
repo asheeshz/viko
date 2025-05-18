@@ -1,0 +1,129 @@
+<!-- संक्षिप्त परिचय: यह एक 'खोजें और सीखें' विजेट है जो उपयोगकर्ताओं को YouTube पर विभिन्न श्रेणियों (पढ़ाई, परीक्षा, मनोरंजन, समाचार) में वीडियो खोजने की अनुमति देता है। यह इनपुट विकल्पों के आधार पर खोज बटन को नियंत्रित करता है और परिणामों को एक स्लाइडर और प्लेयर में दिखाता है। -->
+<!-- निर्देश: 1. कैटेगरी बटन पर क्लिक करके एक श्रेणी चुनें। 2. ड्रॉपडाउन से कम से कम दो विकल्प चुनें या टेक्स्ट बॉक्स में टाइप करें। 3. जब 'खोजें' बटन सक्षम हो जाए, तो क्लिक करें। 4. वीडियो स्लाइडर में वीडियो देखें और प्ले करने के लिए थंबनेल पर क्लिक करें। 'Main Menu' बटन से वापस जाएं। -->
+
+<!-- Hidden Message Texts Container -->
+<!-- यह कंटेनर संदेशों के लिए स्थानीयकृत स्ट्रिंग्स रखता है -->
+<div id="vsw-message-texts" style="display: none;">
+    <span id="vsw-msgSearchingVideos">वीडियो खोजे जा रहे हैं...</span><span id="vsw-msgApiKeyError">त्रुटि: API कुंजी कॉन्फ़िगर नहीं है या अमान्य है।</span><span id="vsw-msgApiQuotaError">त्रुटि: YouTube API कोटा समाप्त हो गया है।</span><span id="vsw-msgApiKeyInvalid">त्रुटि: API कुंजी अमान्य है।</span><span id="vsw-msgNoVideosFound">इस खोज के लिए कोई वीडियो नहीं मिला।</span><span id="vsw-msgVideoLoadFailed">चयनित वीडियो लोड करने में विफल।</span><span id="vsw-msgApiGenericErrorPrefix">API त्रुटि</span><span id="vsw-msgVideoLoadErrorPrefix">वीडियो लोड करने में त्रुटि</span><span id="vsw-msgInternalError">एक आंतरिक त्रुटि हुई।</span><span id="vsw-msgMinInputRequired">कृपया कम से कम दो विकल्प चुनें या टेक्स्ट बॉक्स में टाइप करें।</span>
+</div>
+
+<!-- Main Widget Container -->
+<div id="vsw-main-widget">
+    <div class="vsw-stylish-header-container">
+        <h2 class="vsw-stylish-header">अरे रुको! मज़ा नहीं आ रहा? 🤔 खोजो अपनी पसंद का कंटेंट - पढ़ाई, मनोरंजन, एग्जाम टिप्स और लाइव न्यूज़! 📰📚🎉</h2>
+        <p class="vsw-stylish-description">ऊब गए हो? 🤔 हम आपकी पढ़ाई, मनोरंजन, और परीक्षा की तैयारी को आसान बनाते हैं!🚀 साथ ही, पाएं ताज़ा ख़बरें! 📰 अभी एक्सप्लोर करें! 🔍</p>
+    </div>
+    <!-- कैटेगरी बटन -->
+    <div class="vsw-category-buttons" id="vsw-category-buttons">
+        <button data-target="vsw-study-container">ऑनलाइन पढ़ाई (कक्षा 1-12)</button><button data-target="vsw-exam-container">प्रतियोगी परीक्षा</button><button data-target="vsw-college-container">महाविद्यालयीन/विश्वविद्यालय शिक्षा</button><button data-target="vsw-entertainment-container">मनोरंजन और सीख</button><button data-target="vsw-news-container">लाइव न्यूज़</button>
+    </div>
+    <!-- Animated Banner -->
+    <div id="vsw-category-banner">
+        नीचे दिए बटनों से चुनें अपनी पसंद की दुनिया - पढ़ाई, मज़ा, तैयारी, या ताज़ा खबरें!
+    </div>
+    <!-- खोज कंटेनर (JS द्वारा प्रबंधित) -->
+    <div class="vsw-search-category-container" id="vsw-study-container">
+        <div class="vsw-search-box" id="vsw-search-box-1">
+            <h3>ऑनलाइन पढ़ाई करें (कक्षा 1-12)</h3>
+            <select id="vsw-class-select">
+                <option value="">कक्षा चुनें</option>
+                <option value="कक्षा 1">कक्षा 1</option><option value="कक्षा 2">कक्षा 2</option><option value="कक्षा 3">कक्षा 3</option><option value="कक्षा 4">कक्षा 4</option><option value="कक्षा 5">कक्षा 5</option><option value="कक्षा 6">कक्षा 6</option><option value="कक्षा 7">कक्षा 7</option><option value="कक्षा 8">कक्षा 8</option><option value="कक्षा 9">कक्षा 9</option><option value="कक्षा 10">कक्षा 10</option>
+            </select><select id="vsw-subject-select">
+                <option value="">विषय चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेज़ी (English)">अंग्रेज़ी</option><option value="गणित (Mathematics)">गणित</option><option value="विज्ञान (Science)">विज्ञान</option><option value="सामाजिक विज्ञान (Social Science)">सामाजिक विज्ञान</option><option value="पर्यावरण अध्ययन (EVS)">पर्यावरण अध्ययन</option><option value="संस्कृत">संस्कृत</option><option value="कंप्यूटर">कंप्यूटर</option><option value="इतिहास (History)">इतिहास</option><option value="भूगोल (Geography)">भूगोल</option>
+            </select><select id="vsw-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option>
+            </select><select id="vsw-board-select">
+                <option value="">शिक्षा बोर्ड चुनें</option>
+                <option value="CBSE">सीबीएसई (CBSE)</option><option value="ICSE">आईसीएसई (ICSE)</option><option value="UP Board">उत्तर प्रदेश बोर्ड</option><option value="MP Board">मध्य प्रदेश बोर्ड</option><option value="Rajasthan Board">राजस्थान बोर्ड</option><option value="Bihar Board">बिहार बोर्ड</option><option value="State Board">अन्य राज्य बोर्ड</option><option value="NIOS">एनआईओएस (NIOS)</option>
+            </select><input type="text" id="vsw-text-input-study" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-1')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <div class="vsw-search-category-container" id="vsw-exam-container">
+        <div class="vsw-search-box" id="vsw-search-box-2">
+            <h3>प्रतियोगी परीक्षा की तैयारी करें</h3>
+            <select id="vsw-exam-select">
+                <option value="">परीक्षा चुनें</option>
+                <option value="UPSC Civil Services">UPSC सिविल सेवा</option><option value="SSC CGL">SSC CGL</option><option value="SSC CHSL">SSC CHSL</option><option value="RRB NTPC">रेलवे NTPC</option><option value="IBPS PO">IBPS PO</option><option value="SBI PO">SBI PO</option><option value="NEET">NEET</option><option value="JEE Main">JEE Main</option><option value="CTET">CTET</option><option value="State PSC">राज्य PSC</option>
+            </select><select id="vsw-exam-subject-select">
+                <option value="">विषय / सेक्शन चुनें</option>
+                <option value="गणित">गणित / क्वांट</option><option value="रीजनिंग">रीजनिंग</option><option value="अंग्रेजी">अंग्रेजी</option><option value="सामान्य ज्ञान">सामान्य ज्ञान / GA</option><option value="सामान्य विज्ञान">सामान्य विज्ञान</option><option value="करंट अफेयर्स">करंट अफेयर्स</option><option value="History">इतिहास</option><option value="Geography">भूगोल</option><option value="Polity">राजनीति विज्ञान</option><option value="Economics">अर्थशास्त्र</option>
+            </select><select id="vsw-exam-resource-select">
+                <option value="">संसाधन प्रकार चुनें</option>
+                <option value="लेक्चर वीडियो">लेक्चर वीडियो</option><option value="रणनीति टिप्स">रणनीकी / टिप्स</option><option value="मॉक टेस्ट">मॉक टेस्ट / प्रश्न</option><option value="सिलेबस">सिलेबस विश्लेषण</option><option value="नोट्स">नोट्स / PDF</option>
+            </select><select id="vsw-exam-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option>
+            </select><input type="text" id="vsw-text-input-exam" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-2')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <div class="vsw-search-category-container" id="vsw-college-container">
+        <div class="vsw-search-box" id="vsw-college-search-box">
+            <h3>महाविद्यालयीन / विश्वविद्यालय शिक्षा</h3>
+            <select id="vsw-degree-select">
+                <option value="">डिग्री / कोर्स चुनें</option>
+                <option value="BA">बी.ए. (BA)</option><option value="BSc">बी.एस.सी. (BSc)</option><option value="BCom">बी.कॉम. (BCom)</option><option value="BTech">बी.टेक. (BTech)</option><option value="BE">बी.ई. (BE)</option><option value="BBA">बी.बी.ए. (BBA)</option><option value="BCA">बी.सी.ए. (BCA)</option><option value="MA">एम.ए. (MA)</option><option value="MSc">एम.एस.सी. (MSc)</option><option value="MBA">एम.बी.ए. (MBA)</option>
+            </select><select id="vsw-college-subject-select">
+                <option value="">विषय / विशेषज्ञता चुनें</option>
+                <option value="History">इतिहास</option><option value="Economics">अर्थशास्त्र</option><option value="Physics">भौतिकी</option><option value="Chemistry">रसायन विज्ञान</option><option value="Mathematics">गणित</option><option value="Computer Science">कंप्यूटर विज्ञान</option><option value="Engineering">इंजीनियरिंग (सामान्य)</option><option value="Management">प्रबंधन (Management)</option><option value="Law">कानून (Law)</option><option value="Commerce">वाणिज्य (Commerce)</option>
+            </select><select id="vsw-college-resource-select">
+                <option value="">संसाधन प्रकार चुनें</option>
+                <option value="Lecture">व्याख्यान (Lecture)</option><option value="Notes">नोट्स / अध्ययन सामग्री</option><option value="Seminar">सेमिनार / वेबिनार</option><option value="Practical">प्रैक्टिकल / लैब</option><option value="Exam Preparation">परीक्षा तैयारी</option><option value="Thesis Help">थीसिस सहायता</option>
+            </select><select id="vsw-college-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option>
+            </select><input type="text" id="vsw-text-input-college" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-college-search-box')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <div class="vsw-search-category-container" id="vsw-entertainment-container">
+        <div class="vsw-search-box" id="vsw-search-box-3">
+            <h3>मनोरंजन करें और आनंद पूर्वक सीखें</h3>
+            <select id="vsw-entertainment-select">
+                <option value="">श्रेणी चुनें</option>
+                <option value="आज का पंचांग">आज का पंचांग</option><option value="मनोरंजक कहानियां">कहानी</option><option value="कविताएं">कविता</option><option value="Science Experiments">साइंस एक्सपेरिमेंट्स</option><option value="Fun Math Tricks">रोचक गणित ट्रिक्स</option><option value="Untold History Facts">इतिहास के अनसुने तथ्य</option><option value="Amazing Geography">भूगोल के अजूबे</option><option value="Space and Universe">अंतरिक्ष और ब्रह्मांड</option><option value="Technology Explained">तकनीक सरल भाषा में</option><option value="DIY Projects">DIY प्रोजेक्ट्स</option>
+            </select><select id="vsw-entertainment-format-select">
+                <option value="">प्रारूप चुनें</option>
+                <option value="वीडियो">वीडियो</option><option value="एनिमेशन">एनिमेशन</option><option value="कहानी सुनाना">कहानी सुनाना (ऑडियो/वीडियो)</option><option value="डॉक्यूमेंट्री">डॉक्यूमेंट्री</option><option value="गाना">गाना / संगीत</option>
+            </select><select id="vsw-entertainment-target-audience">
+                <option value="">किसके लिए?</option>
+                <option value="बच्चों के लिए">बच्चों के लिए</option><option value="छात्रों के लिए">छात्रों के लिए</option><option value="सभी के लिए">सभी के लिए</option>
+            </select><select id="vsw-entertainment-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option><option value="बघेली">बघेली</option><option value="बुंदेली">बुंदेली</option><option value="भोजपुरी">भोजपुरी</option><option value="क्षेत्रीय भाषा">अन्य क्षेत्रीय भाषा</option>
+            </select><input type="text" id="vsw-text-input-entertainment" class="vsw-custom-search-input" placeholder="या यहाँ कुछ टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-3')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <div class="vsw-search-category-container" id="vsw-news-container">
+         <div class="vsw-search-box" id="vsw-news-search-box">
+            <h3>लाइव न्यूज़ देखें</h3>
+            <select id="vsw-news-channel-select">
+                <option value="">न्यूज़ चैनल चुनें (उदाहरण)</option>
+                <option value="Aaj Tak Live">आज तक लाइव</option><option value="NDTV India Live">NDTV इंडिया लाइव</option><option value="India TV Live">इंडिया टीवी लाइव</option><option value="ABP News Live">ABP न्यूज़ लाइव</option><option value="Zee News Live">ज़ी न्यूज़ लाइव</option><option value="DD News Live">DD न्यूज़ लाइव</option><option value="BBC Hindi Live">BBC हिंदी लाइव</option><option value="WION Live">WION लाइव (अंग्रेजी)</option><option value="Al Jazeera Live">अल जज़ीरा लाइव (अंग्रेजी)</option>
+            </select><select id="vsw-news-type">
+                <option value="">समाचार का प्रकार चुनें</option>
+                <option value="राष्ट्रीय">राष्ट्रीय (National)</option><option value="अंतरराष्ट्रीय">अंतरराष्ट्रीय (International)</option><option value="व्यापार">व्यापार (Business)</option><option value="खेल">खेल (Sports)</option><option value="टेक्नोलॉजी">टेक्नोलॉजी</option><option value="मनोरंजन">मनोरंजन (Entertainment)</option><option value="राज्य समाचार">राज्य समाचार</option>
+            </select><select id="vsw-news-focus-select">
+                <option value="">फोकस चुनें</option>
+                <option value="ब्रेकिंग न्यूज़">ब्रेकिंग न्यूज़</option><option value="विश्लेषण">विश्लेषण / डिबेट</option><option value="मुख्य समाचार">मुख्य समाचार बुलेटिन</option><option value="विशेष रिपोर्ट">विशेष रिपोर्ट</option>
+            </select><select id="vsw-news-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option><option value="बंगाली">बंगाली</option><option value="मराठी">मराठी</option><option value="तमिल">तमिल</option><option value="तेलुगु">तेलुगु</option><option value="गुजराती">गुजराती</option>
+            </select><input type="text" id="vsw-text-input-news" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक/चैनल टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-news-search-box')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <!-- वीडियो स्लाइडर और प्लेयर सेक्शन -->
+    <section class="vsw-video-slider-container" id="vsw-video-slider-container">
+        <div class="vsw-video-slider" id="vsw-video-slider"></div>
+        <div class="vsw-video-slider-nav" id="vsw-video-slider-nav">
+            <button onclick="vsw_slideVideo(-1)">❮</button><button onclick="vsw_slideVideo(1)">❯</button>
+        </div>
+    </section>
+    <section class="vsw-video-container" id="vsw-video-display">
+        <div class="vsw-video-player">
+            <iframe id="vsw-youtube-iframe" width="100%" height="450" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+</div>
+<!-- Message Box (निश्चित स्थिति) -->
+<div class="vsw-message-box" id="vsw-messageBox"></div>
