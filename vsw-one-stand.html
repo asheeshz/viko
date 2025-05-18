@@ -1,0 +1,461 @@
+<!-- संक्षिप्त परिचय: यह एक 'खोजें और सीखें' विजेट है जो उपयोगकर्ताओं को YouTube पर विभिन्न श्रेणियों (पढ़ाई, परीक्षा, मनोरंजन, समाचार) में वीडियो खोजने की अनुमति देता है। यह इनपुट विकल्पों के आधार पर खोज बटन को नियंत्रित करता है और परिणामों को एक स्लाइडर और प्लेयर में दिखाता है। -->
+<!-- निर्देश: 1. कैटेगरी बटन पर क्लिक करके एक श्रेणी चुनें। 2. ड्रॉपडाउन से कम से कम दो विकल्प चुनें या टेक्स्ट बॉक्स में टाइप करें। 3. जब 'खोजें' बटन सक्षम हो जाए, तो क्लिक करें। 4. वीडियो स्लाइडर में वीडियो देखें और प्ले करने के लिए थंबनेल पर क्लिक करें। 'Main Menu' बटन से वापस जाएं। -->
+<style>
+    h2.vsw-page-title{text-align:center;padding:15px;background:linear-gradient(to right,#3498db,#9b59b6);color:#fff;margin:0 0 20px 0;width:100%;box-sizing:border-box;font-size:1.8em}#vsw-main-widget{background-color:#0a192f;padding:25px;margin:0 auto 20px auto;max-width:1800px;width:95%;box-sizing:border-box;border:10px solid transparent;border-radius:25px;background-clip:padding-box;position:relative;animation:vsw_shinyBorder 6s infinite linear;box-shadow:0 10px 30px rgba(0,0,0,.4);-webkit-mask-image:radial-gradient(white,black);overflow:hidden}@-webkit-keyframes vsw_shinyBorder{0%{border-image-source:linear-gradient(45deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}25%{border-image-source:linear-gradient(135deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}50%{border-image-source:linear-gradient(225deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}75%{border-image-source:linear-gradient(315deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}100%{border-image-source:linear-gradient(405deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}}@keyframes vsw_shinyBorder{0%{border-image-source:linear-gradient(45deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}25%{border-image-source:linear-gradient(135deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}50%{border-image-source:linear-gradient(225deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}75%{border-image-source:linear-gradient(315deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}100%{border-image-source:linear-gradient(405deg,#ff00ff,#00ffff,#ffff00);border-image-slice:1}}.vsw-stylish-header-container{text-align:center;padding:15px;margin:0 auto 25px auto;max-width:95%;border-radius:10px;box-sizing:border-box}.vsw-stylish-header{font-size:1.6em;font-weight:bold;color:#e74c3c;text-shadow:2px 2px 5px rgba(255,255,255,.15),3px 3px 8px rgba(0,0,0,.6);animation:vsw_colorChange 5s infinite alternate,vsw_wobble 2.5s infinite ease-in-out}.vsw-stylish-description{font-size:1.15em;color:#5dade2;animation:vsw_fadeIn 2s ease-out,vsw_pulse 2.2s infinite alternate;line-height:1.5}@-webkit-keyframes vsw_wobble{0%,100%{transform:translateX(0) rotate(0)}15%{transform:translateX(-6px) rotate(-4deg)}30%{transform:translateX(4px) rotate(3deg)}45%{transform:translateX(-4px) rotate(-2deg)}60%{transform:translateX(3px) rotate(1.5deg)}75%{transform:translateX(-2px) rotate(-1deg)}}@keyframes vsw_wobble{0%,100%{transform:translateX(0) rotate(0)}15%{transform:translateX(-6px) rotate(-4deg)}30%{transform:translateX(4px) rotate(3deg)}45%{transform:translateX(-4px) rotate(-2deg)}60%{transform:translateX(3px) rotate(1.5deg)}75%{transform:translateX(-2px) rotate(-1deg)}}@-webkit-keyframes vsw_fadeIn{from{opacity:0}to{opacity:1}}@keyframes vsw_fadeIn{from{opacity:0}to{opacity:1}}@-webkit-keyframes vsw_colorChange{0%{color:#e74c3c}25%{color:#3498db}50%{color:#2ecc71}75%{color:#f1c40f}100%{color:#9b59b6}}@keyframes vsw_colorChange{0%{color:#e74c3c}25%{color:#3498db}50%{color:#2ecc71}75%{color:#f1c40f}100%{color:#9b59b6}}@-webkit-keyframes vsw_pulse{0%{transform:scale(1)}100%{transform:scale(1.03)}}@keyframes vsw_pulse{0%{transform:scale(1)}100%{transform:scale(1.03)}}.vsw-category-buttons{text-align:center;padding:20px 10px;background-color:rgba(255,255,255,.05);display:flex;flex-wrap:wrap;justify-content:center;gap:15px;border-radius:8px;transition:opacity .4s ease-in-out;opacity:1}.vsw-category-buttons.vsw-hidden{opacity:0}.vsw-category-buttons button{flex-grow:1;flex-basis:150px;max-width:200px;padding:12px 15px;height:48px;display:inline-flex;align-items:center;justify-content:center;font-size:1em;font-weight:bold;color:#fff;border:none;border-radius:8px;cursor:pointer;transition:background-color .3s ease,transform .15s ease,box-shadow .15s ease,border-bottom .15s ease;text-align:center;box-shadow:0 5px 8px rgba(0,0,0,.25),inset 0 -4px 2px rgba(0,0,0,.3);border-bottom:3px solid rgba(0,0,0,.4);position:relative;top:0}.vsw-category-buttons button:nth-child(1){background-color:#e74c3c;border-color:#a1332a}.vsw-category-buttons button:nth-child(2){background-color:#3498db;border-color:#2570a8}.vsw-category-buttons button:nth-child(3){background-color:#2ecc71;border-color:#1f9451}.vsw-category-buttons button:nth-child(4){background-color:#f39c12;border-color:#b5740e}.vsw-category-buttons button:nth-child(5){background-color:#9b59b6;border-color:#703c87}.vsw-category-buttons button:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 12px rgba(0,0,0,.3),inset 0 -2px 1px rgba(0,0,0,.2);top:-3px}.vsw-category-buttons button:active{transform:translateY(2px) scale(.98);box-shadow:0 1px 3px rgba(0,0,0,.2),inset 0 1px 2px rgba(0,0,0,.3);border-bottom:none;top:2px}#vsw-category-banner{background:linear-gradient(90deg,rgba(2,0,36,1) 0%,rgba(9,9,121,1) 35%,rgba(0,212,255,1) 100%);color:#fff;text-align:center;padding:12px 10px;margin:20px auto 25px auto;border-radius:8px;font-size:1.1em;font-weight:bold;letter-spacing:.5px;width:90%;max-width:600px;box-shadow:0 3px 8px rgba(0,0,0,.3);animation:vsw_bannerPulse 2s infinite alternate ease-in-out,vsw_fadeInBanner 1s ease-out;display:block;transition:opacity .4s ease-in-out;opacity:1}#vsw-category-banner.vsw-hidden{opacity:0}@-webkit-keyframes vsw_bannerPulse{0%{transform:scale(1);box-shadow:0 3px 8px rgba(0,0,0,.3)}100%{transform:scale(1.02);box-shadow:0 5px 15px rgba(0,212,255,.5)}}@keyframes vsw_bannerPulse{0%{transform:scale(1);box-shadow:0 3px 8px rgba(0,0,0,.3)}100%{transform:scale(1.02);box-shadow:0 5px 15px rgba(0,212,255,.5)}}@-webkit-keyframes vsw_fadeInBanner{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}@keyframes vsw_fadeInBanner{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}.vsw-search-category-container{padding:10px 0;width:100%;box-sizing:border-box;opacity:0;display:none;transition:opacity .4s ease-in-out}.vsw-search-category-container.vsw-active-search-box{opacity:1;max-height:2000px;overflow:visible}.vsw-search-box{max-width:95%;margin:10px auto 20px auto;padding:25px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.4);text-align:center;color:#fff;transition:transform .4s ease,box-shadow .4s ease;min-height:280px;position:relative;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center}#vsw-search-box-1{background:linear-gradient(45deg,#4285f4,#34a853,#fbbc05,#ea4335,#673ab7)}#vsw-search-box-2{background:linear-gradient(45deg,#e91e63,#9c27b0,#673ab7,#3f51b5,#2196f3)}#vsw-college-search-box{background:linear-gradient(45deg,#009688,#4caf50,#8bc34a,#cddc39,#ffeb3b)}#vsw-search-box-3{background:linear-gradient(45deg,#ff9800,#ff5722,#f44336,#e91e63,#9c27b0)}#vsw-news-search-box{background:linear-gradient(45deg,#607d8b,#795548,#9e9e9e,#455a64,#37474f)}.vsw-search-box:hover{transform:scale(1.02);box-shadow:0 6px 16px rgba(0,0,0,.5)}.vsw-search-box h3{font-size:1.5em;margin-bottom:20px;text-shadow:1px 1px 3px rgba(0,0,0,.5);font-weight:bold;color:#fff}.vsw-search-box select,.vsw-search-box input[type=text],.vsw-search-box button{width:90%;max-width:450px;padding:12px;margin-bottom:15px;border-radius:6px;border:1px solid #ccc;background-color:rgba(255,255,255,.95);color:#333;font-size:1.1em;font-weight:normal;box-sizing:border-box;display:block;margin-left:auto;margin-right:auto}.vsw-search-box button.vsw-back-button{background-color:#5a6268;color:#fff;margin-top:15px;font-size:.9em;text-transform:none;letter-spacing:normal;width:auto;max-width:200px;padding:8px 15px;display:inline-block;margin-bottom:0}.vsw-search-box button.vsw-back-button:hover{background-color:#4e555b}.vsw-search-box button.vsw-back-button:active{transform:scale(.98)}.vsw-search-box select{cursor:pointer}.vsw-search-box input[type=text]{cursor:text}.vsw-search-box button.vsw-search-button{background-color:#e74c3c;color:#fff;font-weight:bold;text-transform:uppercase;letter-spacing:.8px;border:none;cursor:pointer;transition:background-color .3s ease,transform .1s ease,opacity .3s ease;pointer-events:auto}.vsw-search-box button.vsw-search-button:disabled{opacity:.5;cursor:not-allowed;pointer-events:none!important}.vsw-search-box button.vsw-search-button:not(:disabled):hover{background-color:#c0392b}.vsw-search-box button.vsw-search-button:not(:disabled):active{transform:scale(.98)}.vsw-custom-search-input::-webkit-input-placeholder{color:#777;font-style:italic}.vsw-custom-search-input::-moz-placeholder{color:#777;font-style:italic}.vsw-custom-search-input:-ms-input-placeholder{color:#777;font-style:italic}.vsw-custom-search-input::placeholder{color:#777;font-style:italic}.vsw-video-container{padding:15px 5px;text-align:center;display:none;width:100%;box-sizing:border-box}.vsw-video-slider-container{position:relative;width:100%;max-width:100%;margin:15px auto;overflow:hidden;min-height:160px;display:none;background-color:rgba(255,255,255,.1);border-radius:8px;padding:10px;box-shadow:0 1px 4px rgba(0,0,0,.2)}.vsw-video-slider{display:flex;transition:transform .5s ease-in-out}.vsw-video-item{flex:0 0 auto;width:150px;margin:0 6px;cursor:pointer;position:relative;text-align:center;border:1px solid #555;border-radius:4px;padding:5px;background-color:#1a2b47;transition:transform .2s ease,border-color .3s ease;box-sizing:border-box}.vsw-video-item:first-child{margin-left:0}.vsw-video-item:last-child{margin-right:0}.vsw-video-item:hover{transform:scale(1.04);border-color:#00ffff}.vsw-video-item img{width:100%;height:84px;object-fit:cover;border-radius:4px;display:block}.vsw-video-item p{margin-top:6px;font-size:.8em;line-height:1.25;height:3em;overflow:hidden;text-overflow:ellipsis;color:#ccc;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:break-word}.vsw-video-slider-nav{position:absolute;top:50%;transform:translateY(-50%);left:0;right:0;width:100%;box-sizing:border-box;display:flex;justify-content:space-between;padding:0 5px;display:none;z-index:10;pointer-events:none}.vsw-video-slider-nav button{background:rgba(0,0,0,.7);color:#fff;border:none;padding:8px 12px;border-radius:50%;cursor:pointer;font-size:1.1em;line-height:1;width:40px;height:40px;display:flex;align-items:center;justify-content:center;transition:background-color .3s ease;pointer-events:auto;z-index:11}.vsw-video-slider-nav button:hover{background:rgba(0,0,0,1)}.vsw-video-player{width:98%;max-width:900px;margin:20px auto;border-radius:8px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.5);background-color:#000}.vsw-video-player iframe{display:block;width:100%;aspect-ratio:16/9;border:none}.vsw-message-box{position:fixed;top:80px;left:50%;transform:translateX(-50%);background-color:#ffc107;color:#333;border:1px solid #e0a800;padding:15px 25px;border-radius:5px;box-shadow:0 2px 10px rgba(0,0,0,.3);z-index:1100;text-align:center;display:none;font-size:1.1em;font-weight:bold;max-width:80%;box-sizing:border-box}@media (max-width:768px){#vsw-main-widget{padding:15px;border-width:8px;border-radius:20px}.vsw-stylish-header{font-size:1.4em}.vsw-stylish-description{font-size:1.05em}.vsw-category-buttons button{flex-basis:140px;height:45px}.vsw-category-buttons{gap:12px}#vsw-category-banner{font-size:1em;padding:10px;margin-bottom:20px}.vsw-search-box{max-width:100%;padding:20px;min-height:auto}.vsw-search-box h3{font-size:1.3em;margin-bottom:15px}.vsw-search-box select,.vsw-search-box input[type=text],.vsw-search-box button{width:95%;font-size:1em;padding:10px;margin-bottom:12px}.vsw-search-box button.vsw-back-button{width:auto;max-width:180px;font-size:.85em;padding:6px 12px;margin-bottom:0}.vsw-video-item{width:130px}.vsw-video-item img{height:73px}.vsw-video-item p{font-size:.78em}.vsw-video-player iframe{height:350px}.vsw-video-slider-nav button{width:38px;height:38px;font-size:1em}}@media (max-width:480px){h2.vsw-page-title{font-size:1.4em;padding:12px}#vsw-main-widget{padding:10px;border-width:6px;border-radius:15px}.vsw-stylish-header{font-size:1.2em}.vsw-stylish-description{font-size:.95em}.vsw-category-buttons{padding:15px 5px;gap:10px}.vsw-category-buttons button{font-size:.85em;padding:8px 10px;flex-basis:calc(50% - 15px);max-width:none;height:48px}#vsw-category-banner{font-size:.9em;padding:8px;margin-bottom:15px}.vsw-search-box h3{font-size:1.15em}.vsw-search-box select,.vsw-search-box input[type=text],.vsw-search-box button{font-size:.9em;padding:8px}.vsw-search-box button.vsw-back-button{max-width:150px;font-size:.8em;padding:5px 10px;margin-bottom:0}.vsw-video-item{width:110px}.vsw-video-item img{height:62px}.vsw-video-item p{font-size:.7em;height:2.8em;-webkit-line-clamp:2;-webkit-box-orient:vertical}.vsw-video-player iframe{height:200px}.vsw-video-slider-nav button{width:32px;height:32px;font-size:.9em}}#vsw-message-texts{display:none}
+</style>
+<div id="vsw-message-texts" style="display: none;">
+    <span id="vsw-msgSearchingVideos">वीडियो खोजे जा रहे हैं...</span><span id="vsw-msgApiKeyError">त्रुटि: API कुंजी कॉन्फ़िगर नहीं है या अमान्य है।</span><span id="vsw-msgApiQuotaError">त्रुटि: YouTube API कोटा समाप्त हो गया है।</span><span id="vsw-msgApiKeyInvalid">त्रुटि: API कुंजी अमान्य है।</span><span id="vsw-msgNoVideosFound">इस खोज के लिए कोई वीडियो नहीं मिला।</span><span id="vsw-msgVideoLoadFailed">चयनित वीडियो लोड करने में विफल।</span><span id="vsw-msgApiGenericErrorPrefix">API त्रुटि</span><span id="vsw-msgVideoLoadErrorPrefix">वीडियो लोड करने में त्रुटि</span><span id="vsw-msgInternalError">एक आंतरिक त्रुटि हुई।</span><span id="vsw-msgMinInputRequired">कृपया कम से कम दो विकल्प चुनें या टेक्स्ट बॉक्स में टाइप करें।</span>
+</div>
+<div id="vsw-main-widget">
+    <div class="vsw-stylish-header-container">
+        <h2 class="vsw-stylish-header">अरे रुको! मज़ा नहीं आ रहा? 🤔 खोजो अपनी पसंद का कंटेंट - पढ़ाई, मनोरंजन, एग्जाम टिप्स और लाइव न्यूज़! 📰📚🎉</h2>
+        <p class="vsw-stylish-description">ऊब गए हो? 🤔 हम आपकी पढ़ाई, मनोरंजन, और परीक्षा की तैयारी को आसान बनाते हैं!🚀 साथ ही, पाएं ताज़ा ख़बरें! 📰 अभी एक्सप्लोर करें! 🔍</p>
+    </div>
+    <div class="vsw-category-buttons" id="vsw-category-buttons">
+        <button data-target="vsw-study-container">ऑनलाइन पढ़ाई (कक्षा 1-12)</button><button data-target="vsw-exam-container">प्रतियोगी परीक्षा</button><button data-target="vsw-college-container">महाविद्यालयीन/विश्वविद्यालय शिक्षा</button><button data-target="vsw-entertainment-container">मनोरंजन और सीख</button><button data-target="vsw-news-container">लाइव न्यूज़</button>
+    </div>
+    <div id="vsw-category-banner">
+        नीचे दिए बटनों से चुनें अपनी पसंद की दुनिया - पढ़ाई, मज़ा, तैयारी, या ताज़ा खबरें!
+    </div>
+    <div class="vsw-search-category-container" id="vsw-study-container">
+        <div class="vsw-search-box" id="vsw-search-box-1">
+            <h3>ऑनलाइन पढ़ाई करें (कक्षा 1-12)</h3>
+            <select id="vsw-class-select">
+                <option value="">कक्षा चुनें</option>
+                <option value="कक्षा 1">कक्षा 1</option><option value="कक्षा 2">कक्षा 2</option><option value="कक्षा 3">कक्षा 3</option><option value="कक्षा 4">कक्षा 4</option><option value="कक्षा 5">कक्षा 5</option><option value="कक्षा 6">कक्षा 6</option><option value="कक्षा 7">कक्षा 7</option><option value="कक्षा 8">कक्षा 8</option><option value="कक्षा 9">कक्षा 9</option><option value="कक्षा 10">कक्षा 10</option>
+            </select><select id="vsw-subject-select">
+                <option value="">विषय चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेज़ी (English)">अंग्रेज़ी</option><option value="गणित (Mathematics)">गणित</option><option value="विज्ञान (Science)">विज्ञान</option><option value="सामाजिक विज्ञान (Social Science)">सामाजिक विज्ञान</option><option value="पर्यावरण अध्ययन (EVS)">पर्यावरण अध्ययन</option><option value="संस्कृत">संस्कृत</option><option value="कंप्यूटर">कंप्यूटर</option><option value="इतिहास (History)">इतिहास</option><option value="भूगोल (Geography)">भूगोल</option>
+            </select><select id="vsw-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option>
+            </select><select id="vsw-board-select">
+                <option value="">शिक्षा बोर्ड चुनें</option>
+                <option value="CBSE">सीबीएसई (CBSE)</option><option value="ICSE">आईसीएसई (ICSE)</option><option value="UP Board">उत्तर प्रदेश बोर्ड</option><option value="MP Board">मध्य प्रदेश बोर्ड</option><option value="Rajasthan Board">राजस्थान बोर्ड</option><option value="Bihar Board">बिहार बोर्ड</option><option value="State Board">अन्य राज्य बोर्ड</option><option value="NIOS">एनआईओएस (NIOS)</option>
+            </select><input type="text" id="vsw-text-input-study" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-1')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <div class="vsw-search-category-container" id="vsw-exam-container">
+        <div class="vsw-search-box" id="vsw-search-box-2">
+            <h3>प्रतियोगी परीक्षा की तैयारी करें</h3>
+            <select id="vsw-exam-select">
+                <option value="">परीक्षा चुनें</option>
+                <option value="UPSC Civil Services">UPSC सिविल सेवा</option><option value="SSC CGL">SSC CGL</option><option value="SSC CHSL">SSC CHSL</option><option value="RRB NTPC">रेलवे NTPC</option><option value="IBPS PO">IBPS PO</option><option value="SBI PO">SBI PO</option><option value="NEET">NEET</option><option value="JEE Main">JEE Main</option><option value="CTET">CTET</option><option value="State PSC">राज्य PSC</option>
+            </select><select id="vsw-exam-subject-select">
+                <option value="">विषय / सेक्शन चुनें</option>
+                <option value="गणित">गणित / क्वांट</option><option value="रीजनिंग">रीजनिंग</option><option value="अंग्रेजी">अंग्रेजी</option><option value="सामान्य ज्ञान">सामान्य ज्ञान / GA</option><option value="सामान्य विज्ञान">सामान्य विज्ञान</option><option value="करंट अफेयर्स">करंट अफेयर्स</option><option value="History">इतिहास</option><option value="Geography">भूगोल</option><option value="Polity">राजनीति विज्ञान</option><option value="Economics">अर्थशास्त्र</option>
+            </select><select id="vsw-exam-resource-select">
+                <option value="">संसाधन प्रकार चुनें</option>
+                <option value="लेक्चर वीडियो">लेक्चर वीडियो</option><option value="रणनीति टिप्स">रणनीकी / टिप्स</option><option value="मॉक टेस्ट">मॉक टेस्ट / प्रश्न</option><option value="सिलेबस">सिलेबस विश्लेषण</option><option value="नोट्स">नोट्स / PDF</option>
+            </select><select id="vsw-exam-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option>
+            </select><input type="text" id="vsw-text-input-exam" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-2')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <div class="vsw-search-category-container" id="vsw-college-container">
+        <div class="vsw-search-box" id="vsw-college-search-box">
+            <h3>महाविद्यालयीन / विश्वविद्यालय शिक्षा</h3>
+            <select id="vsw-degree-select">
+                <option value="">डिग्री / कोर्स चुनें</option>
+                <option value="BA">बी.ए. (BA)</option><option value="BSc">बी.एस.सी. (BSc)</option><option value="BCom">बी.कॉम. (BCom)</option><option value="BTech">बी.टेक. (BTech)</option><option value="BE">बी.ई. (BE)</option><option value="BBA">बी.बी.ए. (BBA)</option><option value="BCA">बी.सी.ए. (BCA)</option><option value="MA">एम.ए. (MA)</option><option value="MSc">एम.एस.सी. (MSc)</option><option value="MBA">एम.बी.ए. (MBA)</option>
+            </select><select id="vsw-college-subject-select">
+                <option value="">विषय / विशेषज्ञता चुनें</option>
+                <option value="History">इतिहास</option><option value="Economics">अर्थशास्त्र</option><option value="Physics">भौतिकी</option><option value="Chemistry">रसायन विज्ञान</option><option value="Mathematics">गणित</option><option value="Computer Science">कंप्यूटर विज्ञान</option><option value="Engineering">इंजीनियरिंग (सामान्य)</option><option value="Management">प्रबंधन (Management)</option><option value="Law">कानून (Law)</option><option value="Commerce">वाणिज्य (Commerce)</option>
+            </select><select id="vsw-college-resource-select">
+                <option value="">संसाधन प्रकार चुनें</option>
+                <option value="Lecture">व्याख्यान (Lecture)</option><option value="Notes">नोट्स / अध्ययन सामग्री</option><option value="Seminar">सेमिनार / वेबिनार</option><option value="Practical">प्रैक्टिकल / लैब</option><option value="Exam Preparation">परीक्षा तैयारी</option><option value="Thesis Help">थीसिस सहायता</option>
+            </select><select id="vsw-college-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option>
+            </select><input type="text" id="vsw-text-input-college" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-college-search-box')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <div class="vsw-search-category-container" id="vsw-entertainment-container">
+        <div class="vsw-search-box" id="vsw-search-box-3">
+            <h3>मनोरंजन करें और आनंद पूर्वक सीखें</h3>
+            <select id="vsw-entertainment-select">
+                <option value="">श्रेणी चुनें</option>
+                <option value="आज का पंचांग">आज का पंचांग</option><option value="मनोरंजक कहानियां">कहानी</option><option value="कविताएं">कविता</option><option value="Science Experiments">साइंस एक्सपेरिमेंट्स</option><option value="Fun Math Tricks">रोचक गणित ट्रिक्स</option><option value="Untold History Facts">इतिहास के अनसुने तथ्य</option><option value="Amazing Geography">भूगोल के अजूबे</option><option value="Space and Universe">अंतरिक्ष और ब्रह्मांड</option><option value="Technology Explained">तकनीक सरल भाषा में</option><option value="DIY Projects">DIY प्रोजेक्ट्स</option>
+            </select><select id="vsw-entertainment-format-select">
+                <option value="">प्रारूप चुनें</option>
+                <option value="वीडियो">वीडियो</option><option value="एनिमेशन">एनिमेशन</option><option value="कहानी सुनाना">कहानी सुनाना (ऑडियो/वीडियो)</option><option value="डॉक्यूमेंट्री">डॉक्यूमेंट्री</option><option value="गाना">गाना / संगीत</option>
+            </select><select id="vsw-entertainment-target-audience">
+                <option value="">किसके लिए?</option>
+                <option value="बच्चों के लिए">बच्चों के लिए</option><option value="छात्रों के लिए">छात्रों के लिए</option><option value="सभी के लिए">सभी के लिए</option>
+            </select><select id="vsw-entertainment-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option><option value="बघेली">बघेली</option><option value="बुंदेली">बुंदेली</option><option value="भोजपुरी">भोजपुरी</option><option value="क्षेत्रीय भाषा">अन्य क्षेत्रीय भाषा</option>
+            </select><input type="text" id="vsw-text-input-entertainment" class="vsw-custom-search-input" placeholder="या यहाँ कुछ टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-search-box-3')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <div class="vsw-search-category-container" id="vsw-news-container">
+         <div class="vsw-search-box" id="vsw-news-search-box">
+            <h3>लाइव न्यूज़ देखें</h3>
+            <select id="vsw-news-channel-select">
+                <option value="">न्यूज़ चैनल चुनें (उदाहरण)</option>
+                <option value="Aaj Tak Live">आज तक लाइव</option><option value="NDTV India Live">NDTV इंडिया लाइव</option><option value="India TV Live">इंडिया टीवी लाइव</option><option value="ABP News Live">ABP न्यूज़ लाइव</option><option value="Zee News Live">ज़ी न्यूज़ लाइव</option><option value="DD News Live">DD न्यूज़ लाइव</option><option value="BBC Hindi Live">BBC हिंदी लाइव</option><option value="WION Live">WION लाइव (अंग्रेजी)</option><option value="Al Jazeera Live">अल जज़ीरा लाइव (अंग्रेजी)</option>
+            </select><select id="vsw-news-type">
+                <option value="">समाचार का प्रकार चुनें</option>
+                <option value="राष्ट्रीय">राष्ट्रीय (National)</option><option value="अंतरराष्ट्रीय">अंतरराष्ट्रीय (International)</option><option value="व्यापार">व्यापार (Business)</option><option value="खेल">खेल (Sports)</option><option value="टेक्नोलॉजी">टेक्नोलॉजी</option><option value="मनोरंजन">मनोरंजन (Entertainment)</option><option value="राज्य समाचार">राज्य समाचार</option>
+            </select><select id="vsw-news-focus-select">
+                <option value="">फोकस चुनें</option>
+                <option value="ब्रेकिंग न्यूज़">ब्रेकिंग न्यूज़</option><option value="विश्लेषण">विश्लेषण / डिबेट</option><option value="मुख्य समाचार">मुख्य समाचार बुलेटिन</option><option value="विशेष रिपोर्ट">विशेष रिपोर्ट</option>
+            </select><select id="vsw-news-language-select">
+                <option value="">भाषा चुनें</option>
+                <option value="हिंदी">हिंदी</option><option value="अंग्रेजी">अंग्रेजी</option><option value="बंगाली">बंगाली</option><option value="मराठी">मराठी</option><option value="तमिल">तमिल</option><option value="तेलुगु">तेलुगु</option><option value="गुजराती">गुजराती</option>
+            </select><input type="text" id="vsw-text-input-news" class="vsw-custom-search-input" placeholder="या यहाँ टॉपिक/चैनल टाइप करें..." /><button class="vsw-search-button" onclick="vsw_performSearch('vsw-news-search-box')" disabled>खोजें</button><button class="vsw-back-button">Main Menu</button>
+        </div>
+    </div>
+    <section class="vsw-video-slider-container" id="vsw-video-slider-container">
+        <div class="vsw-video-slider" id="vsw-video-slider"></div>
+        <div class="vsw-video-slider-nav" id="vsw-video-slider-nav">
+            <button onclick="vsw_slideVideo(-1)">❮</button><button onclick="vsw_slideVideo(1)">❯</button>
+        </div>
+    </section>
+    <section class="vsw-video-container" id="vsw-video-display">
+        <div class="vsw-video-player">
+            <iframe id="vsw-youtube-iframe" width="100%" height="450" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+</div>
+<div class="vsw-message-box" id="vsw-messageBox"></div>
+<script>
+    /*
+    विजेट का परिचय:
+    यह एक 'खोजें और सीखें' विजेट है जो उपयोगकर्ताओं को YouTube पर विभिन्न श्रेणियों (पढ़ाई, परीक्षा, मनोरंजन, समाचार) में वीडियो खोजने की अनुमति देता है।
+    यह इनपुट विकल्पों के आधार पर खोज बटन को सक्षम/अक्षम करता है और परिणामों को एक स्लाइडर और प्लेयर में दिखाता है।
+
+    उपयोग के निर्देश:
+    1. कैटेगरी बटन पर क्लिक करके अपनी पसंद की श्रेणी चुनें।
+    2. खुले हुए बॉक्स में ड्रॉपडाउन से कम से कम दो विकल्प चुनें या टेक्स्ट बॉक्स में कुछ टाइप करें।
+    3. जब 'खोजें' बटन सक्षम हो जाए (मंद दिखना बंद हो जाए), तो उस पर क्लिक करें।
+    4. खोज परिणाम नीचे वीडियो स्लाइडर में दिखाई देंगे। किसी वीडियो को मुख्य प्लेयर में देखने के लिए उसके थंबनेल पर क्लिक करें।
+    5. मुख्य मेनू पर वापस जाने के लिए 'Main Menu' बटन का उपयोग करें।
+    */
+    let vsw_mainWidget,vsw_categoryButtonsContainer,vsw_categoryBanner,vsw_allSearchContainers,vsw_videoSliderContainer,vsw_videoDisplay,vsw_videoSliderNav,vsw_messageBox,vsw_videoSlider,vsw_youtubeIframe,vsw_messageTexts;
+    let vsw_currentVideoItems=[],vsw_videoSlideIndex=0,vsw_itemsPerPage=4,vsw_activeSearchContainerId=null,vsw_messageTimeout,vsw_resizeTimeout,vsw_scrollTimeout;
+    document.addEventListener('DOMContentLoaded',()=>{
+        vsw_mainWidget=document.getElementById('vsw-main-widget');vsw_categoryButtonsContainer=document.getElementById('vsw-category-buttons');vsw_categoryBanner=document.getElementById('vsw-category-banner');vsw_allSearchContainers=document.querySelectorAll('.vsw-search-category-container');vsw_videoSliderContainer=document.getElementById('vsw-video-slider-container');vsw_videoDisplay=document.getElementById('vsw-video-display');vsw_videoSliderNav=document.getElementById('vsw-video-slider-nav');vsw_messageBox=document.getElementById('vsw-messageBox');vsw_videoSlider=document.getElementById('vsw-video-slider');vsw_youtubeIframe=document.getElementById('vsw-youtube-iframe');vsw_messageTexts=document.getElementById('vsw-message-texts');
+        if(vsw_mainWidget&&vsw_categoryButtonsContainer&&vsw_messageTexts&&vsw_messageBox){
+            vsw_setupCategoryButtons();vsw_setupBackButtons();vsw_setupOutsideClickListener();window.addEventListener('resize',vsw_handleResize);window.addEventListener('scroll',vsw_handleScroll);
+            vsw_mainWidget.addEventListener('change',vsw_handleInputChange);vsw_mainWidget.addEventListener('input',vsw_handleInputChange);vsw_mainWidget.addEventListener('click',vsw_handleSearchButtonClick);
+            vsw_showCategoriesAndBanner();
+            vsw_allSearchContainers.forEach(container=>{container.style.display='none';container.classList.remove('vsw-active-search-box');container.style.opacity=0;});
+            vsw_hideVideoSections();
+        }else{
+            console.error("VSW Error: Essential elements missing.");
+            if(vsw_messageBox){vsw_messageBox.textContent="VSW Initialization Error: Essential elements missing.";vsw_messageBox.style.display='block';}
+        }
+    });
+    function vsw_handleSearchButtonClick(event){
+         const target=event.target;const searchButton=target.closest('.vsw-search-button');
+         if(searchButton){
+             const searchBox=searchButton.closest('.vsw-search-box');const categoryContainer=searchBox?searchBox.closest('.vsw-search-category-container'):null;
+             if(categoryContainer&&categoryContainer.id===vsw_activeSearchContainerId){
+                 if(searchButton.disabled){
+                     event.preventDefault();event.stopPropagation();vsw_showMessage(vsw_getTextById('vsw-msgMinInputRequired'),4000);
+                 }
+             }
+         }
+    }
+    function vsw_handleInputChange(event){
+         const target=event.target;
+         if(target.tagName==='SELECT'||(target.tagName==='INPUT'&&target.classList.contains('vsw-custom-search-input'))){
+             const searchBox=target.closest('.vsw-search-box');const categoryContainer=searchBox?searchBox.closest('.vsw-search-category-container'):null;
+             if(searchBox&&categoryContainer&&categoryContainer.id===vsw_activeSearchContainerId){
+                  vsw_checkInputsAndToggleSearchButton(searchBox);vsw_hideMessage();
+             }
+         }
+    }
+    function vsw_checkInputsAndToggleSearchButton(searchBoxElement){
+         const searchButton=searchBoxElement.querySelector('.vsw-search-button');if(!searchButton)return;
+         let inputCount=0;const selects=searchBoxElement.querySelectorAll('select');const textInput=searchBoxElement.querySelector('.vsw-custom-search-input');
+         selects.forEach(select=>{if(select.value?.trim()&&select.value!==""){inputCount++;}});
+         if(textInput&&textInput.value.trim()){inputCount++;}
+         const minInputsRequired=2;
+         if(inputCount>=minInputsRequired){searchButton.disabled=false;}else{searchButton.disabled=true;}
+    }
+    function vsw_showCategoriesAndBanner(){
+         if(vsw_categoryButtonsContainer){
+              vsw_categoryButtonsContainer.style.display='flex';
+              setTimeout(()=>{vsw_categoryButtonsContainer.classList.remove('vsw-hidden');vsw_categoryButtonsContainer.style.opacity=1;},10);
+         }
+         if(vsw_categoryBanner){
+             vsw_categoryBanner.style.display='block';
+             setTimeout(()=>{vsw_categoryBanner.classList.remove('vsw-hidden');vsw_categoryBanner.style.opacity=1;},10);
+         }
+    }
+    function vsw_hideCategoriesAndBanner(){
+        if(vsw_categoryButtonsContainer){
+             vsw_categoryButtonsContainer.style.opacity=0;
+             const catBtnHandler=function(){this.style.display='none';this.removeEventListener('transitionend',catBtnHandler);};
+             if(parseFloat(vsw_categoryButtonsContainer.style.opacity)>0){vsw_categoryButtonsContainer.addEventListener('transitionend',catBtnHandler,{once:true});}
+             else{vsw_categoryButtonsContainer.style.display='none';}
+             vsw_categoryButtonsContainer.classList.add('vsw-hidden');
+        }
+         if(vsw_categoryBanner){
+             vsw_categoryBanner.style.opacity=0;
+             const bannerHandler=function(){this.style.display='none';this.removeEventListener('transitionend',bannerHandler);};
+             if(parseFloat(vsw_categoryBanner.style.opacity)>0){vsw_categoryBanner.addEventListener('transitionend',bannerHandler,{once:true});}
+             else{vsw_categoryBanner.style.display='none';}
+              vsw_categoryBanner.classList.add('vsw-hidden');
+         }
+    }
+    function vsw_getTextById(id){
+        if(!vsw_messageTexts){console.error("VSW Error: Message text container not found.");return`[${id}]`;}
+        const element=vsw_messageTexts.querySelector(`#${id}`);
+        if(element){return element.textContent||`[${id}]`;}else{console.warn(`VSW Warning: Message ID "${id}" not found.`);return`[${id}]`;}
+    }
+    function vsw_setupCategoryButtons(){
+        if(!vsw_categoryButtonsContainer)return;
+        const buttons=vsw_categoryButtonsContainer.querySelectorAll('button[data-target]');
+        buttons.forEach(button=>{
+            button.addEventListener('click',(event)=>{
+                event.stopPropagation();const targetId=button.getAttribute('data-target');
+                if(targetId){vsw_toggleCategory(targetId);}else{console.warn("VSW Warning: Button missing data-target.");}
+            });
+        });
+    }
+    function vsw_setupBackButtons(){
+        const backButtons=document.querySelectorAll('.vsw-back-button');
+        backButtons.forEach(button=>{
+            button.addEventListener('click',(event)=>{event.stopPropagation();vsw_closeCurrentlyActiveCategory();});
+        });
+    }
+    function vsw_closeCurrentlyActiveCategory(){
+         if(vsw_activeSearchContainerId){
+             const currentActiveContainer=document.getElementById(vsw_activeSearchContainerId);
+             if(currentActiveContainer){
+                 const searchButton=currentActiveContainer.querySelector('.vsw-search-button');if(searchButton){searchButton.disabled=true;}
+                  currentActiveContainer.style.opacity=0;
+                  const containerHandler=function(){this.style.display='none';this.classList.remove('vsw-active-search-box');
+                       const selects=this.querySelectorAll('select');const textInput=this.querySelector('.vsw-custom-search-input');
+                       selects.forEach(select=>select.value="");if(textInput)textInput.value="";
+                       this.removeEventListener('transitionend',containerHandler);};
+                  if(parseFloat(currentActiveContainer.style.opacity)>0){currentActiveContainer.addEventListener('transitionend',containerHandler,{once:true});}
+                  else{currentActiveContainer.style.display='none';currentActiveContainer.classList.remove('vsw-active-search-box');
+                       const selects=currentActiveContainer.querySelectorAll('select');const textInput=currentActiveContainer.querySelector('.vsw-custom-search-input');
+                       selects.forEach(select=>select.value="");if(textInput)textInput.value="";}
+                 vsw_hideVideoSections();vsw_clearVideoResults();
+             }else{console.warn(`VSW Warning: Active container ID ${vsw_activeSearchContainerId} not found.`);}
+             vsw_activeSearchContainerId=null;vsw_showCategoriesAndBanner();
+         }vsw_hideMessage();
+    }
+    function vsw_toggleCategory(containerIdToShow){
+        const containerToShow=document.getElementById(containerIdToShow);
+        if(!containerToShow){console.error(`VSW Error: Target container ID ${containerIdToShow} not found.`);return;}
+        if(containerIdToShow===vsw_activeSearchContainerId){vsw_closeCurrentlyActiveCategory();return;}
+        if(vsw_activeSearchContainerId){
+            const currentActiveContainer=document.getElementById(vsw_activeSearchContainerId);
+             if(currentActiveContainer){
+                  const searchButton=currentActiveContainer.querySelector('.vsw-search-button');if(searchButton){searchButton.disabled=true;}
+                  currentActiveContainer.style.opacity=0;
+                  const oldContainerHandler=function(){this.style.display='none';this.classList.remove('vsw-active-search-box');
+                       const selects=this.querySelectorAll('select');const textInput=this.querySelector('.vsw-custom-search-input');
+                       selects.forEach(select=>select.value="");if(textInput)textInput.value="";
+                      this.removeEventListener('transitionend',oldContainerHandler);};
+                  if(parseFloat(currentActiveContainer.style.opacity)>0){currentActiveContainer.addEventListener('transitionend',oldContainerHandler,{once:true});}
+                  else{currentActiveContainer.style.display='none';currentActiveContainer.classList.remove('vsw-active-search-box');
+                       const selects=currentActiveContainer.querySelectorAll('select');const textInput=currentActiveContainer.querySelector('.vsw-custom-search-input');
+                       selects.forEach(select=>select.value="");if(textInput)textInput.value="";}
+             }
+        }vsw_hideCategoriesAndBanner();
+        containerToShow.style.display='block';
+        setTimeout(()=>{
+             containerToShow.classList.add('vsw-active-search-box');containerToShow.style.opacity=1;
+             const searchBoxElement=containerToShow.querySelector('.vsw-search-box');if(searchBoxElement){vsw_checkInputsAndToggleSearchButton(searchBoxElement);}
+             setTimeout(()=>{const widgetRect=vsw_mainWidget.getBoundingClientRect();const targetScrollTop=window.scrollY+widgetRect.top;window.scrollTo({top:targetScrollTop,behavior:'smooth'});},400);
+        },10);
+        vsw_activeSearchContainerId=containerIdToShow;vsw_clearVideoResults();vsw_hideVideoSections();vsw_itemsPerPage=vsw_calculateItemsPerPage();vsw_hideMessage();
+    }
+    function vsw_setupOutsideClickListener(){
+        document.addEventListener('click',(event)=>{
+            // यदि कोई श्रेणी सक्रिय नहीं है, तो कुछ न करें
+            if(!vsw_activeSearchContainerId)return;
+
+            // जांचें कि क्लिक मुख्य विजेट कंटेनर के अंदर हुआ है या नहीं
+            // यदि क्लिक मुख्य विजेट के अंदर है, तो बाहर निकलने वाले क्लिक को बंद न करें
+             if(vsw_mainWidget && vsw_mainWidget.contains(event.target)){
+                 // क्लिक मुख्य विजेट के अंदर हुआ। इसे किसी अन्य स्पेसिफिक हैंडलर को मैनेज करने दें (जैसे वीडियो थंबनेल या बटन क्लिक)
+                 return;
+             }
+
+            // यदि क्लिक मुख्य विजेट के बाहर हुआ है, और एक श्रेणी सक्रिय है, तो इसे बंद करें
+            vsw_closeCurrentlyActiveCategory();
+        });
+    }
+    function vsw_handleScroll(){
+         clearTimeout(vsw_scrollTimeout);
+         vsw_scrollTimeout=setTimeout(()=>{
+             // केवल तभी कार्य करें जब एक श्रेणी इनपुट बॉक्स वर्तमान में खुला हो
+             if(vsw_activeSearchContainerId&&vsw_mainWidget){
+                 // यदि वीडियो डिस्प्ले क्षेत्र दृश्यमान है, तो स्क्रॉल पर श्रेणी बंद न करें
+                 if(vsw_videoDisplay&&vsw_videoDisplay.style.display!=='none'){
+                     // console.log("VSW: Video display is visible, ignoring scroll-to-close.");
+                      return;
+                 }
+                 // यदि वीडियो डिस्प्ले दृश्यमान नहीं है, तो जांचें कि विजेट दृश्य से बाहर तो नहीं हो गया है
+                 const widgetRect=vsw_mainWidget.getBoundingClientRect();const threshold=Math.min(widgetRect.height*.3,window.innerHeight*.3);
+                 const isOutOfView=(widgetRect.bottom<threshold||widgetRect.top>window.innerHeight-threshold);
+
+                 if(isOutOfView){
+                      // console.log("VSW: Widget scrolled out of view, closing category.");
+                      vsw_closeCurrentlyActiveCategory();
+                 }
+             }
+         },100);
+    }
+    async function vsw_fetchYouTubeData(searchTerm=''){
+        const apiKey='AIzaSyBYVKCeEIlBjCoS6Xy_mWatJywG3hUPv3Q'; /* डेमो कुंजी - उत्पादन के लिए बदलें! */
+        if(!apiKey||apiKey==='YOUR_API_KEY_HERE'||apiKey.length<30){
+             console.error("VSW Error: API Key config missing/invalid.");vsw_showMessage(vsw_getTextById('vsw-msgApiKeyError'),8000);
+             vsw_hideVideoSections();vsw_clearVideoResults();return;
+        }
+        const apiHost='youtube.googleapis.com';const maxResults=30;const safeSearchTerm=searchTerm||'educational videos in Hindi';
+        let apiUrl=`https://${apiHost}/youtube/v3/search?part=snippet&type=video&maxResults=${maxResults}&key=${apiKey}`;
+        apiUrl+=`&q=${encodeURIComponent(safeSearchTerm)}`;
+         const hasHindiChars=/[\u0900-\u097F]/.test(safeSearchTerm);const hasCommonHindiWords=/\b(हिंदी|कक्षा|परीक्षा|विज्ञान|गणित|इतिहास|भूगोल|समाचार|लाइव|कहानी|कविता)\b/i.test(safeSearchTerm);
+        if(hasHindiChars||hasCommonHindiWords||safeSearchTerm.toLowerCase().includes("hindi")){apiUrl+=`&relevanceLanguage=hi`;}
+        vsw_showMessage(vsw_getTextById('vsw-msgSearchingVideos'),2500);vsw_hideVideoSections();vsw_clearVideoResults();
+        try{
+            const response=await fetch(apiUrl,{method:'GET',headers:{'Accept':'application/json'}});
+            const data=await response.json();
+            if(!response.ok){
+                console.error('VSW API Error Response:',data);let errorId='vsw-msgApiGenericErrorPrefix';let errorDetails=`(${response.status})`;
+                if(data.error?.message){
+                    if(data.error.errors?.[0]?.reason==='quotaExceeded'){errorId='vsw-msgApiQuotaError';errorDetails='';}
+                    else if(data.error.errors?.[0]?.reason==='keyInvalid'){errorId='vsw-msgApiKeyInvalid';errorDetails='';}
+                    else{errorDetails=`:${data.error.message}`;}
+                }else{errorDetails=`(${response.status})`;}
+                const apiError=new Error(vsw_getTextById(errorId)+errorDetails);apiError.statusCode=response.status;throw apiError;
+            }
+            if(!data?.items||data.items.length===0){
+                vsw_showMessage(vsw_getTextById('vsw-msgNoVideosFound'),4000);vsw_hideVideoSections();vsw_clearVideoResults();vsw_currentVideoItems=[];return;
+            }
+            vsw_currentVideoItems=data.items.filter(item=>item.id?.videoId&&item.snippet);
+            if(vsw_currentVideoItems.length===0){
+                 vsw_showMessage(vsw_getTextById('vsw-msgNoVideosFound')+" (valid items not found)",4000);
+                vsw_hideVideoSections();vsw_clearVideoResults();return;
+            }
+            vsw_displayVideos(vsw_currentVideoItems);vsw_showVideoSections();vsw_hideMessage();
+        }catch(error){
+            console.error('VSW Fetch Error:',error);let displayError=vsw_getTextById('vsw-msgInternalError');
+            if(error.message&&(error.message.startsWith(vsw_getTextById('vsw-msgApiGenericErrorPrefix'))||error.message.startsWith(vsw_getTextById('vsw-msgApiQuotaError'))||error.message.startsWith(vsw_getTextById('vsw-msgApiKeyInvalid'))||error.message.startsWith(vsw_getTextById('vsw-msgApiKeyError')))){
+                 displayError=error.message;
+             }else if(error.message){displayError=`${vsw_getTextById('vsw-msgVideoLoadErrorPrefix')}: ${error.message.substring(0,100)}...`;}
+            vsw_showMessage(displayError,6000);vsw_hideVideoSections();vsw_clearVideoResults();vsw_currentVideoItems=[];
+        }
+    }
+    function vsw_displayVideos(videos){
+        if(!vsw_videoSlider||!vsw_videoSliderContainer||!vsw_videoDisplay||!vsw_youtubeIframe){console.error("VSW Video display elements not found.");return;}
+        vsw_videoSlider.innerHTML='';vsw_videoSlideIndex=0;vsw_currentVideoItems=videos;
+        if(!vsw_currentVideoItems||vsw_currentVideoItems.length===0){
+            if(vsw_videoSliderContainer){vsw_videoSlider.innerHTML=`<p style="color:#ccc; padding: 20px; text-align: center; width: 100%;">${vsw_getTextById('vsw-msgNoVideosFound')}</p>`;vsw_videoSliderContainer.style.display='block';}
+            if(vsw_videoSliderNav)vsw_videoSliderNav.style.display='none';if(vsw_youtubeIframe)vsw_youtubeIframe.src='';if(vsw_videoDisplay)vsw_videoDisplay.style.display='none';return;
+        }
+        vsw_currentVideoItems.forEach((video,index)=>{
+            if(!video.id?.videoId||!video.snippet){console.warn("VSW Skipping invalid video item:",video);return;}
+            const videoId=video.id.videoId;const videoTitle=video.snippet.title||'Untitled Video';
+            const thumbnailUrl=video.snippet.thumbnails?.medium?.url||video.snippet.thumbnails?.default?.url||'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+            const videoItem=document.createElement('div');videoItem.classList.add('vsw-video-item');videoItem.setAttribute('data-index',index);videoItem.setAttribute('data-videoid',videoId);
+            const thumbnail=document.createElement('img');thumbnail.src=thumbnailUrl;thumbnail.alt=videoTitle;
+            thumbnail.onerror=function(){this.onerror=null;this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';console.warn(`VSW Thumbnail failed for ${videoId}`);};
+            const title=document.createElement('p');const tempEl=document.createElement('textarea');tempEl.innerHTML=videoTitle;title.textContent=tempEl.value;
+            videoItem.appendChild(thumbnail);videoItem.appendChild(title);
+            videoItem.addEventListener('click',()=>{vsw_displayEmbeddedVideo(videoId);
+                if(vsw_videoDisplay&&vsw_videoDisplay.style.display!=='none'){const playerRect=vsw_videoDisplay.getBoundingClientRect();if(playerRect.top<20){window.scrollTo({top:window.scrollY+playerRect.top-20,behavior:'smooth'});}}
+            });
+            vsw_videoSlider.appendChild(videoItem);
+        });
+        if(vsw_currentVideoItems.length>0&&vsw_currentVideoItems[0].id?.videoId){vsw_displayEmbeddedVideo(vsw_currentVideoItems[0].id.videoId);}
+        else{if(vsw_youtubeIframe)vsw_youtubeIframe.src='';if(vsw_videoDisplay)vsw_videoDisplay.style.display='none';}
+        vsw_itemsPerPage=vsw_calculateItemsPerPage();vsw_updateVideoSlider();
+        if(vsw_videoSliderContainer)vsw_videoSliderContainer.style.display='block';
+        if(vsw_videoSliderNav){vsw_videoSliderNav.style.display=vsw_currentVideoItems.length>vsw_itemsPerPage?'flex':'none';}
+    }
+    function vsw_displayEmbeddedVideo(videoId){
+        if(!vsw_youtubeIframe||!vsw_videoDisplay)return;
+        if(!videoId){vsw_youtubeIframe.src='';vsw_videoDisplay.style.display='none';return;}
+        vsw_youtubeIframe.src=`https://www.youtube.com/embed/${videoId}?autoplay=0&rel=0&modestbranding=1&hl=hi`;
+        vsw_videoDisplay.style.display='block';
+        vsw_youtubeIframe.onerror=()=>{console.error('VSW iFrame failed to load video ID:',videoId);vsw_showMessage(vsw_getTextById('vsw-msgVideoLoadFailed'),3000);vsw_videoDisplay.style.display='none';};
+        vsw_youtubeIframe.onload=()=>{console.log(`VSW iFrame loaded ID: ${videoId}`);if(vsw_youtubeIframe.src.includes(videoId)){vsw_videoDisplay.style.display='block';}};
+        if(!vsw_youtubeIframe.src||vsw_youtubeIframe.src==='about:blank'){vsw_videoDisplay.style.display='none';}
+    }
+    function vsw_clearVideoResults(){
+        if(vsw_videoSlider)vsw_videoSlider.innerHTML='';
+        if(vsw_youtubeIframe){if(vsw_youtubeIframe.contentWindow){try{vsw_youtubeIframe.contentWindow.postMessage('{"event":"command","func":"stopVideo","args":""}','*');}catch(e){}}vsw_youtubeIframe.src='';}
+        vsw_currentVideoItems=[];vsw_videoSlideIndex=0;
+    }
+    function vsw_calculateItemsPerPage(){
+        if(!vsw_videoSliderContainer||vsw_videoSliderContainer.offsetWidth<=0){
+             const itemWidth=150;const itemMargin=12;const itemTotalWidth=itemWidth+itemMargin;
+             const containerWidthFallback=vsw_mainWidget?vsw_mainWidget.offsetWidth*.95-50:window.innerWidth*.95-50;
+             const calculated=Math.max(1,Math.floor(containerWidthFallback/itemTotalWidth));return calculated;
+        }
+        const containerWidth=vsw_videoSliderContainer.offsetWidth-20;const itemWidth=150;const itemMargin=12;const itemTotalWidth=itemWidth+itemMargin;
+        if(containerWidth<=0||itemTotalWidth<=0){return 1;}
+        const calculatedItems=Math.max(1,Math.floor(containerWidth/itemTotalWidth));return calculatedItems;
+    }
+    function vsw_slideVideo(direction){
+        const numVideoItems=vsw_currentVideoItems.length;vsw_itemsPerPage=vsw_calculateItemsPerPage();
+        if(numVideoItems<=vsw_itemsPerPage)return;
+        const maxIndex=Math.max(0,numVideoItems-vsw_itemsPerPage);let newIndex=vsw_videoSlideIndex+direction;
+        vsw_videoSlideIndex=Math.max(0,Math.min(maxIndex,newIndex));vsw_updateVideoSlider();
+    }
+    function vsw_updateVideoSlider(){
+        if(!vsw_videoSlider||vsw_currentVideoItems.length===0){if(vsw_videoSlider)vsw_videoSlider.style.transform='translateX(0px)';return;}
+        const itemWidth=150;const itemMargin=12;const slideAmount=-vsw_videoSlideIndex*(itemWidth+itemMargin);
+        vsw_videoSlider.style.transform=`translateX(${slideAmount}px)`;
+    }
+    function vsw_handleResize(){
+        clearTimeout(vsw_resizeTimeout);
+        vsw_resizeTimeout=setTimeout(()=>{
+            if(vsw_videoSliderContainer&&vsw_videoSliderContainer.style.display!=='none'){
+                const oldItemsPerPage=vsw_itemsPerPage;vsw_itemsPerPage=vsw_calculateItemsPerPage();
+                if(oldItemsPerPage!==vsw_itemsPerPage){
+                    const maxIndex=Math.max(0,vsw_currentVideoItems.length-vsw_itemsPerPage);
+                    vsw_videoSlideIndex=Math.min(vsw_videoSlideIndex,maxIndex);vsw_updateVideoSlider();
+                    if(vsw_videoSliderNav){vsw_videoSliderNav.style.display=vsw_currentVideoItems.length>vsw_itemsPerPage?'flex':'none';}
+                }
+            }
+             if(vsw_activeSearchContainerId){
+                  const activeContainer=document.getElementById(vsw_activeSearchContainerId);
+                  if(activeContainer){const searchBoxElement=activeContainer.querySelector('.vsw-search-box');if(searchBoxElement){vsw_checkInputsAndToggleSearchButton(searchBoxElement);}}
+             }
+        },250);
+    }
+    function vsw_performSearch(searchBoxId){
+        const searchBox=document.getElementById(searchBoxId);if(!searchBox){console.error("VSW Error: Search box not found:",searchBoxId);vsw_showMessage(vsw_getTextById('vsw-msgInternalError'),4000);return;}
+         const searchButton=searchBox.querySelector('.vsw-search-button');if(searchButton&&searchButton.disabled){console.warn("VSW: performSearch called on disabled button.");vsw_showMessage(vsw_getTextById('vsw-msgMinInputRequired'),4000);return;}
+        let finalSearchTerm='';let inputCount=0;let dropdownSearchTerm='';
+        const selects=searchBox.querySelectorAll('select');const textInput=searchBox.querySelector('.vsw-custom-search-input');
+        selects.forEach(select=>{if(select.value?.trim()&&select.value!==""){dropdownSearchTerm+=select.value.trim()+' ';inputCount++;}});
+        dropdownSearchTerm=dropdownSearchTerm.trim();const textValue=textInput?textInput.value.trim():'';
+        if(textValue){inputCount++;}
+        const minInputsRequired=2;
+        if(inputCount<minInputsRequired){console.warn("VSW: performSearch called with insufficient inputs (fallback).");vsw_showMessage(vsw_getTextById('vsw-msgMinInputRequired'),4000);return;}
+         if(textValue){finalSearchTerm=(dropdownSearchTerm+' '+textValue).trim();}else{finalSearchTerm=dropdownSearchTerm;}
+        vsw_hideMessage();console.log(`VSW Performing search for: "${finalSearchTerm}"`);vsw_fetchYouTubeData(finalSearchTerm);
+    }
+    function vsw_showVideoSections(){
+        if(vsw_currentVideoItems&&vsw_currentVideoItems.length>0){
+            if(vsw_videoSliderContainer&&vsw_videoSliderContainer.style.display==='none'){vsw_videoSliderContainer.style.display='block';}
+            if(vsw_youtubeIframe&&vsw_youtubeIframe.src&&vsw_youtubeIframe.src!=='about:blank'&&vsw_videoDisplay&&vsw_videoDisplay.style.display==='none'){vsw_videoDisplay.style.display='block';}
+            vsw_itemsPerPage=vsw_calculateItemsPerPage();
+            if(vsw_videoSliderNav){vsw_videoSliderNav.style.display=vsw_currentVideoItems.length>vsw_itemsPerPage?'flex':'none';}
+        }else{vsw_hideVideoSections();}
+    }
+    function vsw_hideVideoSections(){
+        if(vsw_videoSliderContainer)vsw_videoSliderContainer.style.display='none';if(vsw_videoDisplay)vsw_videoDisplay.style.display='none';if(vsw_videoSliderNav)vsw_videoSliderNav.style.display='none';
+    }
+    function vsw_showMessage(messageText,duration=3000){
+        if(!vsw_messageBox)return;
+        clearTimeout(vsw_messageTimeout);
+        const textToShow=messageText||vsw_getTextById('vsw-msgInternalError');
+        vsw_messageBox.textContent=textToShow;vsw_messageBox.style.display='block';
+        if(duration>0){vsw_messageTimeout=setTimeout(vsw_hideMessage,duration);}
+    }
+    function vsw_hideMessage(){if(!vsw_messageBox)return;clearTimeout(vsw_messageTimeout);vsw_messageBox.style.display='none';}
+</script>
